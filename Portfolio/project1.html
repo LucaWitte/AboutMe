@@ -28,14 +28,54 @@
             letter-spacing: 2px;
          }
 
+         /* Sidebar Styling */
+         .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #0d3b66;
+            padding-top: 100px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+         }
+
+         .side-menu a {
+            padding: 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+         }
+
+         .side-menu a:hover {
+            background-color: #1d4e89;
+            padding-left: 40px;
+         }
+
+         .side-menu a.active {
+            background-color: #ffcc00;
+            color: #0d3b66;
+            font-weight: bold;
+         }
+
          /* Main content styling */
          .main-content {
+            margin-left: 260px;
+            padding: 30px;
+         }
+
+         main {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 0 auto;
             padding: 40px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
          }
 
          .project-image {
@@ -153,11 +193,12 @@
          /* Responsive Styling */
          @media (max-width: 768px) {
             .main-content {
+               margin-left: 0;
                padding: 20px;
             }
 
             footer {
-               padding: 10px;
+               margin-left: 0;
             }
          }
       </style>
@@ -167,32 +208,42 @@
          <h1>Automated Cell Culture System</h1>
       </header>
 
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="../index.html">About Me</a>
+         <a href="../resume.html">My Resume</a>
+         <a href="../blog.html">Blog</a>
+         <a href="../cool-things.html" class="active">Cool Things I Have Done</a>
+      </div>
+
+      <!-- Main content starts here -->
       <div class="main-content">
-         <!-- Project overview -->
-         <section>
-            <h2>Project Overview</h2>
-            <p>This project focuses on the development of an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The goal was to streamline laboratory research processes, reduce human error, and enhance reproducibility in cell biology experiments.</p>
+         <main>
+            <!-- Project overview -->
+            <section>
+               <h2>Project Overview</h2>
+               <p>This project focuses on the development of an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The goal was to streamline laboratory research processes, reduce human error, and enhance reproducibility in cell biology experiments.</p>
 
-            <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
+               <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
 
-            <!-- Detailed description -->
-            <h2>Detailed Description</h2>
-            <p>The automated system employs a robotic arm to handle cell cultures, while machine learning algorithms monitor cell growth and suggest adjustments to factors like temperature, CO2 concentration, and media composition. This innovative approach saves time and ensures consistent results, allowing scientists to focus more on data analysis and less on manual tasks.</p>
+               <!-- Detailed description -->
+               <h2>Detailed Description</h2>
+               <p>The automated system employs a robotic arm to handle cell cultures, while machine learning algorithms monitor cell growth and suggest adjustments to factors like temperature, CO2 concentration, and media composition. This innovative approach saves time and ensures consistent results, allowing scientists to focus more on data analysis and less on manual tasks.</p>
 
-            <p>The system is designed to be modular, making it adaptable to different types of cell lines and experimental conditions. By integrating real-time data analysis and control systems, the system can make decisions autonomously, significantly reducing the need for manual intervention.</p>
+               <p>The system is designed to be modular, making it adaptable to different types of cell lines and experimental conditions. By integrating real-time data analysis and control systems, the system can make decisions autonomously, significantly reducing the need for manual intervention.</p>
 
-            <p>Here’s a breakdown of the major components of the project:</p>
-            <ul>
-               <li>Robotic handling of cell culture plates and consumables</li>
-               <li>Machine learning algorithms for optimizing growth conditions</li>
-               <li>Automated feedback systems for real-time monitoring</li>
-               <li>Data integration with laboratory information management systems (LIMS)</li>
-            </ul>
+               <p>Here’s a breakdown of the major components of the project:</p>
+               <ul>
+                  <li>Robotic handling of cell culture plates and consumables</li>
+                  <li>Machine learning algorithms for optimizing growth conditions</li>
+                  <li>Automated feedback systems for real-time monitoring</li>
+                  <li>Data integration with laboratory information management systems (LIMS)</li>
+               </ul>
 
-            <!-- Collapsible code block showing a Git file -->
-            <button type="button" class="collapsible">View Code from GitHub</button>
-            <div class="collapsible-content">
-               <pre><code>
+               <!-- Collapsible code block showing a Git file -->
+               <button type="button" class="collapsible">View Code from GitHub</button>
+               <div class="collapsible-content">
+                  <pre><code>
 # Example Python Code for Optimizing Cell Growth Conditions
 
 import numpy as np
@@ -210,32 +261,16 @@ model.fit(X, y)
 new_condition = np.array([[37, 5.5]])
 predicted_growth = model.predict(new_condition)
 print(f"Predicted cell growth: {predicted_growth[0]:.2f}%")
-               </code></pre>
-            </div>
-         </section>
+                  </code></pre>
+               </div>
+            </section>
+         </main>
       </div>
-
+      
       <footer>
          &copy; 2024 Luca | All rights reserved.
          <div class="social-icons">
             <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
             </a>
-            <a href="https://orcid.org/0000-0002-1234-5678" target="_blank">
-               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
-            </a>
-         </div>
-      </footer>
-
-      <script>
-         // Script to toggle the collapsible content
-         const collapsible = document.querySelector('.collapsible');
-         const content = document.querySelector('.collapsible-content');
-
-         collapsible.addEventListener('click', function() {
-            this.classList.toggle('active');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-         });
-      </script>
-   </body>
-</html>
+            <a href="https://orcid.org/0000-0002-1234-567

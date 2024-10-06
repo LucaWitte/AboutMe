@@ -11,6 +11,7 @@ sass:
 collections:
   posts:
     output          : true
+remote_theme: jekyll-theme-minimal
 
 # Handling Reading
 safe                : false

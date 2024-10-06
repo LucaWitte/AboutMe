@@ -38,6 +38,7 @@
             background-color: #0d3b66;
             padding-top: 100px;
             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2); /* Darker shadow to separate it visually */
+            z-index: 1; /* Ensure the sidebar is layered on top of the footer */
          }
 
          .side-menu a {
@@ -133,6 +134,7 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            z-index: 0; /* Footer behind the sidebar */
          }
 
          /* Responsive Styling */

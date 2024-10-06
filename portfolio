@@ -130,7 +130,7 @@
                <div class="cool-thing">
                   <img src="Images/project1.webp" alt="Project 1">
                   <div>
-                     <h3><a href="cool-things/project1.html">Automated Cell Culture System</a></h3>
+                     <h3><a href="Portfolio/project1.html">Automated Cell Culture System</a></h3>
                      <p>I developed an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The project was designed to streamline research processes and reduce human error in laboratories.</p>
                   </div>
                </div>

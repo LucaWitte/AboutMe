@@ -3,265 +3,152 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Automated Cell Culture System - Project by Luca">
-      <title>Automated Cell Culture System UPDATED SUCCESSFULLY - Luca</title>
+      <meta name="description" content="Cool things I have done - Luca">
+      <title>Cool Things I Have Done - Luca</title>
       <style>
          body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
          }
-
          /* Header Styling */
          header {
-            background-color: #0d4b78;
+            background-color: #1a73e8; /* Modern blue color */
             color: white;
-            padding: 2em 0;
+            padding: 1em 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
          }
-
          header h1 {
             margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
          }
-
-         /* Sidebar Styling */
+         /* Styles for the left-hand menu */
          .side-menu {
             position: fixed;
             top: 0;
             left: 0;
-            width: 250px;
+            width: 200px;
             height: 100%;
-            background-color: #0d3b66;
-            padding-top: 100px;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            background-color: #333;
+            padding-top: 60px;
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
          }
-
          .side-menu a {
-            padding: 20px;
+            padding: 15px 20px;
             display: block;
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             transition: background-color 0.3s ease, padding-left 0.3s ease;
          }
-
          .side-menu a:hover {
-            background-color: #1d4e89;
-            padding-left: 40px;
+            background-color: #575757;
+            padding-left: 30px;
          }
-
          .side-menu a.active {
-            background-color: #ffcc00;
-            color: #0d3b66;
+            background-color: #1a73e8;
             font-weight: bold;
          }
-
-         /* Main content styling */
+         /* Main content styling to shift it to the right of the menu */
          .main-content {
-            margin-left: 260px;
-            padding: 30px;
+            margin-left: 210px;
+            padding: 20px;
          }
-
          main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-         }
-
-         .project-image {
-            width: 100%;
-            max-width: 600px;
-            display: block;
+            max-width: 800px;
             margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
          }
-
+         section {
+            margin-bottom: 20px;
+         }
          h2 {
-            font-size: 2em;
-            color: #0d3b66;
-            border-bottom: 3px solid #ffcc00;
-            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
          }
-
-         p {
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 20px;
+         .cool-thing {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
          }
-
-         ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 20px;
+         .cool-thing img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
          }
-
-         li {
-            margin-bottom: 10px;
-            color: #555;
+         .cool-thing h3 {
+            margin: 0;
          }
-
-         /* Collapsible code block */
-         .collapsible {
-            background-color: #f1f1f1;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            text-align: left;
-            border: none;
-            outline: none;
-            font-size: 18px;
-            margin: 10px 0;
-            border-radius: 5px;
+         .cool-thing p {
+            margin: 5px 0;
          }
-
-         .collapsible:hover {
-            background-color: #ddd;
+         .cool-thing a {
+            color: #1a73e8;
+            text-decoration: none;
          }
-
-         .collapsible-content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+         .cool-thing a:hover {
+            text-decoration: underline;
          }
-
-         pre {
-            background-color: #272822;
-            color: #f8f8f2;
-            padding: 10px;
-            border-radius: 4px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            margin-top: 10px;
-         }
-
-         code {
-            font-family: 'Courier New', Courier, monospace;
-         }
-
-         /* Footer Styling */
          footer {
             text-align: center;
-            padding: 20px;
-            background-color: #2a5a8a;
-            color: #e0e0e0;
+            padding: 10px;
+            background-color: #333;
+            color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
-         }
-
-         footer a {
-            color: #e0e0e0;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-         }
-
-         footer a:hover {
-            color: #ffcc00;
-         }
-
-         footer .social-icons {
-            margin-top: 10px;
-         }
-
-         .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            vertical-align: middle;
-            transition: transform 0.3s ease;
-         }
-
-         .social-icons img:hover {
-            transform: scale(1.1);
-         }
-
-         /* Responsive Styling */
-         @media (max-width: 768px) {
-            .main-content {
-               margin-left: 0;
-               padding: 20px;
-            }
-
-            footer {
-               margin-left: 0;
-            }
+            margin-left: 210px;
          }
       </style>
    </head>
    <body>
+      <!-- Header always at the top -->
       <header>
-         <h1>Automated Cell Culture System</h1>
+         <h1>Cool Things I Have Done</h1>
       </header>
 
       <!-- Left-hand menu starts below the header -->
       <div class="side-menu">
-         <a href="../index.html">About Me</a>
-         <a href="../resume.html">My Resume</a>
-         <a href="../blog.html">Blog</a>
-         <a href="../cool-things.html" class="active">Cool Things I Have Done</a>
+         <a href="index.html">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html">Blog</a>
+         <a href="cool-things.html" class="active">Cool Things I Have Done</a>
       </div>
 
       <!-- Main content starts here -->
       <div class="main-content">
          <main>
-            <!-- Project overview -->
             <section>
-               <h2>Project Overview</h2>
-               <p>This project focuses on the development of an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The goal was to streamline laboratory research processes, reduce human error, and enhance reproducibility in cell biology experiments.</p>
+               <h2>Projects & Accomplishments</h2>
 
-               <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
+               <div class="cool-thing">
+                  <img src="Images/project1.webp" alt="Project 1">
+                  <div>
+                     <h3><a href="Portfolio/project1.html">Automated Cell Culture System</a></h3>
+                     <p>I developed an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The project was designed to streamline research processes and reduce human error in laboratories.</p>
+                  </div>
+               </div>
 
-               <!-- Detailed description -->
-               <h2>Detailed Description</h2>
-               <p>The automated system employs a robotic arm to handle cell cultures, while machine learning algorithms monitor cell growth and suggest adjustments to factors like temperature, CO2 concentration, and media composition. This innovative approach saves time and ensures consistent results, allowing scientists to focus more on data analysis and less on manual tasks.</p>
+               <div class="cool-thing">
+                  <img src="Images/project2.webp" alt="Project 2">
+                  <div>
+                     <h3><a href="cool-things/project2.html">Data Visualization Platform for Roche</a></h3>
+                     <p>During my time at Roche, I led the development of a comprehensive data visualization platform for internal stakeholders, enabling real-time decision-making through interactive dashboards and ETL pipelines.</p>
+                  </div>
+               </div>
 
-               <p>The system is designed to be modular, making it adaptable to different types of cell lines and experimental conditions. By integrating real-time data analysis and control systems, the system can make decisions autonomously, significantly reducing the need for manual intervention.</p>
-
-               <p>Here’s a breakdown of the major components of the project:</p>
-               <ul>
-                  <li>Robotic handling of cell culture plates and consumables</li>
-                  <li>Machine learning algorithms for optimizing growth conditions</li>
-                  <li>Automated feedback systems for real-time monitoring</li>
-                  <li>Data integration with laboratory information management systems (LIMS)</li>
-               </ul>
-
-               <!-- Collapsible code block showing a Git file -->
-               <button type="button" class="collapsible">View Code from GitHub</button>
-               <div class="collapsible-content">
-                  <pre><code>
-# Example Python Code for Optimizing Cell Growth Conditions
-
-import numpy as np
-from sklearn.ensemble import RandomForestRegressor
-
-# Simulated data for cell growth conditions
-X = np.array([[37, 5], [36, 5], [37, 6], [38, 5], [36, 4]])  # Temperature, CO2 level
-y = np.array([80, 78, 85, 90, 75])  # Cell growth percentages
-
-# Machine learning model to predict optimal conditions
-model = RandomForestRegressor()
-model.fit(X, y)
-
-# Predicting cell growth for a new condition
-new_condition = np.array([[37, 5.5]]);
-predicted_growth = model.predict(new_condition);
-print(f"Predicted cell growth: {predicted_growth[0]:.2f}%")
-                  </code></pre>
+               <div class="cool-thing">
+                  <img src="Images/project3.webp" alt="Project 3">
+                  <div>
+                     <h3><a href="cool-things/project3.html">Gene Circuit Simulations with Python</a></h3>
+                     <p>Explored the impact of gene circuit architectures on cell-to-cell variability through simulations, creating a Python package for synthetic biology simulations and publishing the results in a peer-reviewed journal.</p>
+                  </div>
                </div>
             </section>
          </main>
@@ -269,6 +156,6 @@ print(f"Predicted cell growth: {predicted_growth[0]:.2f}%")
       
       <footer>
          &copy; 2024 Luca | All rights reserved.
-         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
-               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </footer>
+   </body>
+</html>

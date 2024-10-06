@@ -12,14 +12,49 @@
             margin: 0;
             padding: 0;
          }
+         /* Header Styling */
          header {
-            background-color: #333;
+            background-color: #1a73e8; /* Changed to a cleaner, modern blue */
             color: white;
             padding: 1em 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a nice shadow under the header */
          }
          header h1 {
             margin: 0;
+         }
+         /* Styles for the left-hand menu */
+         .side-menu {
+            position: fixed;
+            top: 0; /* Now starts at the very top */
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333; /* Dark background for contrast */
+            padding-top: 60px; /* Creates space for the header */
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1); /* Subtle shadow to add depth */
+            transition: width 0.3s ease; /* Smooth transition for any future hover effects */
+         }
+         .side-menu a {
+            padding: 15px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+         }
+         .side-menu a:hover {
+            background-color: #575757;
+            padding-left: 30px; /* Adds a sliding effect on hover */
+         }
+         .side-menu a.active {
+            background-color: #1a73e8;
+            font-weight: bold;
+         }
+         /* Main content styling to shift it to the right of the menu */
+         .main-content {
+            margin-left: 210px;
+            padding: 20px;
          }
          main {
             max-width: 800px;
@@ -59,35 +94,48 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            margin-left: 210px;
          }
       </style>
    </head>
    <body>
+      <!-- Header always at the top -->
       <header>
          <h1>Blog - [Your Name]</h1>
       </header>
 
-      <main>
-         <section>
-            <h2>Recent Posts</h2>
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="index.html">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html" class="active">Blog</a>
+         <a href="cool-things.html">Cool Things I Have Done</a>
+      </div>
 
-            <div class="blog-post">
-               <h3><a href="blog-post-1.html">The Future of Bioengineering: Trends to Watch</a></h3>
-               <p>As the field of bioengineering continues to evolve, new trends are emerging that could revolutionize healthcare, food production, and more. In this post, I explore some key innovations shaping the future of bioengineering.</p>
-            </div>
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <section>
+               <h2>Recent Posts</h2>
 
-            <div class="blog-post">
-               <h3><a href="blog-post-2.html">Navigating the Challenges of Techno-Economic Analysis</a></h3>
-               <p>Techno-economic analysis is critical in assessing the viability of technologies, but it comes with its own set of challenges. Here's a breakdown of the common hurdles and how to overcome them for effective decision-making.</p>
-            </div>
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-1.html">The Future of Bioengineering: Trends to Watch</a></h3>
+                  <p>As the field of bioengineering continues to evolve, new trends are emerging that could revolutionize healthcare, food production, and more. In this post, I explore some key innovations shaping the future of bioengineering.</p>
+               </div>
 
-            <div class="blog-post">
-               <h3><a href="blog-post-3.html">Building a Business Intelligence Platform at Roche</a></h3>
-               <p>In this article, I share insights and lessons learned from my experience in developing a data visualization platform for Roche, covering everything from ETL pipelines to stakeholder engagement.</p>
-            </div>
-         </section>
-      </main>
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-2.html">Navigating the Challenges of Techno-Economic Analysis</a></h3>
+                  <p>Techno-economic analysis is critical in assessing the viability of technologies, but it comes with its own set of challenges. Here's a breakdown of the common hurdles and how to overcome them for effective decision-making.</p>
+               </div>
 
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-3.html">Building a Business Intelligence Platform at Roche</a></h3>
+                  <p>In this article, I share insights and lessons learned from my experience in developing a data visualization platform for Roche, covering everything from ETL pipelines to stakeholder engagement.</p>
+               </div>
+            </section>
+         </main>
+      </div>
+      
       <footer>
          &copy; 2024 [Your Name] | All rights reserved.
       </footer>

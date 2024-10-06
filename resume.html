@@ -7,98 +7,161 @@
       <title>Resume - Luca</title>
       <style>
          body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
          }
+
          /* Header Styling */
          header {
-            background-color: #1a73e8;
+            background-color: #0d4b78; /* Updated header color */
             color: white;
-            padding: 1em 0;
+            padding: 2em 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
          }
+
          header h1 {
             margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
          }
-         /* Side menu styling */
+
+         /* Sidebar Styling */
          .side-menu {
             position: fixed;
             top: 0;
             left: 0;
-            width: 200px;
+            width: 250px;
             height: 100%;
-            background-color: #333;
-            padding-top: 60px;
-            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
-            transition: width 0.3s ease;
+            background-color: #0d3b66;
+            padding-top: 100px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
          }
+
          .side-menu a {
-            padding: 15px 20px;
+            padding: 20px;
             display: block;
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             transition: background-color 0.3s ease, padding-left 0.3s ease;
          }
+
          .side-menu a:hover {
-            background-color: #575757;
-            padding-left: 30px;
+            background-color: #1d4e89;
+            padding-left: 40px;
          }
+
          .side-menu a.active {
-            background-color: #1a73e8;
+            background-color: #ffcc00;
+            color: #0d3b66;
             font-weight: bold;
          }
-         /* Main content styling to shift it to the right of the menu */
+
+         /* Main content styling */
          .main-content {
-            margin-left: 210px;
-            padding: 20px;
+            margin-left: 260px;
+            padding: 30px;
          }
+
          main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
          }
+
+         /* Section Headers */
          h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            font-size: 22px;
-            color: #1a73e8;
+            font-size: 2em;
+            color: #0d3b66;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
          }
+
          p {
             color: #333;
          }
+
          .subheading {
             font-weight: bold;
             font-size: 18px;
             color: #444;
          }
+
          ul {
             list-style-type: none;
             padding: 0;
          }
+
          li {
             margin-bottom: 10px;
             color: #555;
          }
-         /* Footer styling */
+
+         /* Footer Styling */
          footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
+            padding: 20px;
+            background-color: #2a5a8a;
+            color: #e0e0e0;
             position: fixed;
             width: 100%;
             bottom: 0;
-            margin-left: 210px;
+            z-index: 0;
+         }
+
+         footer a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+         }
+
+         footer a:hover {
+            color: #ffcc00;
+         }
+
+         footer .social-icons {
+            margin-top: 10px;
+         }
+
+         .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+         }
+
+         .social-icons img:hover {
+            transform: scale(1.1);
+         }
+
+         /* Responsive Styling */
+         @media (max-width: 768px) {
+            .main-content {
+               margin-left: 0;
+               padding: 20px;
+            }
+
+            footer {
+               margin-left: 0;
+            }
          }
       </style>
    </head>
    <body>
+      <header>
+         <h1>Resume - Luca</h1>
+      </header>
 
       <!-- Left-hand menu starts below the header -->
       <div class="side-menu">
@@ -107,10 +170,6 @@
          <a href="blog.html">Blog</a>
          <a href="portfolio.html">Cool Things I Have Done</a>
       </div>
-
-      <header>
-         <h1>Resume - Luca</h1>
-      </header>
 
       <!-- Main content starts here -->
       <div class="main-content">
@@ -179,7 +238,6 @@
       
       <footer>
          &copy; 2024 Luca | All rights reserved.
-      </footer>
-
-   </body>
-</html>
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src

@@ -12,11 +12,41 @@
             margin: 0;
             padding: 0;
          }
+         /* Styles for the left-hand menu */
+         .side-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            padding-top: 20px;
+         }
+         .side-menu a {
+            padding: 10px 15px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+         }
+         .side-menu a:hover {
+            background-color: #575757;
+         }
+         .side-menu a.active {
+            background-color: #1a73e8;
+         }
+         /* Main content styling to shift it to the right of the menu */
+         .main-content {
+            margin-left: 210px;
+            padding: 20px;
+         }
          header {
             background-color: #333;
             color: white;
             padding: 1em 0;
             text-align: center;
+            margin-left: 210px; /* Make sure header shifts with the content */
          }
          header h1 {
             margin: 0;
@@ -59,37 +89,52 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            margin-left: 210px; /* Ensure footer aligns with the content */
          }
       </style>
    </head>
    <body>
+
+      <!-- Left-hand menu -->
+      <div class="side-menu">
+         <a href="index.html">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html" class="active">Blog</a>
+         <a href="cool-things.html">Cool Things I Have Done</a>
+      </div>
+
+      <!-- Main content starts here -->
       <header>
          <h1>Blog - [Your Name]</h1>
       </header>
 
-      <main>
-         <section>
-            <h2>Recent Posts</h2>
+      <div class="main-content">
+         <main>
+            <section>
+               <h2>Recent Posts</h2>
 
-            <div class="blog-post">
-               <h3><a href="blogposts/blog-post-1.html">The Future of Bioengineering: Trends to Watch</a></h3>
-               <p>As the field of bioengineering continues to evolve, new trends are emerging that could revolutionize healthcare, food production, and more. In this post, I explore some key innovations shaping the future of bioengineering.</p>
-            </div>
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-1.html">The Future of Bioengineering: Trends to Watch</a></h3>
+                  <p>As the field of bioengineering continues to evolve, new trends are emerging that could revolutionize healthcare, food production, and more. In this post, I explore some key innovations shaping the future of bioengineering.</p>
+               </div>
 
-            <div class="blog-post">
-               <h3><a href="blogposts/blog-post-2.html">Navigating the Challenges of Techno-Economic Analysis</a></h3>
-               <p>Techno-economic analysis is critical in assessing the viability of technologies, but it comes with its own set of challenges. Here's a breakdown of the common hurdles and how to overcome them for effective decision-making.</p>
-            </div>
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-2.html">Navigating the Challenges of Techno-Economic Analysis</a></h3>
+                  <p>Techno-economic analysis is critical in assessing the viability of technologies, but it comes with its own set of challenges. Here's a breakdown of the common hurdles and how to overcome them for effective decision-making.</p>
+               </div>
 
-            <div class="blog-post">
-               <h3><a href="blogposts/blog-post-3.html">Building a Business Intelligence Platform at Roche</a></h3>
-               <p>In this article, I share insights and lessons learned from my experience in developing a data visualization platform for Roche, covering everything from ETL pipelines to stakeholder engagement.</p>
-            </div>
-         </section>
-      </main>
-
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-3.html">Building a Business Intelligence Platform at Roche</a></h3>
+                  <p>In this article, I share insights and lessons learned from my experience in developing a data visualization platform for Roche, covering everything from ETL pipelines to stakeholder engagement.</p>
+               </div>
+            </section>
+         </main>
+      </div>
+      
       <footer>
          &copy; 2024 [Your Name] | All rights reserved.
       </footer>
+      
    </body>
 </html>
+

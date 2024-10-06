@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Resume of Luca">
-      <title>Resume - Luca</title>
-      <style>
-         body {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Luca">
+    <title>Resume - Luca</title>
+    <style>
+        body {
             font-family: 'Montserrat', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-         }
+        }
 
-         /* Header Styling */
-         header {
-            background-color: #0d4b78; /* Updated header color */
+        header {
+            background-color: #0d4b78;
             color: white;
             padding: 2em 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-         }
+        }
 
-         header h1 {
+        header h1 {
             margin: 0;
             font-size: 2.5em;
             letter-spacing: 2px;
-         }
+        }
 
-         /* Sidebar Styling */
-         .side-menu {
+        .side-menu {
             position: fixed;
             top: 0;
             left: 0;
@@ -39,36 +37,35 @@
             padding-top: 100px;
             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
             z-index: 1;
-         }
+        }
 
-         .side-menu a {
+        .side-menu a {
             padding: 20px;
             display: block;
             color: white;
             text-decoration: none;
             font-size: 18px;
             transition: background-color 0.3s ease, padding-left 0.3s ease;
-         }
+        }
 
-         .side-menu a:hover {
+        .side-menu a:hover {
             background-color: #1d4e89;
             padding-left: 40px;
-         }
+        }
 
-         .side-menu a.active {
+        .side-menu a.active {
             background-color: #ffcc00;
             color: #0d3b66;
             font-weight: bold;
-         }
+        }
 
-         /* Main content styling */
-         .main-content {
+        .main-content {
             margin-left: 260px;
             padding: 30px;
-            margin-bottom: 60px; /* Added bottom margin to prevent overlap with footer */
-         }
+            margin-bottom: 60px;
+        }
 
-         main {
+        main {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px;
@@ -77,176 +74,203 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
-         }
+        }
 
-         /* Section Headers */
-         h2 {
+        h2 {
             font-size: 2em;
             color: #0d3b66;
             border-bottom: 3px solid #ffcc00;
             padding-bottom: 10px;
-         }
+        }
 
-         p {
+        p {
             color: #333;
-         }
+        }
 
-         .subheading {
-            font-weight: bold;
-            font-size: 18px;
-            color: #444;
-         }
-
-         ul {
-            list-style-type: none;
+        .timeline {
+            position: relative;
+            margin: 0;
             padding: 0;
-         }
+        }
 
-         li {
-            margin-bottom: 10px;
-            color: #555;
-         }
-
-         /* Footer Styling */
-         footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2a5a8a;
-            color: #e0e0e0;
-            position: fixed;
-            width: 100%;
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
             bottom: 0;
-            z-index: 0;
-         }
+            left: 50px;
+            width: 2px;
+            background: #ffcc00;
+        }
 
-         footer a {
-            color: #e0e0e0;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-         }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 100px;
+        }
 
-         footer a:hover {
-            color: #ffcc00;
-         }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            background-color: #0d4b78;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
 
-         footer .social-icons {
-            margin-top: 10px;
-         }
+        .timeline-item img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: -60px;
+            top: -10px;
+        }
 
-         .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            vertical-align: middle;
-            transition: transform 0.3s ease;
-         }
+        .progress-container {
+            margin-bottom: 40px;
+        }
 
-         .social-icons img:hover {
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-bar div {
+            height: 20px;
+            background-color: #0d3b66;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: 10% auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .thumbnail:hover {
             transform: scale(1.1);
-         }
+        }
 
-         /* Responsive Styling */
-         @media (max-width: 768px) {
-            .main-content {
-               margin-left: 0;
-               padding: 20px;
-            }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resume - Luca</h1>
+    </header>
 
-            footer {
-               margin-left: 0;
-            }
-         }
-      </style>
-   </head>
-   <body>
-      <header>
-         <h1>Resume - Luca</h1>
-      </header>
+    <div class="side-menu">
+        <a href="index.html">About Me</a>
+        <a href="resume.html" class="active">My Resume</a>
+        <a href="blog.html">Blog</a>
+        <a href="portfolio.html">Cool Things I Have Done</a>
+    </div>
 
-      <!-- Left-hand menu starts below the header -->
-      <div class="side-menu">
-         <a href="index.html">About Me</a>
-         <a href="resume.html" class="active">My Resume</a>
-         <a href="blog.html">Blog</a>
-         <a href="portfolio.html">Cool Things I Have Done</a>
-      </div>
-
-      <!-- Main content starts here -->
-      <div class="main-content">
-         <main>
+    <div class="main-content">
+        <main>
             <section>
-               <h2>Education</h2>
-               <p><span class="subheading">ETH Zürich</span> | Sep 2021 - Sep 2023</p>
-               <p>Master of Science - Biotechnology | Basel, Switzerland</p>
-               <ul>
-                  <li>GPA: 5.86/6; Summa cum laude</li>
-                  <li>Lab courses: Laboratory automation, Stem cell techniques, Cellular engineering, Microsystems, NGS</li>
-                  <li>Courses: Bioengineering, Systems biology, Computational biology, Statistics, Data mining</li>
-                  <li>Student association: Industry representative and vice-president, student’s representative for selection of new professor, Planning and organization team of PharmaCamp competition</li>
-               </ul>
+                <h2>Education & Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/ETH-Zuerich-Logo.svg" alt="ETH Logo">
+                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023</p>
+                        <p>GPA: 5.86/6, Summa cum laude</p>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Roche_Logo.svg/1280px-Roche_Logo.svg.png" alt="Roche Logo">
+                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
+                    </div>
+                </div>
             </section>
 
             <section>
-               <h2>Work Experience</h2>
-               <p><span class="subheading">F. Hoffmann-La Roche</span> | Oct 2023 – Sep 2024</p>
-               <p>Junior Project Manager Knowledge Management | Basel, Switzerland</p>
-               <ul>
-                  <li>Setting up a business intelligence data visualization platform for internal and stakeholder communication.</li>
-                  <li>Technologies: ETL pipelines, Interactive visualizations, Python, R, SQL.</li>
-                  <li>Documented links between technical and business processes (Change management, Governance).</li>
-                  <li>Collaborated with diverse stakeholders, Technical support, Maintained databases, Git repositories and APIs.</li>
-               </ul>
+                <h2>Skills</h2>
+                <div class="progress-container">
+                    <p>Python</p>
+                    <div class="progress-bar"><div style="width: 90%">90%</div></div>
 
-               <p><span class="subheading">ETH Zürich</span> | Feb 2023 - Sep 2023</p>
-               <p>Master Thesis - Multiomics for Integrin Mechanosensing | Basel, Switzerland</p>
-               <ul>
-                  <li>Conducted genomics, transcriptomics and single cell sequencing to study integrin signaling in mammalian cells.</li>
-                  <li>Developed novel protocols for experimental setup and data analysis (R, Python, Unix).</li>
-                  <li>Handled both data generation (cell culture, sample processing) and big data analysis and integration.</li>
-               </ul>
+                    <p>R</p>
+                    <div class="progress-bar"><div style="width: 85%">85%</div></div>
 
-               <p><span class="subheading">ETH Zürich</span> | Sep 2022 - Feb 2023</p>
-               <p>Research Project - Statistical models of genetic circuits</p>
-               <ul>
-                  <li>Established nonlinear mixed-effects models to study cell-to-cell variability of synthetic gene circuit architectures.</li>
-                  <li>Population-level deterministic simulations and statistical evaluation using R, C++, and Python.</li>
-                  <li>Reviewed literature, presented contextualized results for experimental implementations.</li>
-               </ul>
-
-               <p><span class="subheading">Wacker Chemie AG</span> | Jun 2021 – Sep 2021</p>
-               <p>Summer Rotation Student - Manufacturing Operations | Jena, Germany</p>
-
-               <p><span class="subheading">Max Planck Institute of Biophysics</span> | Oct 2020 - Jun 2021</p>
-               <p>Bachelor’s Thesis - Optimization of a novel spectroscopic assay for small molecule binding | Frankfurt, Germany</p>
-               <ul>
-                  <li>Developed a label-free thermal shift assay for drug candidate binding to E. coli bd oxidases.</li>
-                  <li>Optimized assay conditions and validated results with established functional assays.</li>
-               </ul>
+                    <p>SQL</p>
+                    <div class="progress-bar"><div style="width: 80%">80%</div></div>
+                </div>
             </section>
 
             <section>
-               <h2>Certifications, Skills & Interests</h2>
-               <ul>
-                  <li><strong>Soft skills:</strong> Project management, Adaptability, Creative problem-solving, Collaboration, Attention to detail</li>
-                  <li><strong>Hard skills:</strong> Python, R, SQL, ETL pipelines, Git, Data science and Data engineering, Agile methodologies</li>
-                  <li><strong>Certifications:</strong> Business Intelligence for Consultants, Scrum, Tableau</li>
-                  <li><strong>Interests:</strong> Kickboxing & Brazilian Jiu-Jitsu, Meditation, Reading, Music, Traveling</li>
-               </ul>
+                <h2>Projects</h2>
+                <div class="project-gallery">
+                    <img class="thumbnail" src="https://via.placeholder.com/150" alt="Project 1" onclick="openLightbox('lightbox1')">
+                    <img class="thumbnail" src="https://via.placeholder.com/150" alt="Project 2" onclick="openLightbox('lightbox2')">
+                </div>
+
+                <div id="lightbox1" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Multiomics for Integrin Mechanosensing</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
+
+                <div id="lightbox2" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Statistical Models of Genetic Circuits</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
             </section>
-         </main>
-      </div>
-      
-      <footer>
-         &copy; 2024 Luca | You can also find me here:
-         <div class="social-icons">
+        </main>
+    </div>
+
+    <script>
+        function openLightbox(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeLightbox(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+    <footer>
+        &copy; 2024 Luca | You can also find me here:
+        <div class="social-icons">
             <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
-               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
             </a>
             <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
-               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
-            </a>
-         </div>
-      </footer>
-   </body>
-</html>
+                <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt

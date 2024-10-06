@@ -14,37 +14,42 @@
          }
          /* Header Styling */
          header {
-            background-color: #333;
+            background-color: #1a73e8; /* Changed to a cleaner, modern blue */
             color: white;
             padding: 1em 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a nice shadow under the header */
          }
          header h1 {
             margin: 0;
          }
-         /* Styles for the left-hand menu starting below the header */
+         /* Styles for the left-hand menu */
          .side-menu {
-            position: absolute;
-            top: 100px; /* Moves the menu below the header */
+            position: fixed;
+            top: 0; /* Now starts at the very top */
             left: 0;
             width: 200px;
-            height: calc(100% - 100px); /* Adjust height based on header size */
-            background-color: #333;
-            padding-top: 20px;
+            height: 100%;
+            background-color: #333; /* Dark background for contrast */
+            padding-top: 60px; /* Creates space for the header */
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1); /* Subtle shadow to add depth */
+            transition: width 0.3s ease; /* Smooth transition for any future hover effects */
          }
          .side-menu a {
-            padding: 10px 15px;
+            padding: 15px 20px;
             display: block;
             color: white;
             text-decoration: none;
-            font-family: Arial, sans-serif;
             font-size: 16px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
          }
          .side-menu a:hover {
             background-color: #575757;
+            padding-left: 30px; /* Adds a sliding effect on hover */
          }
          .side-menu a.active {
             background-color: #1a73e8;
+            font-weight: bold;
          }
          /* Main content styling to shift it to the right of the menu */
          .main-content {
@@ -114,4 +119,25 @@
                <h2>Recent Posts</h2>
 
                <div class="blog-post">
-                  <h3><a href="blogposts
+                  <h3><a href="blogposts/blog-post-1.html">The Future of Bioengineering: Trends to Watch</a></h3>
+                  <p>As the field of bioengineering continues to evolve, new trends are emerging that could revolutionize healthcare, food production, and more. In this post, I explore some key innovations shaping the future of bioengineering.</p>
+               </div>
+
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-2.html">Navigating the Challenges of Techno-Economic Analysis</a></h3>
+                  <p>Techno-economic analysis is critical in assessing the viability of technologies, but it comes with its own set of challenges. Here's a breakdown of the common hurdles and how to overcome them for effective decision-making.</p>
+               </div>
+
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-3.html">Building a Business Intelligence Platform at Roche</a></h3>
+                  <p>In this article, I share insights and lessons learned from my experience in developing a data visualization platform for Roche, covering everything from ETL pipelines to stakeholder engagement.</p>
+               </div>
+            </section>
+         </main>
+      </div>
+      
+      <footer>
+         &copy; 2024 [Your Name] | All rights reserved.
+      </footer>
+   </body>
+</html>

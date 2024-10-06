@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Cool things I have done - Luca">
+      <title>Cool Things I Have Done - Luca</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+         }
+         /* Header Styling */
+         header {
+            background-color: #1a73e8; /* Modern blue color */
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         }
+         header h1 {
+            margin: 0;
+         }
+         /* Styles for the left-hand menu */
+         .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            padding-top: 60px;
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+         }
+         .side-menu a {
+            padding: 15px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+         }
+         .side-menu a:hover {
+            background-color: #575757;
+            padding-left: 30px;
+         }
+         .side-menu a.active {
+            background-color: #1a73e8;
+            font-weight: bold;
+         }
+         /* Main content styling to shift it to the right of the menu */
+         .main-content {
+            margin-left: 210px;
+            padding: 20px;
+         }
+         main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+         }
+         section {
+            margin-bottom: 20px;
+         }
+         h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+         }
+         .cool-thing {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+         }
+         .cool-thing img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+         }
+         .cool-thing h3 {
+            margin: 0;
+         }
+         .cool-thing p {
+            margin: 5px 0;
+         }
+         .cool-thing a {
+            color: #1a73e8;
+            text-decoration: none;
+         }
+         .cool-thing a:hover {
+            text-decoration: underline;
+         }
+         footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            margin-left: 210px;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Header always at the top -->
+      <header>
+         <h1>Cool Things I Have Done</h1>
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="index.html">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html">Blog</a>
+         <a href="cool-things.html" class="active">Cool Things I Have Done</a>
+      </div>
+
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <section>
+               <h2>Projects & Accomplishments</h2>
+
+               <div class="cool-thing">
+                  <img src="Images/project1.webp" alt="Project 1">
+                  <div>
+                     <h3><a href="cool-things/project1.html">Automated Cell Culture System</a></h3>
+                     <p>I developed an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The project was designed to streamline research processes and reduce human error in laboratories.</p>
+                  </div>
+               </div>
+
+               <div class="cool-thing">
+                  <img src="Images/project2.webp" alt="Project 2">
+                  <div>
+                     <h3><a href="cool-things/project2.html">Data Visualization Platform for Roche</a></h3>
+                     <p>During my time at Roche, I led the development of a comprehensive data visualization platform for internal stakeholders, enabling real-time decision-making through interactive dashboards and ETL pipelines.</p>
+                  </div>
+               </div>
+
+               <div class="cool-thing">
+                  <img src="Images/project3.webp" alt="Project 3">
+                  <div>
+                     <h3><a href="cool-things/project3.html">Gene Circuit Simulations with Python</a></h3>
+                     <p>Explored the impact of gene circuit architectures on cell-to-cell variability through simulations, creating a Python package for synthetic biology simulations and publishing the results in a peer-reviewed journal.</p>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+      
+      <footer>
+         &copy; 2024 Luca | All rights reserved.
+      </footer>
+   </body>
+</html>

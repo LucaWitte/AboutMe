@@ -7,89 +7,154 @@
       <title>About - Luca</title>
       <style>
          body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
          }
+
          /* Header Styling */
          header {
-            background-color: #1a73e8;
+            background-color: #0d3b66;
             color: white;
-            padding: 1em 0;
+            padding: 2em 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
          }
+
          header h1 {
             margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
          }
+
          /* Styles for the left-hand menu */
          .side-menu {
             position: fixed;
             top: 0;
             left: 0;
-            width: 200px;
+            width: 250px;
             height: 100%;
-            background-color: #333;
-            padding-top: 60px;
+            background-color: #0d3b66;
+            padding-top: 100px;
             box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
          }
+
          .side-menu a {
-            padding: 15px 20px;
+            padding: 20px;
             display: block;
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             transition: background-color 0.3s ease, padding-left 0.3s ease;
          }
+
          .side-menu a:hover {
-            background-color: #575757;
-            padding-left: 30px;
+            background-color: #1d4e89;
+            padding-left: 40px;
          }
+
          .side-menu a.active {
-            background-color: #1a73e8;
+            background-color: #ffcc00;
+            color: #0d3b66;
             font-weight: bold;
          }
-         /* Main content styling to shift it to the right of the menu */
+
+         /* Main content styling */
          .main-content {
-            margin-left: 210px;
-            padding: 20px;
+            margin-left: 260px;
+            padding: 30px;
          }
+
          main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
          }
+
+         /* Introduction Section */
          .intro {
             display: flex;
             align-items: center;
          }
+
          .intro img {
             border-radius: 50%;
-            margin-right: 20px;
-            width: 250px;
-            height: 250px;
+            margin-right: 30px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
          }
+
+         .intro img:hover {
+            transform: scale(1.05);
+         }
+
          .intro-text {
             flex: 1;
+            font-size: 1.1em;
+            line-height: 1.8;
          }
+
          h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
+            font-size: 2em;
+            color: #0d3b66;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
          }
+
+         p {
+            color: #333;
+         }
+
+         a {
+            color: #0d3b66;
+            text-decoration: none;
+            font-weight: bold;
+         }
+
+         a:hover {
+            color: #ffcc00;
+         }
+
+         /* Footer */
          footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
+            padding: 20px;
+            background-color: #0d3b66;
             color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
-            margin-left: 210px;
+         }
+
+         /* Responsive Styling */
+         @media (max-width: 768px) {
+            .intro {
+               flex-direction: column;
+               text-align: center;
+            }
+
+            .intro img {
+               margin-bottom: 20px;
+               margin-right: 0;
+            }
+
+            .main-content {
+               margin-left: 0;
+               padding: 20px;
+            }
+
+            footer {
+               margin-left: 0;
+            }
          }
       </style>
    </head>
@@ -113,7 +178,7 @@
             <section class="intro">
                <img src="Images/MyPicture.jpeg" alt="Picture of Luca">
                <div class="intro-text">
-                  <h2>Welcome to My Personal Website! 🎙</h2>
+                  <h2>Welcome to My Personal Website!</h2>
                   <p>Hello! I’m Luca, a biotechnology enthusiast with a passion for innovation and technology. I love working on exciting projects related to biotechnology, data science, and automation. This website showcases my journey, work, and ideas.</p>
                   <p>Feel free to explore my <a href="resume.html">Resume</a>, check out my <a href="blog.html">Blog</a>, or see some <a href="portfolio.html">Cool Things I Have Done</a>.</p>
                </div>

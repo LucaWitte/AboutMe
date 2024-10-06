@@ -1,276 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resume of Luca">
-    <title>Resume - Luca</title>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+<section>
+    <h2>Projects</h2>
+    <div class="project-gallery">
+        <div class="project-card" onclick="openLightbox('lightbox1')">
+            <div class="project-image" style="background-image: url('https://via.placeholder.com/300x200');"></div>
+            <div class="project-info">
+                <h3>Multiomics for Integrin Mechanosensing</h3>
+                <p>Genomics, transcriptomics, and single cell sequencing to study integrin signaling in mammalian cells.</p>
+            </div>
+        </div>
 
-        header {
-            background-color: #0d4b78;
-            color: white;
-            padding: 2em 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #0d3b66;
-            padding-top: 100px;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .side-menu a {
-            padding: 20px;
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background-color 0.3s ease, padding-left 0.3s ease;
-        }
-
-        .side-menu a:hover {
-            background-color: #1d4e89;
-            padding-left: 40px;
-        }
-
-        .side-menu a.active {
-            background-color: #ffcc00;
-            color: #0d3b66;
-            font-weight: bold;
-        }
-
-        .main-content {
-            margin-left: 260px;
-            padding: 30px;
-            margin-bottom: 60px;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-
-        h2 {
-            font-size: 2em;
-            color: #0d3b66;
-            border-bottom: 3px solid #ffcc00;
-            padding-bottom: 10px;
-        }
-
-        p {
-            color: #333;
-        }
-
-        .timeline {
-            position: relative;
-            margin: 0;
-            padding: 0;
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50px;
-            width: 2px;
-            background: #ffcc00;
-        }
-
-        .timeline-item {
-            margin-bottom: 30px;
-            position: relative;
-            padding-left: 100px;
-        }
-
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: 40px;
-            background-color: #0d4b78;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-
-        .timeline-item img {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            left: -60px;
-            top: -10px;
-        }
-
-        .progress-container {
-            margin-bottom: 40px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            background-color: #ddd;
-            border-radius: 25px;
-            overflow: hidden;
-            margin: 10px 0;
-        }
-
-        .progress-bar div {
-            height: 20px;
-            background-color: #0d3b66;
-            border-radius: 25px;
-            text-align: center;
-            color: white;
-            line-height: 20px;
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 2;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .lightbox-content {
-            margin: 10% auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .thumbnail {
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .thumbnail:hover {
-            transform: scale(1.1);
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Resume - Luca</h1>
-    </header>
-
-    <div class="side-menu">
-        <a href="index.html">About Me</a>
-        <a href="resume.html" class="active">My Resume</a>
-        <a href="blog.html">Blog</a>
-        <a href="portfolio.html">Cool Things I Have Done</a>
+        <div class="project-card" onclick="openLightbox('lightbox2')">
+            <div class="project-image" style="background-image: url('https://via.placeholder.com/300x200');"></div>
+            <div class="project-info">
+                <h3>Statistical Models of Genetic Circuits</h3>
+                <p>Nonlinear mixed-effects models to study cell-to-cell variability of synthetic gene circuits.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="main-content">
-        <main>
-            <section>
-                <h2>Education & Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/ETH-Zuerich-Logo.svg" alt="ETH Logo">
-                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023</p>
-                        <p>GPA: 5.86/6, Summa cum laude</p>
-                    </div>
-                    <div class="timeline-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Roche_Logo.svg/1280px-Roche_Logo.svg.png" alt="Roche Logo">
-                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Skills</h2>
-                <div class="progress-container">
-                    <p>Python</p>
-                    <div class="progress-bar"><div style="width: 90%">90%</div></div>
-
-                    <p>R</p>
-                    <div class="progress-bar"><div style="width: 85%">85%</div></div>
-
-                    <p>SQL</p>
-                    <div class="progress-bar"><div style="width: 80%">80%</div></div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Projects</h2>
-                <div class="project-gallery">
-                    <img class="thumbnail" src="https://via.placeholder.com/150" alt="Project 1" onclick="openLightbox('lightbox1')">
-                    <img class="thumbnail" src="https://via.placeholder.com/150" alt="Project 2" onclick="openLightbox('lightbox2')">
-                </div>
-
-                <div id="lightbox1" class="lightbox">
-                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
-                    <div class="lightbox-content">
-                        <h3>Multiomics for Integrin Mechanosensing</h3>
-                        <p>Details about the project...</p>
-                    </div>
-                </div>
-
-                <div id="lightbox2" class="lightbox">
-                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
-                    <div class="lightbox-content">
-                        <h3>Statistical Models of Genetic Circuits</h3>
-                        <p>Details about the project...</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <!-- Lightbox Modals -->
+    <div id="lightbox1" class="lightbox">
+        <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+        <div class="lightbox-content">
+            <h3>Multiomics for Integrin Mechanosensing</h3>
+            <p>Details about the project...</p>
+        </div>
     </div>
 
-    <script>
-        function openLightbox(id) {
-            document.getElementById(id).style.display = 'block';
-        }
+    <div id="lightbox2" class="lightbox">
+        <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+        <div class="lightbox-content">
+            <h3>Statistical Models of Genetic Circuits</h3>
+            <p>Details about the project...</p>
+        </div>
+    </div>
+</section>
 
-        function closeLightbox(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-    </script>
+<!-- CSS for Projects Section -->
+<style>
+    .project-gallery {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-    <footer>
-        &copy; 2024 Luca | You can also find me here:
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-            </a>
-            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
-                <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt
+    .project-card {
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: white;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        margin: 0 0 10px;
+        color: #0d3b66;
+    }
+
+    .project-info p {
+        color: #555;
+    }
+</style>

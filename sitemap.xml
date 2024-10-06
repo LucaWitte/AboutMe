@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>http://lucawitte.com</loc>
-      <lastmod>2024-10-06</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>1.0</priority>
-   </url>
+   <!-- Main page -->
    <url>
       <loc>http://lucawitte.com/index</loc>
       <lastmod>2024-10-06</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   <!-- Resume page -->
+   <url>
+      <loc>http://lucawitte.com/resume.html</loc>
+      <lastmod>2024-10-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+      <!-- Portfolio page -->
+   <url>
+      <loc>http://lucawitte.com/portfolio.html</loc>
+      <lastmod>2024-10-06</lastmod>
+      <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
-   <!-- Add more pages as needed -->
+   
+   <!-- Blog page -->
+   <url>
+      <loc>http://lucawitte.com/blog.html</loc>
+      <lastmod>2024-10-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
 </urlset>

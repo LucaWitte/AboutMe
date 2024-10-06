@@ -13,6 +13,9 @@ collections:
     output          : true
 theme: jekyll-theme-minimal
 
+title: [The title of your site]
+description: [A short description of your site's purpose]
+
 # Handling Reading
 safe                : false
 include             : [".htaccess"]

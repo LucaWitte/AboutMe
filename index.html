@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Hi, I am Luca.">
-      <title>About - [Your Name]</title>
+      <title>About - Luca</title>
       <style>
          body {
             font-family: Arial, sans-serif;
@@ -12,27 +12,48 @@
             margin: 0;
             padding: 0;
          }
+         /* Header Styling */
          header {
-            background-color: #333;
+            background-color: #1a73e8;
             color: white;
             padding: 1em 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
          }
          header h1 {
             margin: 0;
          }
-         nav {
-            text-align: center;
-            background-color: #444;
-            padding: 1em;
+         /* Styles for the left-hand menu */
+         .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            padding-top: 60px;
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
          }
-         nav a {
+         .side-menu a {
+            padding: 15px 20px;
+            display: block;
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
          }
-         nav a:hover {
-            text-decoration: underline;
+         .side-menu a:hover {
+            background-color: #575757;
+            padding-left: 30px;
+         }
+         .side-menu a.active {
+            background-color: #1a73e8;
+            font-weight: bold;
+         }
+         /* Main content styling to shift it to the right of the menu */
+         .main-content {
+            margin-left: 210px;
+            padding: 20px;
          }
          main {
             max-width: 800px;
@@ -40,6 +61,25 @@
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+         }
+         .intro {
+            display: flex;
+            align-items: center;
+         }
+         .intro img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         }
+         .intro-text {
+            flex: 1;
+         }
+         h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
          }
          footer {
             text-align: center;
@@ -49,6 +89,7 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            margin-left: 210px;
          }
       </style>
    </head>
@@ -57,21 +98,33 @@
          <h1>About Me</h1>
       </header>
 
-      <nav>
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="index.html" class="active">About Me</a>
          <a href="resume.html">My Resume</a>
          <a href="blog.html">Blog</a>
          <a href="cool-things.html">Cool Things I Have Done</a>
-      </nav>
+      </div>
 
-      <main>
-         <h2>Welcome to My Personal Website! 🎙</h2>
-         <p>Hello! I’m [Your Name], and this is my personal website where I share insights about my work, projects, and ideas.</p>
-         <p>Feel free to check out my <a href="resume.html">Resume</a>, explore my <a href="blog.html">Blog</a>, or see some <a href="cool-things.html">Cool Things I Have Done</a>.</p>
-         <p>Thank you for visiting! 🙏</p>
-      </main>
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <!-- Introduction section with picture -->
+            <section class="intro">
+               <img src="Images/MyPicture.jpeg" alt="Picture of Luca">
+               <div class="intro-text">
+                  <h2>Welcome to My Personal Website! 🎙</h2>
+                  <p>Hello! I’m Luca, a biotechnology enthusiast with a passion for innovation and technology. I love working on exciting projects related to biotechnology, data science, and automation. This website showcases my journey, work, and ideas.</p>
+                  <p>Feel free to explore my <a href="resume.html">Resume</a>, check out my <a href="blog.html">Blog</a>, or see some <a href="cool-things.html">Cool Things I Have Done</a>.</p>
+               </div>
+            </section>
 
+            <p>Thank you for visiting! 🙏</p>
+         </main>
+      </div>
+      
       <footer>
-         &copy; 2024 [Your Name] | All rights reserved.
+         &copy; 2024 Luca | All rights reserved.
       </footer>
    </body>
 </html>

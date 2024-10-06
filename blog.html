@@ -37,4 +37,184 @@
             height: 100%;
             background-color: #0d3b66;
             padding-top: 100px;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+         }
+
+         .side-menu a {
+            padding: 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+         }
+
+         .side-menu a:hover {
+            background-color: #1d4e89;
+            padding-left: 40px;
+         }
+
+         .side-menu a.active {
+            background-color: #ffcc00;
+            color: #0d3b66;
+            font-weight: bold;
+         }
+
+         /* Main content styling */
+         .main-content {
+            margin-left: 260px;
+            padding: 30px;
+         }
+
+         main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+         }
+
+         /* Blog Post Styling */
+         section {
+            margin-bottom: 20px;
+         }
+
+         h2 {
+            font-size: 2em;
+            color: #0d3b66;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
+         }
+
+         .blog-post {
+            margin-bottom: 30px;
+         }
+
+         .blog-post h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #0d3b66;
+         }
+
+         .blog-post p {
+            margin: 5px 0;
+            color: #333;
+         }
+
+         .blog-post a {
+            color: #0d4b78;
+            text-decoration: none;
+            font-weight: bold;
+         }
+
+         .blog-post a:hover {
+            text-decoration: underline;
+            color: #ffcc00;
+         }
+
+         /* Footer Styling */
+         footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2a5a8a;
+            color: #e0e0e0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 0;
+         }
+
+         footer a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+         }
+
+         footer a:hover {
+            color: #ffcc00;
+         }
+
+         footer .social-icons {
+            margin-top: 10px;
+         }
+
+         .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+         }
+
+         .social-icons img:hover {
+            transform: scale(1.1);
+         }
+
+         /* Responsive Styling */
+         @media (max-width: 768px) {
+            .main-content {
+               margin-left: 0;
+               padding: 20px;
+            }
+
+            footer {
+               margin-left: 0;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Blog - Luca Witte</h1>
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="index.html">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html" class="active">Blog</a>
+         <a href="portfolio.html">Cool Things I Have Done</a>
+      </div>
+
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <section>
+               <h2>Recent Posts</h2>
+
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-1.html">The Future of Bioengineering: Trends to Watch</a></h3>
+                  <p>As the field of bioengineering continues to evolve, new trends are emerging that could revolutionize healthcare, food production, and more. In this post, I explore some key innovations shaping the future of bioengineering.</p>
+               </div>
+
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-2.html">Navigating the Challenges of Techno-Economic Analysis</a></h3>
+                  <p>Techno-economic analysis is critical in assessing the viability of technologies, but it comes with its own set of challenges. Here's a breakdown of the common hurdles and how to overcome them for effective decision-making.</p>
+               </div>
+
+               <div class="blog-post">
+                  <h3><a href="blogposts/blog-post-3.html">Building a Business Intelligence Platform at Roche</a></h3>
+                  <p>In this article, I share insights and lessons learned from my experience in developing a data visualization platform for Roche, covering everything from ETL pipelines to stakeholder engagement.</p>
+               </div>
+            </section>
+         </main>
+      </div>
+      
+      <footer>
+         &copy; 2024 Luca Witte | All rights reserved.
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://orcid.org/0000-0002-1234-5678" target="_blank">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
+            </a>
+         </div>
+      </footer>
+   </body>
+</html>

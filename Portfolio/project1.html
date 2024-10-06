@@ -125,7 +125,7 @@
             border-radius: 5px;
          }
 
-         .collapsible.active {
+         .collapsible:hover {
             background-color: #ddd;
          }
 
@@ -240,10 +240,10 @@
                   <li>Data integration with laboratory information management systems (LIMS)</li>
                </ul>
 
-            <!-- Collapsible code block showing a Git file -->
-            <button type="button" class="collapsible">View Code from GitHub</button>
-            <div class="collapsible-content">
-               <pre><code>
+               <!-- Collapsible code block showing a Git file -->
+               <button type="button" class="collapsible">View Code from GitHub</button>
+               <div class="collapsible-content">
+                  <pre><code>
 # Example Python Code for Optimizing Cell Growth Conditions
 
 import numpy as np
@@ -261,24 +261,16 @@ model.fit(X, y)
 new_condition = np.array([[37, 5.5]])
 predicted_growth = model.predict(new_condition)
 print(f"Predicted cell growth: {predicted_growth[0]:.2f}%")
-               </code></pre>
-            </div>
-         </section>
+                  </code></pre>
+               </div>
+            </section>
+         </main>
       </div>
-
+      
       <footer>
          &copy; 2024 Luca | All rights reserved.
-      </footer>
-
-      <script>
-         // Script to toggle the collapsible content
-         const collapsible = document.querySelector('.collapsible');
-         const content = document.querySelector('.collapsible-content');
-
-         collapsible.addEventListener('click', function() {
-            this.classList.toggle('active');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-         });
-      </script>
-   </body>
-</html>
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+           

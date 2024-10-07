@@ -90,7 +90,7 @@
         .timeline {
             position: relative;
             margin: 0;
-            padding: 50;
+            padding-left: 50px; /* Increase padding to move everything right */
         }
 
         .timeline:before {
@@ -98,7 +98,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 50px;
+            left: 100px; /* Adjust left position based on new padding */
             width: 2px;
             background: #ffcc00;
         }
@@ -106,14 +106,14 @@
         .timeline-item {
             margin-bottom: 30px;
             position: relative;
-            padding-left: 100px;
+            padding-left: 150px;
             padding-right: 30px;
         }
 
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: 40px;
+            left: 90px; /* Adjust based on the new padding */
             background-color: #0d4b78;
             width: 20px;
             height: 20px;
@@ -122,7 +122,7 @@
 
         .timeline-date {
             position: absolute;
-            left: -100px;
+            left: 0; /* Position relative to new padding */
             top: 0;
             color: #0d3b66;
             font-size: 0.9em;

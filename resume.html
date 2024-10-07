@@ -102,11 +102,28 @@
             width: 2px;
             background: #ffcc00;
         }
-
+        
         .timeline-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 30px;
+            padding-right: 20px; /* Add some padding for spacing */
             position: relative;
-            padding-left: 100px;
+        }
+        
+        .timeline-item p {
+            margin: 0;
+            max-width: 70%; /* Prevent text from stretching too wide */
+        }
+        
+        .logo-container {
+            flex-shrink: 0; /* Prevent the logo from shrinking */
+        }
+        
+        .logo-container img {
+            max-width: 60px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
         }
 
         .timeline-item:before {
@@ -263,15 +280,18 @@
         <main>
             <section>
                 <h2>Education & Experience</h2>
-                <div class="timeline">
                     <div class="timeline-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
                         <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023</p>
                         <p>GPA: 5.86/6, Summa cum laude</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
                     </div>
                     <div class="timeline-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
                         <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
+                        </div>
                     </div>
                 </div>
             </section>

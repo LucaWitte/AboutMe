@@ -90,7 +90,7 @@
         .timeline {
             position: relative;
             margin: 0;
-            padding-left: 150px;
+            padding-left: 150px; /* Moves dots and text - 50*/
         }
 
         .timeline:before {
@@ -98,7 +98,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 100px;
+            left: 100px; /* Moves the yellow line - 100*/
             width: 2px;
             background: #ffcc00;
         }
@@ -106,14 +106,14 @@
         .timeline-item {
             margin-bottom: 30px;
             position: relative;
-            padding-left: 0px;
+            padding-left: 0px; /* Moves both date and text - 150*/
             padding-right: 30px;
         }
 
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: -60px;
+            left: -60px; /* Moves the dots -40 */
             background-color: #0d4b78;
             width: 20px;
             height: 20px;
@@ -122,12 +122,12 @@
 
         .timeline-date {
             position: absolute;
-            left: -150px;
+            left: -150px; /* moves dates */
             top: 0;
             color: #0d3b66;
             font-size: 0.9em;
             font-weight: bold;
-            text-align: left;
+            text-align: left; /* changed from right */
             width: 80px;
         }
 
@@ -164,34 +164,6 @@
             font-size: 16px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .skills-soft .skill-item:hover {
-            background-color: #ffcc00;
-            color: #0d3b66;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .tooltip {
-            display: none;
-            position: absolute;
-            bottom: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #0d4b78;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-        }
-
-        .skill-item:hover .tooltip {
-            display: block;
         }
 
         .divider {
@@ -301,6 +273,30 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
                         </div>
                     </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2020 - Dec 2020</span>
+                        <p><strong>Example Company 1</strong> | Example Position<br>Description of role and achievements.</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2019 - Dec 2019</span>
+                        <p><strong>Example Company 2</strong> | Example Position<br>Summary of responsibilities and accomplishments.</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2018 - Dec 2018</span>
+                        <p><strong>Example Company 3</strong> | Example Position<br>Overview of tasks and key outcomes.</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -318,25 +314,62 @@
                     <div class="divider"></div>
                     <div class="skills-soft">
                         <div class="skill-item">
-                            Project Management
-                            <div class="tooltip">Efficiently organize tasks and resources to achieve project goals.</div>
+                            <p>Project Management</p>
                         </div>
                         <div class="skill-item">
-                            Adaptability
-                            <div class="tooltip">Quickly adjust to changing environments and challenges.</div>
+                            <p>Adaptability</p>
                         </div>
                         <div class="skill-item">
-                            Creative Problem-Solving
-                            <div class="tooltip">Generate innovative solutions for complex issues.</div>
+                            <p>Creative Problem-Solving</p>
                         </div>
                         <div class="skill-item">
-                            Collaboration
-                            <div class="tooltip">Work effectively with others to achieve shared objectives.</div>
+                            <p>Collaboration</p>
                         </div>
                         <div class="skill-item">
-                            Attention to Detail
-                            <div class="tooltip">Carefully review and refine work to ensure accuracy.</div>
+                            <p>Attention to Detail</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+                <div class="project-gallery">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 1" onclick="openLightbox('lightbox1')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 2" onclick="openLightbox('lightbox2')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 3" onclick="openLightbox('lightbox3')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 4" onclick="openLightbox('lightbox4')">
+                </div>
+
+                <div id="lightbox1" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Multiomics for Integrin Mechanosensing</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
+
+                <div id="lightbox2" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Statistical Models of Genetic Circuits</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
+
+                <div id="lightbox3" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox3')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Project Title 3</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
+
+                <div id="lightbox4" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox4')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Project Title 4</h3>
+                        <p>Details about the project...</p>
                     </div>
                 </div>
             </section>

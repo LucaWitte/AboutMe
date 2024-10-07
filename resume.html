@@ -87,44 +87,44 @@
             color: #333;
         }
         
-        .timeline {
+       .timeline {
             position: relative;
+            margin: 0;
             padding: 0;
-            margin: 20px 0;
-            max-width: 800px;
         }
-        
+
         .timeline:before {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 40px; /* Center the yellow line through the dots */
-            width: 4px;
+            left: 50px;
+            width: 2px;
             background: #ffcc00;
         }
-        
+
         .timeline-item {
+            margin-bottom: 30px;
             position: relative;
-            margin-bottom: 40px; /* Add more space between items */
-            padding-left: 80px;
+            padding-left: 100px;
         }
-        
+
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: 30px; /* Align the dot with the yellow line */
-            top: 10px;
+            left: 40px;
             background-color: #0d4b78;
             width: 20px;
             height: 20px;
             border-radius: 50%;
         }
-        
-        .timeline-item p {
-            margin: 0;
-            max-width: 550px; /* Constrain the width for better text wrapping */
-            line-height: 1.6; /* Improve readability */
+
+        .timeline-item img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: -60px;
+            top: -10px;
         }
         
         .logo-container {

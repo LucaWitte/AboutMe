@@ -108,22 +108,22 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 30px;
-            padding-right: 20px; /* Add some padding for spacing */
+            padding-right: 20px;
             position: relative;
         }
         
         .timeline-item p {
             margin: 0;
-            max-width: 70%; /* Prevent text from stretching too wide */
+            max-width: 70%;
         }
         
         .logo-container {
-            flex-shrink: 0; /* Prevent the logo from shrinking */
+            flex-shrink: 0;
         }
         
         .logo-container img {
-            max-width: 60px; /* Adjust size as needed */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 60px;
+            height: auto;
         }
 
         .timeline-item:before {
@@ -134,14 +134,6 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-        }
-        
-        .timeline-item img {
-            max-width: 60px; 
-            height: auto; 
-            position: absolute;
-            left: -80px;
-            top: 0;
         }
 
         .skills-container {
@@ -161,7 +153,7 @@
             margin: 10px 0;
             padding: 7px;
             border-radius: 25px;
-            background-color: #f4f4f4; /* A subtle background for contrast */
+            background-color: #f4f4f4;
             color: #333;
             font-size: 16px;
             text-align: center;
@@ -189,27 +181,6 @@
             text-align: center;
             color: white;
             line-height: 20px;
-        }
-
-        .skills-soft ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .skills-soft li {
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .skills-soft li:before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            color: #ffcc00;
-            font-size: 1.2em;
         }
 
         .project-gallery {
@@ -280,18 +251,17 @@
         <main>
             <section>
                 <h2>Education & Experience</h2>
-                    <div class="timeline-item">
-                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023</p>
-                        <p>GPA: 5.86/6, Summa cum laude</p>
-                        <div class="logo-container">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
-                        </div>
+                <div class="timeline-item">
+                    <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023</p>
+                    <p>GPA: 5.86/6, Summa cum laude</p>
+                    <div class="logo-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
                     </div>
-                    <div class="timeline-item">
-                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
-                        <div class="logo-container">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
-                        </div>
+                </div>
+                <div class="timeline-item">
+                    <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
+                    <div class="logo-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
                     </div>
                 </div>
             </section>
@@ -299,39 +269,30 @@
             <section>
                 <h2>Skills</h2>
                 <div class="skills-container">
-                    <!-- Left column with progress bars for hard skills -->
                     <div class="skills-hard">
                         <p>Python</p>
                         <div class="progress-bar"><div style="width: 90%">90%</div></div>
-
                         <p>R</p>
                         <div class="progress-bar"><div style="width: 85%">85%</div></div>
-
                         <p>SQL</p>
                         <div class="progress-bar"><div style="width: 80%">80%</div></div>
                     </div>
-
-                    <!-- Vertical line divider -->
                     <div class="divider"></div>
-
-                    <!-- Right column with fancy bullet points for soft skills -->
                     <div class="skills-soft">
-                        <div class="skills-soft">
-                            <div class="skill-item">
-                                <p>Project Management</p>
-                            </div>
-                            <div class="skill-item">
-                                <p>Adaptability</p>
-                            </div>
-                            <div class="skill-item">
-                                <p>Creative Problem-Solving</p>
-                            </div>
-                            <div class="skill-item">
-                                <p>Collaboration</p>
-                            </div>
-                            <div class="skill-item">
-                                <p>Attention to Detail</p>
-                            </div>
+                        <div class="skill-item">
+                            <p>Project Management</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Adaptability</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Creative Problem-Solving</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Collaboration</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Attention to Detail</p>
                         </div>
                     </div>
                 </div>

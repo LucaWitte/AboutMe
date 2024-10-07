@@ -1,396 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Resume of Luca">
-	<title>Resume - Luca</title>
-	<style>
-    	body {
-        	font-family: 'Montserrat', sans-serif;
-        	background-color: #f4f4f4;
-        	margin: 0;
-        	padding: 0;
-    	}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Luca">
+    <title>Resume - Luca</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    	header {
-        	background-color: #0d4b78;
-        	color: white;
-        	padding: 2em 0;
-        	text-align: center;
-        	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    	}
+        header {
+            background-color: #0d4b78;
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    	header h1 {
-        	margin: 0;
-        	font-size: 2.5em;
-        	letter-spacing: 2px;
-    	}
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
 
-    	.side-menu {
-        	position: fixed;
-        	top: 0;
-        	left: 0;
-        	width: 250px;
-        	height: 100%;
-        	background-color: #0d3b66;
-        	padding-top: 100px;
-        	box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-        	z-index: 1;
-    	}
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #0d3b66;
+            padding-top: 100px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
-    	.side-menu a {
-        	padding: 20px;
-        	display: block;
-        	color: white;
-        	text-decoration: none;
-        	font-size: 18px;
-        	transition: background-color 0.3s ease, padding-left 0.3s ease;
-    	}
+        .side-menu a {
+            padding: 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
 
-    	.side-menu a:hover {
-        	background-color: #1d4e89;
-        	padding-left: 40px;
-    	}
+        .side-menu a:hover {
+            background-color: #1d4e89;
+            padding-left: 40px;
+        }
 
-    	.side-menu a.active {
-        	background-color: #ffcc00;
-        	color: #0d3b66;
-        	font-weight: bold;
-    	}
+        .side-menu a.active {
+            background-color: #ffcc00;
+            color: #0d3b66;
+            font-weight: bold;
+        }
 
-    	.main-content {
-        	margin-left: 260px;
-        	padding: 30px;
-        	margin-bottom: 60px;
-    	}
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+            margin-bottom: 60px;
+        }
 
-    	main {
-        	max-width: 900px;
-        	margin: 0 auto;
-        	padding: 40px;
-        	background-color: white;
-        	border-radius: 10px;
-        	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        	position: relative;
-        	z-index: 1;
-    	}
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
 
-    	h2 {
-        	font-size: 2em;
-        	color: #0d3b66;
-        	border-bottom: 3px solid #ffcc00;
-        	padding-bottom: 10px;
-    	}
+        h2 {
+            font-size: 2em;
+            color: #0d3b66;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
+        }
 
-    	p {
-        	color: #333;
-    	}
-   	 
-   	.timeline {
-        	position: relative;
-        	margin: 0;
-        	padding: 0;
-    	}
+        p {
+            color: #333;
+        }
 
-    	.timeline:before {
-        	content: '';
-        	position: absolute;
-        	top: 0;
-        	bottom: 0;
-        	left: 50px;
-        	width: 2px;
-        	background: #ffcc00;
-        	height: 100%; /* Ensure it spans the entire timeline */
-    	}
+        .timeline {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
 
-    	.timeline-item {
-        	margin-bottom: 30px;
-        	position: relative;
-        	padding-left: 100px;
-    	}
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 2px;
+            background: #ffcc00;
+        }
 
-    	.timeline-item:before {
-        	content: '';
-        	position: absolute;
-        	left: 40px;
-        	background-color: #0d4b78;
-        	width: 20px;
-        	height: 20px;
-        	border-radius: 50%;
-    	}
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 100px;
+            padding-right: 30px;
+        }
 
-    	.timeline-item img {
-        	width: 40px;
-        	height: 40px;
-        	position: absolute;
-        	left: -60px;
-        	top: -10px;
-    	}
-   	 
-    	.logo-container {
-        	position: absolute;
-        	right: 0;
-        	top: 0;
-    	}
-   	 
-    	.logo-container img {
-        	max-width: 60px;
-        	height: auto;
-    	}
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            background-color: #0d4b78;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
 
+        .timeline-date {
+            position: absolute;
+            left: -100px;
+            top: 0;
+            color: #0d3b66;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: right;
+            width: 80px;
+        }
 
-    	.skills-container {
-        	display: flex;
-        	align-items: flex-start;
-        	justify-content: space-between;
-        	gap: 20px;
-    	}
+        .logo-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
 
-    	.skills-hard,
-    	.skills-soft {
-        	flex: 1;
-        	padding: 0 20px;
-    	}
+        .logo-container img {
+            max-width: 60px;
+            height: auto;
+        }
 
-    	.skills-soft .skill-item {
-        	margin: 10px 0;
-        	padding: 7px;
-        	border-radius: 25px;
-        	background-color: #f4f4f4;
-        	color: #333;
-        	font-size: 16px;
-        	text-align: center;
-        	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    	}
+        .skills-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-    	.divider {
-        	width: 2px;
-        	background-color: #ddd;
-        	height: 100%;
-    	}
+        .skills-hard,
+        .skills-soft {
+            flex: 1;
+            padding: 0 20px;
+        }
 
-    	.progress-bar {
-        	width: 100%;
-        	background-color: #ddd;
-        	border-radius: 25px;
-        	overflow: hidden;
-        	margin: 10px 0;
-    	}
+        .skills-soft .skill-item {
+            margin: 10px 0;
+            padding: 7px;
+            border-radius: 25px;
+            background-color: #f4f4f4;
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-    	.progress-bar div {
-        	height: 20px;
-        	background-color: #0d3b66;
-        	border-radius: 25px;
-        	text-align: center;
-        	color: white;
-        	line-height: 20px;
-    	}
+        .divider {
+            width: 2px;
+            background-color: #ddd;
+            height: 100%;
+        }
 
-    	.project-gallery {
-        	display: flex;
-        	gap: 20px;
-        	flex-wrap: wrap;
-        	justify-content: space-between;
-    	}
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
 
-    	.thumbnail {
-        	width: 150px;
-        	height: 100px;
-        	object-fit: cover;
-        	border-radius: 10px;
-        	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        	transition: transform 0.3s ease, box-shadow 0.3s ease;
-        	cursor: pointer;
-    	}
+        .progress-bar div {
+            height: 20px;
+            background-color: #0d3b66;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
 
-    	.thumbnail:hover {
-        	transform: scale(1.05);
-        	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    	}
+        .project-gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-    	.lightbox {
-        	display: none;
-        	position: fixed;
-        	z-index: 2;
-        	left: 0;
-        	top: 0;
-        	width: 100%;
-        	height: 100%;
-        	background-color: rgba(0, 0, 0, 0.9);
-    	}
+        .thumbnail {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-    	.lightbox-content {
-        	margin: 10% auto;
-        	padding: 20px;
-        	background-color: white;
-        	border-radius: 10px;
-        	width: 80%;
-        	max-width: 800px;
-    	}
+        .thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    	.close {
-        	position: absolute;
-        	top: 20px;
-        	right: 40px;
-        	color: white;
-        	font-size: 40px;
-        	cursor: pointer;
-    	}
-	</style>
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: 10% auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-	<header>
-    	<h1>Resume - Luca</h1>
-	</header>
+    <header>
+        <h1>Resume - Luca</h1>
+    </header>
 
-	<div class="side-menu">
-    	<a href="index.html">About Me</a>
-    	<a href="resume.html" class="active">My Resume</a>
-    	<a href="blog.html">Blog</a>
-    	<a href="portfolio.html">Cool Things I Have Done</a>
-	</div>
+    <div class="side-menu">
+        <a href="index.html">About Me</a>
+        <a href="resume.html" class="active">My Resume</a>
+        <a href="blog.html">Blog</a>
+        <a href="portfolio.html">Cool Things I Have Done</a>
+    </div>
 
-	<div class="main-content">
-    	<main>
-        	<section>
-            	<h2>Education & Experience</h2>
-           	 
-            	<div class="timeline-item">
-                	<p><strong>Example Company 1</strong> | Example Position | Jan 2020 - Dec 2020<br>Description of role and achievements.</p>
-                	<div class="logo-container">
-                    	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
-                	</div>
-            	</div>
-           	 
-            	<div class="timeline-item">
-                	<p><strong>Example Company 2</strong> | Example Position | Jan 2019 - Dec 2019<br>Summary of responsibilities and accomplishments.</p>
-                	<div class="logo-container">
-                    	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
-                	</div>
-            	</div>
-           	 
-            	<div class="timeline-item">
-                	<p><strong>Example Company 3</strong> | Example Position | Jan 2018 - Dec 2018<br>Overview of tasks and key outcomes.</p>
-                	<div class="logo-container">
-                    	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
-                	</div>
-            	</div>
+    <div class="main-content">
+        <main>
+            <section>
+                <h2>Education & Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sep 2021 - Sep 2023</span>
+                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
 
-            	<div class="timeline">
-                	<div class="timeline-item">
-                    	<p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023<br>GPA: 5.86/6, Summa cum laude</p>
-                    	<div class="logo-container">
-                        	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
-                    	</div>
-                	</div>
-               	 
-                	<div class="timeline-item">
-                    	<p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
-                    	<div class="logo-container">
-                        	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
-                    	</div>
-                	</div>
-            	</div>
-           	 
-        	</section>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2023 – Sep 2024</span>
+                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
+                        </div>
+                    </div>
 
-        	<section>
-            	<h2>Skills</h2>
-            	<div class="skills-container">
-                	<div class="skills-hard">
-                    	<p>Python</p>
-                    	<div class="progress-bar"><div style="width: 90%">90%</div></div>
-                    	<p>R</p>
-                    	<div class="progress-bar"><div style="width: 85%">85%</div></div>
-                    	<p>SQL</p>
-                    	<div class="progress-bar"><div style="width: 80%">80%</div></div>
-                	</div>
-                	<div class="divider"></div>
-                	<div class="skills-soft">
-                    	<div class="skill-item">
-                        	<p>Project Management</p>
-                    	</div>
-                    	<div class="skill-item">
-                        	<p>Adaptability</p>
-                    	</div>
-                    	<div class="skill-item">
-                        	<p>Creative Problem-Solving</p>
-                    	</div>
-                    	<div class="skill-item">
-                        	<p>Collaboration</p>
-                    	</div>
-                    	<div class="skill-item">
-                        	<p>Attention to Detail</p>
-                    	</div>
-                	</div>
-            	</div>
-        	</section>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2020 - Dec 2020</span>
+                        <p><strong>Example Company 1</strong> | Example Position<br>Description of role and achievements.</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
 
-        	<section>
-            	<h2>Projects</h2>
-            	<div class="project-gallery">
-                	<img class="thumbnail" src="Images/MyPicture.webp" alt="Project 1" onclick="openLightbox('lightbox1')">
-                	<img class="thumbnail" src="Images/MyPicture.webp" alt="Project 2" onclick="openLightbox('lightbox2')">
-                	<img class="thumbnail" src="Images/MyPicture.webp" alt="Project 3" onclick="openLightbox('lightbox3')">
-                	<img class="thumbnail" src="Images/MyPicture.webp" alt="Project 4" onclick="openLightbox('lightbox4')">
-            	</div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2019 - Dec 2019</span>
+                        <p><strong>Example Company 2</strong> | Example Position<br>Summary of responsibilities and accomplishments.</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
 
-            	<div id="lightbox1" class="lightbox">
-                	<span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
-                	<div class="lightbox-content">
-                    	<h3>Multiomics for Integrin Mechanosensing</h3>
-                    	<p>Details about the project...</p>
-                	</div>
-            	</div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2018 - Dec 2018</span>
+                        <p><strong>Example Company 3</strong> | Example Position<br>Overview of tasks and key outcomes.</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            	<div id="lightbox2" class="lightbox">
-                	<span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
-                	<div class="lightbox-content">
-                    	<h3>Statistical Models of Genetic Circuits</h3>
-                    	<p>Details about the project...</p>
-                	</div>
-            	</div>
+            <section>
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-hard">
+                        <p>Python</p>
+                        <div class="progress-bar"><div style="width: 90%">90%</div></div>
+                        <p>R</p>
+                        <div class="progress-bar"><div style="width: 85%">85%</div></div>
+                        <p>SQL</p>
+                        <div class="progress-bar"><div style="width: 80%">80%</div></div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="skills-soft">
+                        <div class="skill-item">
+                            <p>Project Management</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Adaptability</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Creative Problem-Solving</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Collaboration</p>
+                        </div>
+                        <div class="skill-item">
+                            <p>Attention to Detail</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            	<div id="lightbox3" class="lightbox">
-                	<span class="close" onclick="closeLightbox('lightbox3')">&times;</span>
-                	<div class="lightbox-content">
-                    	<h3>Project Title 3</h3>
-                    	<p>Details about the project...</p>
-                	</div>
-            	</div>
+            <section>
+                <h2>Projects</h2>
+                <div class="project-gallery">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 1" onclick="openLightbox('lightbox1')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 2" onclick="openLightbox('lightbox2')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 3" onclick="openLightbox('lightbox3')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 4" onclick="openLightbox('lightbox4')">
+                </div>
 
-            	<div id="lightbox4" class="lightbox">
-                	<span class="close" onclick="closeLightbox('lightbox4')">&times;</span>
-                	<div class="lightbox-content">
-                    	<h3>Project Title 4</h3>
-                    	<p>Details about the project...</p>
-                	</div>
-            	</div>
-        	</section>
-    	</main>
-	</div>
+                <div id="lightbox1" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Multiomics for Integrin Mechanosensing</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
 
-	<script>
-    	function openLightbox(id) {
-        	document.getElementById(id).style.display = 'block';
-    	}
+                <div id="lightbox2" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Statistical Models of Genetic Circuits</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
 
-    	function closeLightbox(id) {
-        	document.getElementById(id).style.display = 'none';
-    	}
-	</script>
+                <div id="lightbox3" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox3')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Project Title 3</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
 
-	<footer style="text-align: center; padding: 20px; background-color: #2a5a8a; color: #e0e0e0; position: fixed; width: 100%; bottom: 0; z-index: 0;">
-    	&copy; 2024 Luca | You can also find me here:
-    	<div class="social-icons" style="margin-top: 10px;">
-        	<a href="https://www.linkedin.com/in/lucawitte" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
-            	<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
-        	</a>
-        	<a href="https://orcid.org/0000-0001-5033-9473" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
-            	<img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
-        	</a>
-    	</div>
-	</footer>
+                <div id="lightbox4" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox4')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Project Title 4</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function openLightbox(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeLightbox(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+    <footer style="text-align: center; padding: 20px; background-color: #2a5a8a; color: #e0e0e0; position: fixed; width: 100%; bottom: 0; z-index: 0;">
+        &copy; 2024 Luca | You can also find me here:
+        <div class="social-icons" style="margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
+                <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

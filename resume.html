@@ -98,42 +98,44 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 50px;
-            width: 2px;
+            left: 30px;
+            width: 4px;
             background: #ffcc00;
         }
-        
+
         .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 30px;
-            padding-right: 20px;
-            position: relative;
-        }
-        
-        .timeline-item p {
-            margin: 0;
-            max-width: 70%;
-        }
-        
-        .logo-container {
-            flex-shrink: 0;
-        }
-        
-        .logo-container img {
-            max-width: 60px;
-            height: auto;
         }
 
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: 40px;
+            left: 18px;
+            top: 0;
             background-color: #0d4b78;
             width: 20px;
             height: 20px;
             border-radius: 50%;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            max-width: 65%;
+        }
+
+        .logo-container {
+            flex-shrink: 0;
+            padding-left: 20px;
+        }
+
+        .logo-container img {
+            max-width: 60px;
+            height: auto;
         }
 
         .skills-container {
@@ -148,7 +150,7 @@
             flex: 1;
             padding: 0 20px;
         }
-        
+
         .skills-soft .skill-item {
             margin: 10px 0;
             padding: 7px;
@@ -251,17 +253,18 @@
         <main>
             <section>
                 <h2>Education & Experience</h2>
-                <div class="timeline-item">
-                    <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023</p>
-                    <p>GPA: 5.86/6, Summa cum laude</p>
-                    <div class="logo-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology | Sep 2021 - Sep 2023<br>GPA: 5.86/6, Summa cum laude</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
-                    <div class="logo-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
+                    <div class="timeline-item">
+                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management | Oct 2023 – Sep 2024</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
+                        </div>
                     </div>
                 </div>
             </section>

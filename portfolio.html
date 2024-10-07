@@ -3,8 +3,8 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Blog Post - The Future of Bioengineering">
-      <title>The Future of Bioengineering - Luca</title>
+      <meta name="description" content="Cool things I have done - Luca">
+      <title>Cool Things I Have Done - Luca</title>
       <style>
          body {
             font-family: 'Montserrat', sans-serif;
@@ -78,7 +78,7 @@
             z-index: 1;
          }
 
-         /* Blog Post Styling */
+         /* Projects & Accomplishments Styling */
          section {
             margin-bottom: 20px;
          }
@@ -90,35 +90,45 @@
             padding-bottom: 10px;
          }
 
-         .summary {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 20px;
+         .cool-thing {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
          }
 
-         .placeholder-image {
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+         .cool-thing img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
             border-radius: 10px;
+            margin-right: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
          }
 
-         .smaller-image {
-            width: 50%;
-            margin: 20px 0;
-            float: right;
-            margin-left: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         .cool-thing h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #0d4b78;
          }
 
-         p {
+         .cool-thing p {
+            margin: 5px 0;
             color: #333;
             line-height: 1.8;
-            margin-bottom: 20px;
          }
 
+         .cool-thing a {
+            color: #0d4b78;
+            text-decoration: none;
+            font-weight: bold;
+         }
+
+         .cool-thing a:hover {
+            text-decoration: underline;
+            color: #ffcc00;
+         }
+
+         /* Footer Styling */
          footer {
             text-align: center;
             padding: 20px;
@@ -167,54 +177,55 @@
             footer {
                margin-left: 0;
             }
-
-            .smaller-image {
-               width: 100%;
-               float: none;
-               margin-left: 0;
-            }
          }
       </style>
    </head>
    <body>
       <header>
-         <h1>The Future of Bioengineering</h1>
+         <h1>Cool Things I Have Done</h1>
       </header>
 
       <!-- Left-hand menu starts below the header -->
       <div class="side-menu">
-         <a href="../index.html">About Me</a>
-         <a href="../resume.html">My Resume</a>
-         <a href="../blog.html" class="active">Blog</a>
-         <a href="../portfolio.html">Cool Things I Have Done</a>
+         <a href="index.html">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html">Blog</a>
+         <a href="cool-things.html" class="active">Cool Things I Have Done</a>
       </div>
 
       <!-- Main content starts here -->
       <div class="main-content">
          <main>
             <section>
-               <div class="summary">
-                  <p>As bioengineering continues to advance, new trends are shaping the future of healthcare, agriculture, and even space exploration. In this article, we explore the emerging technologies and their potential impact.</p>
+               <h2>Projects & Accomplishments</h2>
+
+               <div class="cool-thing">
+                  <img src="Images/project1.webp" alt="Project 1">
+                  <div>
+                     <h3><a href="Portfolio/project1.html">Automated Cell Culture System</a></h3>
+                     <p>I developed an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The project was designed to streamline research processes and reduce human error in laboratories.</p>
+                  </div>
                </div>
 
-               <!-- Main Image -->
-               <img src="Test_image.webp" alt="Bioengineering concept image" class="placeholder-image">
+               <div class="cool-thing">
+                  <img src="Images/project2.webp" alt="Project 2">
+                  <div>
+                     <h3><a href="Portfolio/project2.html">Data Visualization Platform for Roche</a></h3>
+                     <p>During my time at Roche, I led the development of a comprehensive data visualization platform for internal stakeholders, enabling real-time decision-making through interactive dashboards and ETL pipelines.</p>
+                  </div>
+               </div>
 
-               <h2>Main Body</h2>
-               <p>The field of bioengineering is at the cutting edge of technological innovation, and it promises to revolutionize a number of industries. From creating artificial organs to designing sustainable biofuels, bioengineers are driving change. In this article, we'll explore some of the key trends shaping the future of bioengineering.</p>
-
-               <p>One of the most exciting areas is tissue engineering. This involves creating artificial organs and tissues that can replace damaged ones, potentially alleviating the shortage of donor organs. Scientists are even exploring the possibility of using 3D printing technology to "print" tissues with biological ink made of stem cells. <strong>Another key innovation is synthetic biology</strong>, where organisms are engineered to produce chemicals, medicines, or even materials like biodegradable plastics.</p>
-
-               <!-- Smaller image inside the body -->
-               <img src="Test_image.webp" alt="Smaller bioengineering-related image" class="smaller-image">
-
-               <p>These innovations could also transform the field of agriculture. By engineering crops to be more resilient or nutritious, bioengineering could help address food security issues, especially in the context of climate change. In space exploration, bioengineers are investigating how to grow food in extraterrestrial environments, a necessary step for long-term missions to Mars or beyond.</p>
-
-               <p>While there are many benefits, these technologies also raise important ethical questions. How will society manage the potential risks of creating genetically modified organisms, or the implications of growing human tissues in the lab? These are the challenges bioengineers and policymakers will need to navigate as we move into the future.</p>
+               <div class="cool-thing">
+                  <img src="Images/project3.webp" alt="Project 3">
+                  <div>
+                     <h3><a href="Portfolio/project3.html">Gene Circuit Simulations with Python</a></h3>
+                     <p>Explored the impact of gene circuit architectures on cell-to-cell variability through simulations, creating a Python package for synthetic biology simulations and publishing the results in a peer-reviewed journal.</p>
+                  </div>
+               </div>
             </section>
          </main>
       </div>
-
+      
       <footer>
          &copy; 2024 Luca | All rights reserved.
          <div class="social-icons">

@@ -1,139 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Resume of [Your Name]">
-      <title>Resume - [Your Name]</title>
-      <style>
-         body {
-            font-family: Arial, sans-serif;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Luca">
+    <title>Resume - Luca</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-         }
-         header {
-            background-color: #333;
+        }
+
+        header {
+            background-color: #0d4b78;
             color: white;
-            padding: 1em 0;
+            padding: 2em 0;
             text-align: center;
-         }
-         header h1 {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
             margin: 0;
-         }
-         main {
-            max-width: 800px;
-            margin: 20px auto;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #0d3b66;
+            padding-top: 100px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .side-menu a {
+            padding: 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .side-menu a:hover {
+            background-color: #1d4e89;
+            padding-left: 40px;
+        }
+
+        .side-menu a.active {
+            background-color: #ffcc00;
+            color: #0d3b66;
+            font-weight: bold;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+            margin-bottom: 60px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #0d3b66;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 0;
+            padding-left: 150px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 100px;
+            width: 2px;
+            background: #ffcc00;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 0px;
+            padding-right: 30px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            background-color: #0d4b78;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: -140px;
+            top: 0;
+            color: #0d3b66;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: left;
+            width: 80px;
+        }
+
+        .logo-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .logo-container img {
+            max-width: 60px;
+            height: auto;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: -20px; 
+        }
+    
+        .skills-hard {
+            flex: 1;
+            padding: 0px;
+        }
+    
+        .skills-soft {
+            flex: 1;
+            padding: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .skills-soft .skill-item {
+            margin: 10px 0;
+            padding: 7px;
+            border-radius: 25px;
+            background-color: #f4f4f4;
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills-soft .skill-item:hover {
+            background-color: #ffcc00;
+            color: #0d3b66;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0d4b78;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+
+        .skill-item:hover .tooltip {
+            display: block;
+        }
+
+        .divider {
+            width: 2px;
+            background-color: #ddd;
+            height: 100%;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-bar div {
+            height: 20px;
+            background-color: #0d3b66;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+
+        .project-gallery {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .thumbnail {
+            width: 170px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: 10% auto;
             padding: 20px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-         }
-         section {
-            margin-bottom: 20px;
-         }
-         h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-         }
-         ul {
-            list-style-type: none;
-            padding: 0;
-         }
-         li {
-            margin-bottom: 10px;
-         }
-         .subheading {
-            font-weight: bold;
-         }
-         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-         }
-      </style>
-   </head>
-   <body>
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resume - Luca</h1>
+    </header>
 
-      <!-- Left-hand menu -->
-      <div class="side-menu">
-         <a href="index.html">About Me</a>
-         <a href="resume.html" class="active">My Resume</a>
-         <a href="blog.html">Blog</a>
-         <a href="cool-things.html">Cool Things I Have Done</a>
-      </div>
+    <div class="side-menu">
+        <a href="index.html">About Me</a>
+        <a href="resume.html" class="active">My Resume</a>
+        <a href="blog.html">Blog</a>
+        <a href="portfolio.html">Cool Things I Have Done</a>
+    </div>
 
-      <header>
-         <h1>Resume - [Your Name]</h1>
-      </header>
+    <div class="main-content">
+        <main>
+            <section>
+                <h2>Education & Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2023</span>
+                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management</p>
+                        <ul>
+                            <li>Document management solutions - technical support, ontologies, automation.</li>
+                            <li>Business intelligence data analytics and visualization. </li>
+                            <li>ETL pipelines, Interactive visualizations, Data science and Data engineering.</li>
+                        </ul>                        
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Feb 2023</span>
+                        <p><strong>ETH Zürich</strong> | Master Thesis - Multiomics for Integrin Mechanosensing</p>
+                        <ul>
+                            <li>Single cell RNA sequencing to study integrin signaling in mammalian cells.</li>
+                            <li>Developed novel protocols for physical confinement of mammalian cells.</li>
+                            <li>Multi-omics data analysis and integration.</li>
+                        </ul>                        
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2023</span>
+                        <p><strong>Esther Goeltzer Augenoptik & Optometrie</strong> | Shiny app developer</p>
+                        <ul>
+                            <li>R Shiny applications for automated analysis and visualization of diagnostic data.</li>
+                        </ul>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
 
-      <main>
-         <section>
-            <h2>Education</h2>
-            <p><span class="subheading">ETH Zürich</span> | Sep 2021 - Sep 2023</p>
-            <p>Master of Science - Biotechnology | Basel, Switzerland</p>
-            <ul>
-               <li>GPA: 5.86/6; Summa cum laude</li>
-               <li>Lab courses: Laboratory automation, Stem cell techniques, Cellular engineering, Microsystems, NGS</li>
-               <li>Courses: Bioengineering, Systems biology, Computational biology, Statistics, Data mining</li>
-               <li>Student association: Industry representative and vice-president, student’s representative for selection of new professor, Planning and organization team of PharmaCamp competition</li>
-            </ul>
-         </section>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sep 2022</span>
+                        <p><strong>ETH Zürich</strong> | Research Project - Statistical models of genetic circuits</p>
+                        <ul>
+                            <li>Nonlinear mixed-effects models of cell-to-cell variability in synthetic gene circuits.</li>
+                            <li>Deterministic simulations of microbial populations and statistical analysis.</li>
+                        </ul>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
 
-         <section>
-            <h2>Work Experience</h2>
-            <p><span class="subheading">F. Hoffmann-La Roche</span> | Oct 2023 – Sep 2024</p>
-            <p>Junior Project Manager Knowledge Management | Basel, Switzerland</p>
-            <ul>
-               <li>Setting up a business intelligence data visualization platform for internal and stakeholder communication.</li>
-               <li>Technologies: ETL pipelines, Interactive visualizations, Python, R, SQL.</li>
-               <li>Documented links between technical and business processes (Change management, Governance).</li>
-               <li>Collaborated with diverse stakeholders, Technical support, Maintained databases, Git repositories and APIs.</li>
-            </ul>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sep 2021</span>
+                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-hard">
+                        <p><strong>Labwork:</strong> <br>Molecular techniques & Protein biochemistry</p>
+                        <div class="progress-bar"><div style="width: 95%">95%</div></div>
+                        <p><strong>Data science & Statistics:</strong> <br>Python, R, SQL</p>
+                        <div class="progress-bar"><div style="width: 90%">90%</div></div>
+                        <p><strong>Sequencing technologies & Data analysis</strong></p>
+                        <div class="progress-bar"><div style="width: 85%">85%</div></div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="skills-soft">
+                        <div class="skill-item">
+                            Project Management
+                            <div class="tooltip">Independently managed research projects, handling complex tasks in parallel. <br>At Roche, I completed PM courses, covering advanced methodologies to efficiently oversee long-term projects and subtasks.</div>
+                        </div>
+                        <div class="skill-item">
+                            Adaptability
+                            <div class="tooltip">I quickly adjust to new environments and challenges, <br>constantly seeking opportunities to expand my skill set and adapt to evolving demands.</div>
+                        </div>
+                        <div class="skill-item">
+                            Creative Problem-Solving
+                            <div class="tooltip">My multidisciplinary background enables me to develop innovative solutions for <br>complex scientific problems, integrating insights from data science, biology, and statistics.</div>
+                        </div>
+                        <div class="skill-item">
+                            Collaboration & Communication
+                            <div class="tooltip">My diverse experience allows me to work effectively with <br>a range of collaborators and stakeholders, <br>supported by strong oral and written communication skills.</div>
+                        </div>
+                        <div class="skill-item">
+                            Attention to Detail
+                            <div class="tooltip">Scientific success often hinges on precision. <br>I prioritize careful planning and meticulous execution to ensure <br>all details are accounted for and experiments are set up for success.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <p><span class="subheading">ETH Zürich</span> | Feb 2023 - Sep 2023</p>
-            <p>Master Thesis - Multiomics for Integrin Mechanosensing | Basel, Switzerland</p>
-            <ul>
-               <li>Conducted genomics, transcriptomics and single cell sequencing to study integrin signaling in mammalian cells.</li>
-               <li>Developed novel protocols for experimental setup and data analysis (R, Python, Unix).</li>
-               <li>Handled both data generation (cell culture, sample processing) and big data analysis and integration.</li>
-            </ul>
+            <section>
+                <h2>Projects</h2>
+                <div class="project-gallery">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 1" onclick="openLightbox('lightbox1')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 2" onclick="openLightbox('lightbox2')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 3" onclick="openLightbox('lightbox3')">
+                    <img class="thumbnail" src="Images/MyPicture.webp" alt="Project 4" onclick="openLightbox('lightbox4')">
+                </div>
 
-            <p><span class="subheading">ETH Zürich</span> | Sep 2022 - Feb 2023</p>
-            <p>Research Project - Statistical models of genetic circuits</p>
-            <ul>
-               <li>Established nonlinear mixed-effects models to study cell-to-cell variability of synthetic gene circuit architectures.</li>
-               <li>Population-level deterministic simulations and statistical evaluation using R, C++, and Python.</li>
-               <li>Reviewed literature, presented contextualized results for experimental implementations.</li>
-            </ul>
+                <div id="lightbox1" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Multiomics for Integrin Mechanosensing</h3>
+                        <p>In this thesis, I examined how integrin signaling impacts cellular behaviors, 
+                            focusing on gene expression changes induced by integrin-mediated mechanotransduction. 
+                            Integrins, which mediate cell adhesion and signal transmission from the extracellular matrix, 
+                            play vital roles in cell migration and proliferation. 
+                            Using transcriptome sequencing on fibroblast cell lines with specific integrin receptors knocked out, 
+                            I observed significant alterations in ECM and cytoskeletal gene expression upon fibronectin exposure. 
+                            The analysis also uncovered genes linked to immune response, neural development, and disease pathways, 
+                            offering potential new avenues for therapeutic targeting. 
+                            Additionally, I developed a novel approach combining cellular confinement with single-cell transcriptomics, 
+                            enhancing our ability to study mechanosignaling at the mRNA level. 
+                            This method holds promise for understanding disease processes like cancer metastasis, where cellular mechanics play a crucial role.</p>
+                    </div>
+                </div>
 
-            <p><span class="subheading">Wacker Chemie AG</span> | Jun 2021 – Sep 2021</p>
-            <p>Summer Rotation Student - Manufacturing Operations | Jena, Germany</p>
+                <div id="lightbox2" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Statistical Models of Genetic Circuits</h3>
+                        <p>In this project, I investigated the role of negative feedback in enhancing robustness in gene expression, 
+                            specifically focusing on noise reduction mechanisms. 
+                            Biological noise, influenced by factors like environmental changes and molecule concentrations, 
+                            can disturb cellular function. Negative feedback was explored as a strategy to dampen this noise, 
+                            achieving stability in cellular outputs. I modeled these feedback mechanisms using deterministic ordinary differential equations (ODEs) 
+                            to capture temporal changes and noise propagation across cells. By varying parameters in simulated autoregulatory networks, 
+                            I identified how specific feedback strengths impact noise and cell-to-cell variability. This research provides insights for fine-tuning synthetic gene circuits to optimize stability and performance.</p>
+                    </div>
+                </div>
 
-            <p><span class="subheading">Max Planck Institute of Biophysics</span> | Oct 2020 - Jun 2021</p>
-            <p>Bachelor’s Thesis - Optimization of a novel spectroscopic assay for small molecule binding | Frankfurt, Germany</p>
-            <ul>
-               <li>Developed a label-free thermal shift assay for drug candidate binding to E. coli bd oxidases.</li>
-               <li>Optimized assay conditions and validated results with established functional assays.</li>
-            </ul>
-         </section>
+                <div id="lightbox3" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox3')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Project Title 3</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
 
-         <section>
-            <h2>Certifications, Skills & Interests</h2>
-            <ul>
-               <li><strong>Soft skills:</strong> Project management, Adaptability, Creative problem-solving, Collaboration, Attention to detail</li>
-               <li><strong>Hard skills:</strong> Python, R, SQL, ETL pipelines, Git, Data science and Data engineering, Agile methodologies</li>
-               <li><strong>Certifications:</strong> Business Intelligence for Consultants, Scrum, Tableau</li>
-               <li><strong>Interests:</strong> Kickboxing & Brazilian Jiu-Jitsu, Meditation, Reading, Music, Traveling</li>
-            </ul>
-         </section>
-      </main>
+                <div id="lightbox4" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox4')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Project Title 4</h3>
+                        <p>Details about the project...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
-      <footer>
-         &copy; 2024 [Your Name] | All rights reserved.
-      </footer>
-   </body>
+    <script>
+        function openLightbox(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeLightbox(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+    <footer style="text-align: center; padding: 20px; background-color: #2a5a8a; color: #e0e0e0; position: fixed; width: 100%; bottom: 0; z-index: 0;">
+        &copy; 2024 Luca | You can also find me here:
+        <div class="social-icons" style="margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
+                <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
+            </a>
+        </div>
+    </footer>
+</body>
 </html>

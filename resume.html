@@ -144,15 +144,20 @@
 
         .skills-container {
             display: flex;
-            align-items: flex-start;
             justify-content: space-between;
             gap: 20px;
         }
-
-        .skills-hard,
+    
+        .skills-hard {
+            flex: 1;
+            padding: 20px;
+        }
+    
         .skills-soft {
             flex: 1;
-            padding: 0 20px;
+            padding: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
         .skills-soft .skill-item {

@@ -163,9 +163,25 @@
             line-height: 20px;
         }
 
-        .skills-soft p {
+        .skills-soft ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-soft li {
             margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 16px;
             color: #333;
+        }
+
+        .skills-soft li:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #ffcc00;
+            font-size: 1.2em;
         }
 
         .project-gallery {
@@ -267,13 +283,15 @@
                     <!-- Vertical line divider -->
                     <div class="divider"></div>
 
-                    <!-- Right column with list of soft skills -->
+                    <!-- Right column with fancy bullet points for soft skills -->
                     <div class="skills-soft">
-                        <p>Project Management</p>
-                        <p>Adaptability</p>
-                        <p>Creative Problem-Solving</p>
-                        <p>Collaboration</p>
-                        <p>Attention to Detail</p>
+                        <ul>
+                            <li>Project Management</li>
+                            <li>Adaptability</li>
+                            <li>Creative Problem-Solving</li>
+                            <li>Collaboration</li>
+                            <li>Attention to Detail</li>
+                        </ul>
                     </div>
                 </div>
             </section>

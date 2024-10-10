@@ -185,15 +185,27 @@
             display: block;
         }
             
-        .logo-container {
+        .education-logo-container {
             display: flex;
-            align-items: center; /* Vertically center the logo */
-            justify-content: center; /* Center the logo horizontally within its container */
-            height: 100%; /* Ensure the logo takes up the full height of the box */
+            align-items: center; /* Center the logo vertically */
+            justify-content: center; /* Center the logo within the right side */
+            height: 100%; /* Full height to center vertically */
+        }
+        
+        .education-logo-container img {
+            max-width: 80px; /* Increase size slightly for emphasis */
+            height: auto;
+        }
+        
+        .logo-container {
+            /* Maintain original styling for timeline logos, or add specific styling here as needed */
+            position: absolute;
+            right: 0;
+            top: 0;
         }
         
         .logo-container img {
-            max-width: 60px;
+            max-width: 60px; /* Keep the original size for timeline logos */
             height: auto;
         }
 
@@ -348,9 +360,9 @@
             <section>
                 <h2>Education & Experience</h2>
                  
-               <div class="education-block">
+                <div class="education-block">
                     <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
-                    <div class="logo-container">
+                    <div class="education-logo-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
                     </div>
                     <div class="education-tooltip">

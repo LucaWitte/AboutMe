@@ -186,11 +186,12 @@
         }
             
         .logo-container {
-            position: absolute;
-            right: 0;
-            top: 0;
+            display: flex;
+            align-items: center; /* Vertically center the logo */
+            justify-content: center; /* Center the logo horizontally within its container */
+            height: 100%; /* Ensure the logo takes up the full height of the box */
         }
-
+        
         .logo-container img {
             max-width: 60px;
             height: auto;

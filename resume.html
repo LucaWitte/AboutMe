@@ -292,7 +292,7 @@
 
         .project-gallery {
             display: flex;
-            gap: 5px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: space-between;
         }
@@ -312,6 +312,18 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
+        .thumbnail-container {
+            text-align: center;
+            width: 170px; /* Matches the thumbnail width for alignment */
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-title {
+            font-size: 0.8em; 
+            color: #555; 
+            margin-top: 5px; 
+        }
+        
         .lightbox {
             display: none;
             position: fixed;
@@ -521,14 +533,26 @@
 
             <section>
                 <h2>Research Projects</h2>
-                <p><b>Click thumbnail for Details</b></p>
+                <p><b>Click the thumbnails for more Details</b></p>
+                <br>
                 
-                <div class="project-gallery">
-                    <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1 - Integrins and Sequencing" onclick="openLightbox('lightbox1')">
-                    <img class="thumbnail" src="Images/SemesterProject2.PNG" alt="Project 2 - Genetic circuits" onclick="openLightbox('lightbox2')">
-                    <img class="thumbnail" src="Images/Bachelorthesis3.PNG" alt="Project 3 - bd Oxidase binding assay" onclick="openLightbox('lightbox3')">
-                    <img class="thumbnail" src="Images/ProjectZurich2.PNG" alt="Project 4 - Omphalotin mutagenesis" onclick="openLightbox('lightbox4')">
-                </div>
+                   <div class="project-gallery">
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1 - Integrins and Sequencing" onclick="openLightbox('lightbox1')">
+                            <p class="thumbnail-title">Integrins and Sequencing</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/SemesterProject2.PNG" alt="Project 2 - Genetic circuits" onclick="openLightbox('lightbox2')">
+                            <p class="thumbnail-title">Genetic Circuits</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/Bachelorthesis3.PNG" alt="Project 3 - bd Oxidase binding assay" onclick="openLightbox('lightbox3')">
+                            <p class="thumbnail-title">bd Oxidase Binding Assay</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/ProjectZurich2.PNG" alt="Project 4 - Omphalotin mutagenesis" onclick="openLightbox('lightbox4')">
+                            <p class="thumbnail-title">Omphalotin Mutagenesis</p>
+                    </div>
 
                 <div id="lightbox1" class="lightbox">
                     <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>

@@ -352,14 +352,44 @@
             font-size: 40px;
             cursor: pointer;
         }
+
+        .collapsible-button {
+            background-color: #0d3b66;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .collapsible-button:hover {
+            background-color: #1d4e89;
+        }
+        
+        .collapsible-content {
+            display: none; /* Initially hidden */
+            padding: 15px;
+            background-color: #ffffff;
+            color: #333333;
+            border: 1px solid #0d3b66;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 0.9em;
+            line-height: 1.4em;
+            margin-top: 10px;
+        }
+        
     </style>
 </head>
 <body>
     <header>
       <h1>Resume - Luca</h1>
       <p class="summary">
-          Experienced biotech professional <br>
-          specializing in data science, bioinformatics, and innovative problem-solving.
+          Experienced Biotech Professional <br>
+          Specializing in bridging Bioengineering and Bioinformatics
       </p>
     </header>
 
@@ -380,7 +410,8 @@
                     <div class="education-logo-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
                     </div>
-                    <div class="education-tooltip">
+                    <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
+                    <div class="collapsible-content">
                         <strong>Program Details:</strong>
                         <p>Specialized in advanced biotechnology with a focus on bioinformatics, data science, and innovative techniques in life sciences. Coursework included:</p>
                         <ul>
@@ -685,5 +716,14 @@
             </a>
         </div>
     </footer>
+
+    <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
+        function toggleCollapse(button) {
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+            button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
+        }
+    </script>
+    
 </body>
 </html>

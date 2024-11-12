@@ -144,20 +144,23 @@
             background-color: #ffffff;
             padding: 20px;
             margin-bottom: 20px;
-            border: 2px solid #ffcc00; /* Slightly thicker border for emphasis */
+            border: 2px solid #ffcc00;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             position: relative;
-            overflow: hidden; /* Ensures content stays neatly inside */
+            overflow: hidden;
+            display: flex;
+            align-items: center; 
         }
         
         .education-block p {
             font-size: 1.1em;
             color: #0d3b66;
-            margin: 0 0 15px 0; /* Adds space below the main text */
+            margin: 0 0 15px 0;
             font-weight: bold;
+            flex-grow: 1; /* Allows the text to use remaining space */
         }
-        
+ 
         .education-content {
             margin-bottom: 10px;
         }
@@ -184,13 +187,14 @@
         }
             
         .education-logo-container {
-            float: right;
-            margin-left: 15px; /* Adds some space between text and logo */
-            max-width: 120px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
         }
         
         .education-logo-container img {
-            max-width: 80px; /* Increase size slightly for emphasis */
+            max-width: 100px; 
             height: auto;
         }
         
@@ -202,7 +206,7 @@
         }
         
         .logo-container img {
-            max-width: 60px; /* Keep the original size for timeline logos */
+            max-width: 60px;
             height: auto;
         }
 
@@ -380,7 +384,7 @@
         }
         
         .collapsible-content ul {
-            padding-left: 20px; /* Indent list items */
+            padding-left: 20px; 
             margin-top: 10px;
         }
         

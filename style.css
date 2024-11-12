@@ -352,6 +352,279 @@
       transform: scale(1.1);
    }
 
+   /* Section Styling for Resume */
+
+   .timeline {
+       position: relative;
+       margin: 0;
+       padding-left: 150px;
+   }
+   
+   .timeline:before {
+       content: '';
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 100px;
+       width: 2px;
+       background: #ffcc00;
+   }
+   
+   .timeline-item {
+       margin-bottom: 30px;
+       position: relative;
+       padding-left: 0px;
+       padding-right: 30px;
+   }
+   
+   .timeline-item:before {
+       content: '';
+       position: absolute;
+       left: -60px;
+       background-color: #0d4b78;
+       width: 20px;
+       height: 20px;
+       border-radius: 50%;
+   }
+   
+   .timeline-date {
+       position: absolute;
+       left: -140px;
+       top: 0;
+       color: #0d3b66;
+       font-size: 0.9em;
+       font-weight: bold;
+       text-align: left;
+       width: 80px;
+   }
+
+   .education-block {
+       background-color: #ffffff;
+       padding: 20px;
+       margin-bottom: 20px;
+       border: 2px solid #ffcc00;
+       border-radius: 10px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+       position: relative;
+       overflow: hidden;
+   }
+   
+   .education-block p {
+       font-size: 1.1em;
+       color: #0d3b66;
+       margin: 0 0 15px 0;
+       font-weight: bold;
+   }
+   
+   .education-content {
+       margin-bottom: 10px;
+   }
+   
+   .education-tooltip {
+       display: none;
+       position: absolute;
+       right: -300px;
+       top: 50%;
+       transform: translateY(-50%);
+       width: 250px;
+       padding: 15px;
+       background-color: #ffffff;
+       color: #333333;
+       border: 1px solid #0d3b66;
+       border-radius: 10px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+       font-size: 0.9em;
+       line-height: 1.4em;
+   }
+   
+   .education-tooltip strong {
+       color: #0d3b66;
+       font-size: 1em;
+   }
+   
+   .skills-container {
+       display: flex;
+       justify-content: space-between;
+       gap: 20px;
+       padding-top: -20px;
+   }
+   
+   .skills-hard {
+       flex: 1;
+       padding: 0px;
+   }
+   
+   .skills-soft {
+       flex: 1;
+       padding: 20px;
+       margin-top: auto;
+       margin-bottom: auto;
+   }
+   
+   .skills-soft .skill-item {
+       margin: 10px 0;
+       padding: 7px;
+       border-radius: 25px;
+       background-color: #f4f4f4;
+       color: #333;
+       font-size: 16px;
+       text-align: center;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       position: relative;
+       cursor: pointer;
+       transition: background-color 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .skills-soft .skill-item:hover {
+       background-color: #ffcc00;
+       color: #0d3b66;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   }
+
+   .tooltip {
+       display: none;
+       position: absolute;
+       bottom: 35px;
+       left: 50%;
+       transform: translateX(-50%);
+       background-color: #0d4b78;
+       color: white;
+       padding: 5px 10px;
+       border-radius: 5px;
+       font-size: 14px;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+       white-space: nowrap;
+   }
+   
+   .skill-item:hover .tooltip {
+       display: block;
+   }
+   
+   .divider {
+       width: 2px;
+       background-color: #ddd;
+       height: 100%;
+   }
+   
+   .progress-bar {
+       width: 100%;
+       background-color: #ddd;
+       border-radius: 25px;
+       overflow: hidden;
+       margin: 10px 0;
+   }
+   
+   .progress-bar div {
+       height: 20px;
+       background-color: #0d3b66;
+       border-radius: 25px;
+       text-align: center;
+       color: white;
+       line-height: 20px;
+   }
+   
+   .project-gallery {
+       display: flex;
+       gap: 10px;
+       flex-wrap: wrap;
+       justify-content: space-between;
+   }
+   
+   .thumbnail {
+       width: 170px;
+       height: 120px;
+       object-fit: cover;
+       border-radius: 10px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+       cursor: pointer;
+   }
+   
+   .thumbnail:hover {
+       transform: scale(1.05);
+       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+   }
+   
+   .thumbnail-container {
+       text-align: center;
+       width: 170px;
+       margin-bottom: 10px;
+   }
+   
+   .thumbnail-title {
+       font-size: 0.8em;
+       color: #555;
+       margin-top: 5px;
+   }
+   
+   .lightbox {
+       display: none;
+       position: fixed;
+       z-index: 2;
+       left: 0;
+       top: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.9);
+   }
+   
+   .lightbox-content {
+       margin: 10% auto;
+       padding: 20px;
+       background-color: white;
+       border-radius: 10px;
+       width: 80%;
+       max-width: 800px;
+   }
+   
+   .close {
+       position: absolute;
+       top: 20px;
+       right: 40px;
+       color: white;
+       font-size: 40px;
+       cursor: pointer;
+   }
+
+.collapsible-button {
+    background-color: #0d3b66;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+   .collapsible-button:hover {
+       background-color: #1d4e89;
+       transform: scale(1.05);
+   }
+   
+   .collapsible-content {
+       display: none;
+       padding-top: 15px;
+       font-size: 0.95em;
+       line-height: 1.6;
+       color: #333;
+       border-top: 1px solid #e0e0e0;
+       margin-top: 10px;
+   }
+   
+   .collapsible-content ul {
+       padding-left: 20px;
+       margin-top: 10px;
+   }
+   
+   .collapsible-content ul li {
+       list-style-type: disc;
+       color: #0d3b66;
+       margin-bottom: 5px;
+   }
+
    /* Hide sidebar on small screens and show with 'show' class */
    @media (max-width: 768px) {
        .side-menu {

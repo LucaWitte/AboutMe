@@ -21,6 +21,16 @@
       letter-spacing: 2px;
    }
 
+   a {
+      color: #0d3b66;
+      text-decoration: none;
+      font-weight: bold;
+   }
+   
+   a:hover {
+      color: #ffcc00;
+   }
+
  .side-menu {
        position: fixed;
        top: 0;
@@ -426,5 +436,17 @@
       width: 100%;
       float: none;
       margin-left: 0;
+   }
+}
+
+@media (max-width: 768px) {
+   .intro {
+      flex-direction: column;
+      text-align: center;
+   }
+
+   .intro img {
+      margin-bottom: 20px;
+      margin-right: 0;
    }
 }

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="3d printing adventures - Project by Luca">
+      <title>3d printing - Luca</title>
+      <style>
+         body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+         }
+
+         /* Header Styling */
+         header {
+            background-color: #0d4b78;
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         }
+
+         header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+         }
+
+         /* Sidebar Styling */
+         .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #0d3b66;
+            padding-top: 100px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+         }
+
+         .side-menu a {
+            padding: 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+         }
+
+         .side-menu a:hover {
+            background-color: #1d4e89;
+            padding-left: 40px;
+         }
+
+         .side-menu a.active {
+            background-color: #ffcc00;
+            color: #0d3b66;
+            font-weight: bold;
+         }
+
+         /* Main content styling */
+         .main-content {
+            margin-left: 260px;
+            padding: 30px;
+         }
+
+         main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+         }
+
+         .project-image {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         }
+
+         h2 {
+            font-size: 2em;
+            color: #0d3b66;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
+         }
+
+         p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 20px;
+         }
+
+         ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+         }
+
+         li {
+            margin-bottom: 10px;
+            color: #555;
+         }
+
+         /* Collapsible code block */
+         .collapsible {
+            background-color: #f1f1f1;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 5px;
+         }
+
+         .collapsible.active {
+            background-color: #ddd;
+         }
+
+         .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+         }
+
+         pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 10px;
+         }
+
+         code {
+            font-family: 'Courier New', Courier, monospace;
+         }
+
+         /* Footer Styling */
+         footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2a5a8a;
+            color: #e0e0e0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+         }
+
+         footer a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+         }
+
+         footer a:hover {
+            color: #ffcc00;
+         }
+
+         footer .social-icons {
+            margin-top: 10px;
+         }
+
+         .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+         }
+
+         .social-icons img:hover {
+            transform: scale(1.1);
+         }
+
+         /* Responsive Styling */
+         @media (max-width: 768px) {
+            .main-content {
+               margin-left: 0;
+               padding: 20px;
+            }
+
+            footer {
+               margin-left: 0;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>My Journey into 3d Printing</h1>
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="../index.html">About Me</a>
+         <a href="../resume.html">My Resume</a>
+         <a href="../blog.html">Blog</a>
+         <a href="../portfolio.html" class="active">Cool Things I Have Done</a>
+      </div>
+
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <!-- Project overview -->
+            <section>
+               <h2>Ender 3</h2>
+               <p>
+                 I am using an Ender 3 with the silent board and glass bed modifications. Some technical details will be added later. <br><br>
+                 As I used blender for 3d modeling before, I have tried to create to-scale models in Blender. This works surprisingly well if the 3Dprint tools extension is used to prevent disconnected vertices. 
+                 There is a ton of measuring options to scale things correctly. I have worked with CAD software in the past when designing microfluidic chips, but Blender is definitely more visually appealing and 
+                 provides more options if looks of the model are more important than optimizing strength or similar.
+               </p>
+              
+               <!-- Detailed description -->
+               <h2>Some stuff</h2>
+               <p>This page is still under construction, but here is some cool things I have printed:</p>
+
+               <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
+               <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
+               <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
+
+         </section>
+      </div>
+
+      <footer>
+         &copy; 2024 Luca | All rights reserved.
+      </footer>
+
+      <script>
+         // Script to toggle the collapsible content
+         const collapsible = document.querySelector('.collapsible');
+         const content = document.querySelector('.collapsible-content');
+
+         collapsible.addEventListener('click', function() {
+            this.classList.toggle('active');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+         });
+      </script>
+   </body>
+</html>

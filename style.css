@@ -301,6 +301,29 @@
       color: #ffcc00;
    }
 
+   .summary {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+   }
+   
+   .placeholder-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
+   
+   .smaller-image {
+      width: 50%;
+      margin: 20px 0;
+      float: right;
+      margin-left: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
+
    /* Section Styling for Social Icons */
 
    .social-icons {
@@ -398,3 +421,10 @@
    }
 }
 
+@media (max-width: 768px) {
+   .smaller-image {
+      width: 100%;
+      float: none;
+      margin-left: 0;
+   }
+}

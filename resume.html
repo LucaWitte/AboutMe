@@ -144,15 +144,18 @@
             background-color: #ffffff;
             padding: 20px;
             margin-bottom: 20px;
-            border: 1px solid #ffcc00;
+            border: 2px solid #ffcc00; /* Slightly thicker border for emphasis */
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+            position: relative;
+            overflow: hidden; /* Ensures content stays neatly inside */
         }
         
         .education-block p {
-            color: #0d3b66;
             font-size: 1.1em;
-            margin: 0;
+            color: #0d3b66;
+            margin: 0 0 15px 0; /* Adds space below the main text */
+            font-weight: bold;
         }
         
         .education-content {
@@ -179,12 +182,13 @@
             color: #0d3b66;
             font-size: 1em;
         }
-        
+            
         .education-logo-container {
             float: right;
-            margin-left: 10px;
+            margin-left: 15px; /* Adds some space between text and logo */
+            max-width: 80px;
         }
-
+        
         .education-logo-container img {
             max-width: 80px; /* Increase size slightly for emphasis */
             height: auto;
@@ -346,25 +350,46 @@
             cursor: pointer;
         }
 
+       
         .collapsible-button {
             background-color: #0d3b66;
             color: #ffffff;
             border: none;
-            padding: 10px;
+            padding: 8px 12px;
+            margin-top: 10px;
             cursor: pointer;
             font-size: 0.9em;
+            font-weight: bold;
             border-radius: 5px;
-        }
-        
-        .collapsible-content {
-            display: none; /* Initially hidden */
-            padding-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
         .collapsible-button:hover {
             background-color: #1d4e89;
+            transform: scale(1.05); /* Slight scale for hover effect */
         }
         
+        .collapsible-content {
+            display: none; /* Initially hidden */
+            padding-top: 15px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #333;
+            border-top: 1px solid #e0e0e0; /* Separator line for emphasis */
+            margin-top: 10px;
+        }
+        
+        .collapsible-content ul {
+            padding-left: 20px; /* Indent list items */
+            margin-top: 10px;
+        }
+        
+        .collapsible-content ul li {
+            list-style-type: disc;
+            color: #0d3b66;
+            margin-bottom: 5px;
+        }
+                
     </style>
 </head>
 <body>

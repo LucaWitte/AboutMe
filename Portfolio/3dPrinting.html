@@ -13,7 +13,9 @@
       <header>
          <h1>My Journey into 3d Printing</h1>
       </header>
-
+      
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+      
       <!-- Left-hand menu starts below the header -->
       <div class="side-menu">
          <a href="../index.html">About Me</a>
@@ -58,6 +60,14 @@
             this.classList.toggle('active');
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
          });
+
+      <script>
+         function toggleSidebar() {
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
+         }
+      </script>
+      
       </script>
    </body>
 </html>

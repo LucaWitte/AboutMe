@@ -223,9 +223,10 @@
             <section>
                <h2>Project Overview</h2>
                <p>
-                  Currently I have been learning to build things using Arduino and ESP32 single board computers. My current project is a device consisting of a number pad, a display and a 3d printed box, that will remind me with sound and light to enter some data twice a day.
+                  Currently I have been learning to build things using Arduino and ESP32 single board computers. My current project is a device with of a number pad, a display and a 3d printed box, 
+                  that will remind me with sound and light to enter some data twice a day and sends me an email reminding me to enter the data manually if I happen to not be at home.
                   I have been wanting to track things like mood, activity, caffeine consumption etc. for a while. The more classic way would be a mood board - the journaling community has many great examples of that. But there is a big issue for me:
-                  Having these things on paper will not allow me to statistically analyze them continuously. Therefore I came up with this solution, which not only reminds me of tracking data (and sends me an email reminding me to enter the data manually if I happen to not be at home etc.), 
+                  Having these things on paper will not allow me to statistically analyze them continuously. Therefore I came up with this solution, which not only reminds me of tracking data, 
                   but it also writes them into a GSheet via the google API connection, allowing me to pull it into python and run analyses.  
                   
                   Here is a picture of the device (to be added):
@@ -250,6 +251,17 @@
                      
                   </code></pre>
                </div>
+               
+               <h2>Analysis:</h2>
+               <p>This is where results and insights go:</p>
+
+                 <p>Here’s some things I would be interested in:</p>
+               <ul>
+                  <li>Does my migraine correlate with sleep length / caffeine consumption / exercise / ... </li>
+                  <li>Correlation of sleep and mood (according to the literature a clear causality, but also in my individual case?). Does this depend on sleep length or a sleep schedule?</li>
+                  <li>Getting a smartwatch to track sleep and heart rate and include that in the analysis (Do they usually have APIs available?) </li>
+               </ul>
+
          </section>
       </div>
 

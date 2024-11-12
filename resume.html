@@ -181,17 +181,22 @@
             font-size: 1em;
         }
     
-        .education-block:hover .education-tooltip {
-            display: block;
-        }
-            
-        .education-logo-container {
-            display: flex;
-            align-items: center; /* Center the logo vertically */
-            justify-content: center; /* Center the logo within the right side */
-            height: 100%; /* Full height to center vertically */
+        .education-block {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ffcc00;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         
+        .education-logo-container {
+            display: inline-block; /* Inline to align with text without flex */
+            vertical-align: middle; /* Adjusts vertical alignment with text */
+            margin-top: 10px;
+        }
+
         .education-logo-container img {
             max-width: 80px; /* Increase size slightly for emphasis */
             height: auto;
@@ -368,7 +373,7 @@
         .collapsible-button:hover {
             background-color: #1d4e89;
         }
-        
+                
         .collapsible-content {
             display: none; /* Initially hidden */
             padding: 15px;

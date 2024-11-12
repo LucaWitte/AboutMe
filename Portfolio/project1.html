@@ -210,13 +210,14 @@
          
          /* Responsive Styling */
          @media (max-width: 768px) {
-             /* Sidebar becomes hidden on mobile, with toggle button shown */
+             /* Sidebar hidden by default on mobile, toggle with 'show' class */
              .side-menu {
-                 transform: translateX(-250px);
+                 transform: translateX(-250px); /* Hide the sidebar */
+                 z-index: 2; /* Ensure it overlays main content when visible */
              }
          
              .side-menu.show {
-                 transform: translateX(0);
+                 transform: translateX(0); /* Show the sidebar */
              }
          
              .sidebar-toggle {

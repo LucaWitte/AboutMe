@@ -20,6 +20,7 @@
             padding: 2em 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-left: 250px; /* Adds space for sidebar */
          }
 
          header h1 {
@@ -39,8 +40,24 @@
             padding-top: 100px;
             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            overflow-y: auto;
+            transition: transform 0.3s ease; /* For mobile toggle */
          }
 
+         .sidebar-toggle {
+             display: none; /* Hidden by default */
+             position: fixed;
+             top: 10px;
+             left: 10px;
+             background-color: #0d4b78;
+             color: white;
+             border: none;
+             padding: 10px;
+             font-size: 18px;
+             z-index: 2;
+             cursor: pointer;
+         }
+         
          .side-menu a {
             padding: 20px;
             display: block;
@@ -65,6 +82,7 @@
          .main-content {
             margin-left: 260px;
             padding: 30px;
+            min-height: calc(100vh - 100px); /* Ensures footer is visible */
          }
 
          main {
@@ -152,15 +170,15 @@
             font-family: 'Courier New', Courier, monospace;
          }
 
-         /* Footer Styling */
          footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2a5a8a;
-            color: #e0e0e0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+             text-align: center;
+             padding: 20px;
+             background-color: #2a5a8a;
+             color: #e0e0e0;
+             position: relative; /* Changed from fixed */
+             width: 100%;
+             bottom: 0;
+             z-index: 1;
          }
 
          footer a {
@@ -189,24 +207,45 @@
          .social-icons img:hover {
             transform: scale(1.1);
          }
-
+         
          /* Responsive Styling */
          @media (max-width: 768px) {
-            .main-content {
-               margin-left: 0;
-               padding: 20px;
-            }
-
-            footer {
-               margin-left: 0;
-            }
+             /* Sidebar becomes hidden on mobile, with toggle button shown */
+             .side-menu {
+                 transform: translateX(-250px);
+             }
+         
+             .side-menu.show {
+                 transform: translateX(0);
+             }
+         
+             .sidebar-toggle {
+                 display: block; /* Show toggle button */
+             }
+         
+             .main-content {
+                 margin-left: 0;
+                 padding: 20px;
+             }
+         
+             header {
+                 margin-left: 0;
+                 padding: 1.5em 1em;
+             }
+         
+             footer {
+                 margin-left: 0;
+             }
          }
+                  
       </style>
    </head>
    <body>
       <header>
-         <h1>Automated Cell Culture System</h1>
+         <h1>Learning Blender</h1>
       </header>
+
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
 
       <!-- Left-hand menu starts below the header -->
       <div class="side-menu">
@@ -267,5 +306,12 @@
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
          });
       </script>
+
+      <script>
+         function toggleSidebar() {
+            document.querySelector('.side-menu').classList.toggle('show');
+         }
+      </script>
+      
    </body>
 </html>

@@ -41,8 +41,14 @@
             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
             z-index: 1;
             overflow-y: auto;
+            transform: translateX(-250px);
             transition: transform 0.3s ease; /* For mobile toggle */
          }
+
+         .side-menu.show {
+             transform: translateX(0); /* Show sidebar when 'show' class is added */
+         }
+
 
          .sidebar-toggle {
              display: none; /* Hidden by default */
@@ -54,7 +60,7 @@
              border: none;
              padding: 10px;
              font-size: 18px;
-             z-index: 2;
+             z-index: 3;
              cursor: pointer;
          }
          
@@ -221,7 +227,7 @@
              }
          
              .sidebar-toggle {
-                 display: block; /* Show toggle button */
+                 display: block; /* Show toggle button on mobile */
              }
          
              .main-content {
@@ -310,7 +316,8 @@
 
       <script>
          function toggleSidebar() {
-            document.querySelector('.side-menu').classList.toggle('show');
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
          }
       </script>
       

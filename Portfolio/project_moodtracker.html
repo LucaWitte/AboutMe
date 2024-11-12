@@ -3,8 +3,8 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Automated Cell Culture System - Project by Luca">
-      <title>Automated Cell Culture System - Luca</title>
+      <meta name="description" content="Building a mood tracker with a single-board computer - Project by Luca">
+      <title>Building a mood tracker with a single-board computer - Luca</title>
       <style>
          body {
             font-family: 'Montserrat', sans-serif;
@@ -205,7 +205,7 @@
    </head>
    <body>
       <header>
-         <h1>Automated Cell Culture System</h1>
+         <h1>Building a mood tracker with a single-board computer</h1>
       </header>
 
       <!-- Left-hand menu starts below the header -->
@@ -222,47 +222,34 @@
             <!-- Project overview -->
             <section>
                <h2>Project Overview</h2>
-               <p>This SHOULD WORK NOW project focuses on the development of an automated cell culture system that integrates robotics and machine learning to optimize cell growth conditions. The goal was to streamline laboratory research processes, reduce human error, and enhance reproducibility in cell biology experiments.</p>
+               <p>
+                  Currently I have been learning to build things using Arduino and ESP32 single board computers. My current project is a device consisting of a number pad, a display and a 3d printed box, that will remind me with sound and light to enter some data twice a day.
+                  I have been wanting to track things like mood, activity, caffeine consumption etc. for a while. The more classic way would be a mood board - the journaling community has many great examples of that. But there is a big issue for me:
+                  Having these things on paper will not allow me to statistically analyze them continuously. Therefore I came up with this solution, which not only reminds me of tracking data (and sends me an email reminding me to enter the data manually if I happen to not be at home etc.), 
+                  but it also writes them into a GSheet via the google API connection, allowing me to pull it into python and run analyses.  
+                  
+                  Here is a picture of the device (to be added):
+               </p>
 
                <img src="../Images/project1.webp" alt="Automated Cell Culture System" class="project-image">
 
                <!-- Detailed description -->
-               <h2>Detailed Description</h2>
-               <p>The automated system employs a robotic arm to handle cell cultures, while machine learning algorithms monitor cell growth and suggest adjustments to factors like temperature, CO2 concentration, and media composition. This innovative approach saves time and ensures consistent results, allowing scientists to focus more on data analysis and less on manual tasks.</p>
+               <h2>Circuitry:</h2>
+               <p>This is where the circuit layout and technical details go</p>
 
-               <p>The system is designed to be modular, making it adaptable to different types of cell lines and experimental conditions. By integrating real-time data analysis and control systems, the system can make decisions autonomously, significantly reducing the need for manual intervention.</p>
-
-               <p>Here’s a breakdown of the major components of the project:</p>
-               <ul>
-                  <li>Robotic handling of cell culture plates and consumables</li>
-                  <li>Machine learning algorithms for optimizing growth conditions</li>
-                  <li>Automated feedback systems for real-time monitoring</li>
-                  <li>Data integration with laboratory information management systems (LIMS)</li>
-               </ul>
-
-            <!-- Collapsible code block showing a Git file -->
-            <button type="button" class="collapsible">View Code from GitHub</button>
-            <div class="collapsible-content">
-               <pre><code>
-# Example Python Code for Optimizing Cell Growth Conditions
-
-import numpy as np
-from sklearn.ensemble import RandomForestRegressor
-
-# Simulated data for cell growth conditions
-X = np.array([[37, 5], [36, 5], [37, 6], [38, 5], [36, 4]])  # Temperature, CO2 level
-y = np.array([80, 78, 85, 90, 75])  # Cell growth percentages
-
-# Machine learning model to predict optimal conditions
-model = RandomForestRegressor()
-model.fit(X, y)
-
-# Predicting cell growth for a new condition
-new_condition = np.array([[37, 5.5]])
-predicted_growth = model.predict(new_condition)
-print(f"Predicted cell growth: {predicted_growth[0]:.2f}%")
-               </code></pre>
-            </div>
+               <h2>Code:</h2>
+               <p>This is where the scripts on the ESP32 and examples of my analysis go:</p>
+               <!-- Collapsible code block showing a Git file -->
+               <button type="button" class="collapsible">View Code from GitHub</button>
+               <div class="collapsible-content">
+                  <pre><code>
+                     # Example Python Code 
+                     
+                     import numpy as np
+                     from sklearn.ensemble import RandomForestRegressor
+                     
+                  </code></pre>
+               </div>
          </section>
       </div>
 

@@ -625,6 +625,30 @@
        margin-bottom: 5px;
    }
 
+  .education-logo-container {
+      float: right;
+      margin-left: 15px; /* Adds some space between text and logo */
+      max-width: 120px;
+      align-items: center; 
+  }
+  
+  .education-logo-container img {
+      max-width: 120px; 
+      height: auto;
+  }
+  
+  .logo-container {
+      /* Maintain original styling for timeline logos, or add specific styling here as needed */
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+  
+  .logo-container img {
+      max-width: 60px; /* Keep the original size for timeline logos */
+      height: auto;
+  }
+
    /* Hide sidebar on small screens and show with 'show' class */
    @media (max-width: 768px) {
        .side-menu {

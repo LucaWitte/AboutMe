@@ -14,6 +14,8 @@
          <h1>Automated Cell Culture System</h1>
       </header>
 
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
       <!-- Left-hand menu starts below the header -->
       <div class="side-menu">
          <a href="../index.html">About Me</a>

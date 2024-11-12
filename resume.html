@@ -147,7 +147,6 @@
             border: 1px solid #ffcc00;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
         
         .education-block p {
@@ -182,8 +181,8 @@
         }
         
         .education-logo-container {
-            text-align: center;
-            margin-top: 10px;
+            float: right;
+            margin-left: 10px;
         }
 
         .education-logo-container img {
@@ -355,24 +354,15 @@
             cursor: pointer;
             font-size: 0.9em;
             border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        .collapsible-button:hover {
-            background-color: #1d4e89;
         }
         
         .collapsible-content {
             display: none; /* Initially hidden */
-            padding: 15px;
-            background-color: #ffffff;
-            color: #333333;
-            border: 1px solid #0d3b66;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 0.9em;
-            line-height: 1.4em;
-            margin-top: 10px;
+            padding-top: 10px;
+        }
+        
+        .collapsible-button:hover {
+            background-color: #1d4e89;
         }
         
     </style>
@@ -399,13 +389,11 @@
                 <h2>Education & Experience</h2>
                  
                <div class="education-block">
-                    <div class="education-content">
-                        <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
-                        <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
-                    </div>
+                    <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
                     <div class="education-logo-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
                     </div>
+                    <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
                     <div class="collapsible-content">
                         <strong>Program Details:</strong>
                         <p>Specialized in advanced biotechnology with a focus on bioinformatics, data science, and innovative techniques in life sciences. Coursework included:</p>
@@ -690,6 +678,14 @@
         </main>
     </div>
 
+    <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
+        function toggleCollapse(button) {
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+            button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
+        }
+    </script>
+    
     <script>
         function openLightbox(id) {
             document.getElementById(id).style.display = 'block';
@@ -712,13 +708,7 @@
         </div>
     </footer>
 
-    <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
-        function toggleCollapse(button) {
-            const content = button.nextElementSibling;
-            content.style.display = content.style.display === "block" ? "none" : "block";
-            button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
-        }
-    </script>
+
     
 </body>
 </html>

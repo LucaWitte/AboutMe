@@ -9,188 +9,9 @@
       
       <!-- Title Tag - Optimized for SEO -->
       <title>About Luca Witte - Biotechnology, Data Science & Automation Projects</title>
-
-      <style>
-         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-         }
-
-         /* Header Styling */
-         header {
-            background-color: #0d4b78;
-            color: white;
-            padding: 2em 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-         }
-
-         header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-         }
-
-         /* Sidebar Styling */
-         .side-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #0d3b66;
-            padding-top: 100px;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-         }
-
-         .side-menu a {
-            padding: 20px;
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background-color 0.3s ease, padding-left 0.3s ease;
-         }
-
-         .side-menu a:hover {
-            background-color: #1d4e89;
-            padding-left: 40px;
-         }
-
-         .side-menu a.active {
-            background-color: #ffcc00;
-            color: #0d3b66;
-            font-weight: bold;
-         }
-
-         /* Main content styling */
-         .main-content {
-            margin-left: 260px;
-            padding: 30px;
-         }
-
-         main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-         }
-
-         /* Introduction Section */
-         .intro {
-            display: flex;
-            align-items: center;
-         }
-
-         .intro img {
-            border-radius: 20%;
-            margin-right: 30px;
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-         }
-
-         .intro img:hover {
-            transform: scale(1.05);
-         }
-
-         .intro-text {
-            flex: 1;
-            font-size: 1.1em;
-            line-height: 1.8;
-         }
-
-         h2 {
-            font-size: 2em;
-            color: #0d3b66;
-            border-bottom: 3px solid #ffcc00;
-            padding-bottom: 10px;
-         }
-
-         p {
-            color: #333;
-         }
-
-         a {
-            color: #0d3b66;
-            text-decoration: none;
-            font-weight: bold;
-         }
-
-         a:hover {
-            color: #ffcc00;
-         }
-
-         /* Footer */
-         footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2a5a8a;
-            color: #e0e0e0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            z-index: 0;
-         }
-
-         footer a {
-            color: #e0e0e0;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-         }
-
-         footer a:hover {
-            color: #ffcc00;
-         }
-
-         footer .social-icons {
-            margin-top: 10px;
-         }
-
-         .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            vertical-align: middle;
-            transition: transform 0.3s ease;
-         }
-
-         .social-icons img:hover {
-            transform: scale(1.1);
-         }
-
-         /* Responsive Styling */
-         @media (max-width: 768px) {
-            .intro {
-               flex-direction: column;
-               text-align: center;
-            }
-
-            .intro img {
-               margin-bottom: 20px;
-               margin-right: 0;
-            }
-
-            .main-content {
-               margin-left: 0;
-               padding: 20px;
-            }
-
-            footer {
-               margin-left: 0;
-            }
-         }
-      </style>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../style.css">
+      
    </head>
    <body>
       <header>
@@ -205,6 +26,8 @@
          <a href="portfolio.html">Cool Things I Have Done</a>
       </div>
 
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+      
       <!-- Main content starts here -->
       <div class="main-content">
          <main>
@@ -236,5 +59,13 @@
             </a>
          </div>
       </footer>
+      
+      <script>
+         function toggleSidebar() {
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
+         }
+      </script>
+      
    </body>
 </html>

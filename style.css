@@ -311,13 +311,10 @@
       color: #ffcc00;
    }
 
-   .summary {
-       font-size: 1em;
-       font-weight: 400;
-       color: #ffcc00;
-       margin: 0;
-       padding: 0;
-       line-height: 1.2em;
+  .summary {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
    }
    
    .placeholder-image {

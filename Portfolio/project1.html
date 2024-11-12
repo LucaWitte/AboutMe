@@ -29,20 +29,18 @@
             letter-spacing: 2px;
          }
 
-         /* Sidebar Styling */
-         .side-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #0d3b66;
-            padding-top: 100px;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            overflow-y: auto;
-            transform: translateX(-250px);
-            transition: transform 0.3s ease; /* For mobile toggle */
+       .side-menu {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 250px;
+             height: 100%;
+             background-color: #0d3b66;
+             padding-top: 100px;
+             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+             z-index: 2;
+             overflow-y: auto;
+             transition: transform 0.3s ease;
          }
 
          .side-menu.show {
@@ -214,16 +212,14 @@
             transform: scale(1.1);
          }
          
-         /* Responsive Styling */
+         /* Hide sidebar on small screens and show with 'show' class */
          @media (max-width: 768px) {
-             /* Sidebar hidden by default on mobile, toggle with 'show' class */
              .side-menu {
-                 transform: translateX(-250px); /* Hide the sidebar */
-                 z-index: 2; /* Ensure it overlays main content when visible */
+                 transform: translateX(-250px); /* Hide sidebar on mobile */
              }
          
              .side-menu.show {
-                 transform: translateX(0); /* Show the sidebar */
+                 transform: translateX(0); /* Show sidebar when 'show' class is added */
              }
          
              .sidebar-toggle {
@@ -231,8 +227,7 @@
              }
          
              .main-content {
-                 margin-left: 0;
-                 padding: 20px;
+                 margin-left: 0; /* Adjust content for mobile view */
              }
          
              header {
@@ -242,6 +237,25 @@
          
              footer {
                  margin-left: 0;
+             }
+         }
+         
+         /* Show sidebar and keep it fixed on larger screens */
+         @media (min-width: 769px) {
+             .sidebar-toggle {
+                 display: none; /* Hide toggle button on larger screens */
+             }
+         
+             .main-content {
+                 margin-left: 260px; /* Reserve space for sidebar on larger screens */
+             }
+         
+             header {
+                 margin-left: 250px;
+             }
+         
+             footer {
+                 margin-left: 250px;
              }
          }
                   

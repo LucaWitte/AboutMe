@@ -229,6 +229,49 @@
       font-size: 1.1em;
       line-height: 1.8;
    }
+
+   /* Section Styling for Projects */
+   section {
+      margin-bottom: 20px;
+   }
+   
+   .cool-thing {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+   }
+   
+   .cool-thing img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
+   
+   .cool-thing h3 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #0d4b78;
+   }
+   
+   .cool-thing p {
+      margin: 5px 0;
+      color: #333;
+      line-height: 1.8;
+   }
+   
+   .cool-thing a {
+      color: #0d4b78;
+      text-decoration: none;
+      font-weight: bold;
+   }
+   
+   .cool-thing a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+   }
    
    /* Hide sidebar on small screens and show with 'show' class */
    @media (max-width: 768px) {
@@ -297,3 +340,14 @@
          margin-left: 0;
       }
    }
+
+@media (max-width: 768px) {
+   .cool-thing {
+      flex-direction: column;
+      text-align: center;
+   }
+
+   .cool-thing img {
+      margin: 0 0 20px 0;
+   }
+}

@@ -272,7 +272,53 @@
       text-decoration: underline;
       color: #ffcc00;
    }
+
+   /* Section Styling for Blog */
+
+   .blog-post {
+      margin-bottom: 30px;
+   }
    
+   .blog-post h3 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #0d3b66;
+   }
+   
+   .blog-post p {
+      margin: 5px 0;
+      color: #333;
+   }
+   
+   .blog-post a {
+      color: #0d4b78;
+      text-decoration: none;
+      font-weight: bold;
+   }
+   
+   .blog-post a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+   }
+
+   /* Section Styling for Social Icons */
+
+   .social-icons {
+      margin-top: 10px;
+   }
+   
+   .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+   }
+   
+   .social-icons img:hover {
+      transform: scale(1.1);
+   }
+
    /* Hide sidebar on small screens and show with 'show' class */
    @media (max-width: 768px) {
        .side-menu {
@@ -351,3 +397,4 @@
       margin: 0 0 20px 0;
    }
 }
+

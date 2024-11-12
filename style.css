@@ -203,6 +203,32 @@
    .social-icons img:hover {
       transform: scale(1.1);
    }
+
+   /* Introduction Section */
+   .intro {
+      display: flex;
+      align-items: center;
+   }
+
+   .intro img {
+      border-radius: 20%;
+      margin-right: 30px;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+   }
+
+   .intro img:hover {
+      transform: scale(1.05);
+   }
+
+   .intro-text {
+      flex: 1;
+      font-size: 1.1em;
+      line-height: 1.8;
+   }
    
    /* Hide sidebar on small screens and show with 'show' class */
    @media (max-width: 768px) {
@@ -250,4 +276,24 @@
            margin-left: 250px;
        }
    }
-            
+
+   @media (max-width: 768px) {
+      .intro {
+         flex-direction: column;
+         text-align: center;
+      }
+   
+      .intro img {
+         margin-bottom: 20px;
+         margin-right: 0;
+      }
+   
+      .main-content {
+         margin-left: 0;
+         padding: 20px;
+      }
+   
+      footer {
+         margin-left: 0;
+      }
+   }

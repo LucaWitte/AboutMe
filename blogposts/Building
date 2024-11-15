@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Blog Post - The Power of building">
+      <title>The power of building - Luca Witte</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../style.css">
+
+   </head>
+   <body>
+      <header>
+         <h1>The Power of Building</h1>
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="../index.html">About Me</a>
+         <a href="../resume.html">My Resume</a>
+         <a href="../blog.html" class="active">Blog</a>
+         <a href="../portfolio.html">Cool Things I Have Done</a>
+      </div>
+
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <section>
+               <div class="summary">
+                  <p>
+                   The Limitations of Bioengineering
+
+    Professional Restrictions
+        Need for specialized lab equipment
+            Microscopes, centrifuges, sterile environments
+        Regulatory hurdles
+            Ethical approvals for experiments
+            Compliance with safety standards
+    Resource Intensive
+        High costs of materials and equipment
+        Dependence on institutional support
+    Time-Consuming Processes
+        Long experimentation cycles
+        Delayed gratification from slow results
+    Limited DIY Opportunities
+        Safety risks prevent home experiments
+        Lack of open-source platforms for bioengineering
+
+Discovering Electrical Engineering
+
+    Initial Spark
+        Exposure to a maker space or electronics workshop
+        Curiosity about how everyday devices work
+    First Projects
+        Building simple circuits
+        Experimenting with Arduino or Raspberry Pi
+    Role of 3D Printing
+        Creating physical components for projects
+        Rapid prototyping capabilities
+
+Accessibility of Building with Electronics
+
+    Affordable Tools and Materials
+        Low-cost microcontrollers and sensors
+        Second-hand equipment availability
+    Online Resources
+        Tutorials, forums, and YouTube channels
+        Open-source software and hardware communities
+    Minimal Regulatory Barriers
+        Freedom to experiment without stringent regulations
+        Safety manageable at home with proper precautions
+    Immediate Feedback
+        Quick iteration cycles
+        Visible results encourage continued learning
+
+The Joy of Creation
+
+    Empowerment
+        Turning ideas into tangible objects
+        Overcoming challenges through problem-solving
+    Community Engagement
+        Collaborating with other makers
+        Participating in hackathons or maker fairs
+    Personal Growth
+        Developing new skills in coding and design
+        Boosting confidence through successful projects
+
+Contrasting Bioengineering and Electrical Engineering
+
+    Scalability of Projects
+        Bioengineering projects often large-scale and collaborative
+        Electronics projects scalable from simple to complex
+    Innovation Pace
+        Faster innovation cycles in electronics
+        Bioengineering advancements slower due to testing requirements
+    Accessibility for Hobbyists
+        Electronics welcoming to beginners
+        Bioengineering less accessible outside professional settings
+
+Encouraging Others to Build
+
+    Embracing the Maker Mindset
+        Encouraging curiosity and experimentation
+    Starting Small
+        Recommending beginner-friendly projects
+        Suggesting resources and communities to join
+    Long-Term Benefits
+        Skill development applicable to various fields
+        Potential to inspire career shifts or new hobbies
+                </p>
+            </section>
+         </main>
+      </div>
+
+      <footer>
+         &copy; 2024 Luca | All rights reserved.
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
+            </a>
+         </div>
+      </footer>
+
+      <script>
+         function toggleSidebar() {
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
+         }
+      </script>
+
+   </body>
+</html>

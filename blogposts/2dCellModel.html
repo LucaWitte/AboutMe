@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Blog Post - Simulating 2D Cell Growth in Python">
+      <title>Simulating 2D Cell Growth in Python - Luca Witte</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../style.css">
+
+   </head>
+   <body>
+      <header>
+         <h1>Simulating 2D Cell Growth with a Vertex Model in Python</h1>
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="../index.html">About Me</a>
+         <a href="../resume.html">My Resume</a>
+         <a href="../blog.html" class="active">Blog</a>
+         <a href="../portfolio.html">Cool Things I Have Done</a>
+      </div>
+
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+           <p>
+            <img src="path/to/animation.gif" alt="Animation of 2D cell growth simulation using the vertex model" style="width:100%; height:auto;">
+          </p>
+          
+          <p>
+            Understanding the mechanics of cell growth and interaction is crucial in developmental biology and tissue engineering. Computational models offer valuable insights by simulating these complex processes. One effective approach is the <strong>2D vertex model</strong>, which represents cells as polygons in a two-dimensional plane. In this post, we'll explore the fundamentals of the vertex model and discuss how to implement it in Python to simulate cell growth and division, without delving into explicit code.
+          </p>
+          
+          <h2>Introduction to the Vertex Model</h2>
+          
+          <p>
+            The vertex model is a computational framework used to simulate the mechanical behavior of epithelial tissues. In this model:
+          </p>
+          
+          <ul>
+            <li><strong>Cells</strong> are represented as polygons with straight edges.</li>
+            <li><strong>Vertices</strong> are points where edges meet and are shared among neighboring cells.</li>
+            <li><strong>Edges</strong> represent the boundaries between cells.</li>
+          </ul>
+          
+          <p>
+            This model is particularly suitable for simulating tissues where cells are tightly packed, such as epithelial layers.
+          </p>
+          
+          <h3>Why Use the Vertex Model?</h3>
+          
+          <ul>
+            <li><strong>Efficiency</strong>: With fewer degrees of freedom compared to high-resolution models, simulations run faster.</li>
+            <li><strong>Flexibility</strong>: Can simulate various cellular behaviors like growth, division, and rearrangement.</li>
+            <li><strong>Relevance</strong>: Ideal for studying planar tissues where cell shapes and neighbor relationships are important.</li>
+          </ul>
+          
+          <h2>Core Concepts of the Vertex Model</h2>
+          
+          <h3>Potential Energy Function</h3>
+          
+          <p>
+            The mechanical state of the tissue is described by a potential energy function \( U \):
+          </p>
+          
+          <p>
+            \[
+            U = \sum_{c} \left[ \frac{K}{2} (A_c - A_{0c})^2 + \frac{\Gamma}{2} (P_c - P_{0c})^2 + \gamma P_c \right]
+            \]
+          </p>
+          
+          <p>Where:</p>
+          
+          <ul>
+            <li>\( K \) is the area elasticity coefficient.</li>
+            <li>\( \Gamma \) is the perimeter elasticity coefficient.</li>
+            <li>\( \gamma \) is the line tension coefficient.</li>
+            <li>\( A_c \) and \( P_c \) are the area and perimeter of cell \( c \).</li>
+            <li>\( A_{0c} \) and \( P_{0c} \) are the target area and perimeter.</li>
+          </ul>
+          
+          <p>Each term represents:</p>
+          
+          <ol>
+            <li><strong>Area Elasticity</strong>: Cells tend to maintain a target area \( A_{0c} \).</li>
+            <li><strong>Perimeter Elasticity</strong>: Cells tend to maintain a target perimeter \( P_{0c} \).</li>
+            <li><strong>Line Tension</strong>: Represents the contractile forces along the cell edges.</li>
+          </ol>
+          
+          <h3>Forces on Vertices</h3>
+          
+          <p>
+            The force on each vertex is calculated as the negative gradient of the potential energy:
+          </p>
+          
+          <p>
+            \[
+            \mathbf{f}_i = -\nabla_i U = -\frac{\partial U}{\partial \mathbf{x}_i}
+            \]
+          </p>
+          
+          <p>
+            This force determines how the vertices (and thus the cells) move over time, allowing the simulation of dynamic behaviors like cell deformation and rearrangement.
+          </p>
+          
+          <h2>Implementing the Vertex Model Conceptually</h2>
+          
+          <h3>Overview of Implementation Steps</h3>
+          
+          <ol>
+            <li><strong>Initialize the Tissue</strong>: Create an initial arrangement of cells, typically a grid of polygons (e.g., hexagons).</li>
+            <li><strong>Define Cell and Vertex Properties</strong>: Assign properties like positions, areas, perimeters, and target values.</li>
+            <li><strong>Compute Forces</strong>: For each vertex, calculate the forces resulting from deviations in area and perimeter.</li>
+            <li><strong>Update Positions</strong>: Move the vertices according to the computed forces.</li>
+            <li><strong>Simulate Growth and Division</strong>: Allow cells to grow and divide based on certain criteria.</li>
+            <li><strong>Handle Topological Changes</strong>: Implement T1 transitions to rearrange cells when necessary.</li>
+            <li><strong>Visualize the Tissue</strong>: Display the evolving tissue to observe cell behaviors over time.</li>
+          </ol>
+          
+          <h3>Step 1: Initializing the Tissue</h3>
+          
+          <p>
+            &mdash; <strong>Create Cells</strong>: Represent cells as polygons with vertices arranged in a consistent order (e.g., counter-clockwise).
+          </p>
+          <p>
+            &mdash; <strong>Position Vertices</strong>: Place vertices to form a regular grid, such as a honeycomb lattice for hexagonal cells.
+          </p>
+          <p>
+            &mdash; <strong>Merge Shared Vertices</strong>: Ensure that edges between adjacent cells share the same vertices by merging vertices that are at the same position.
+          </p>
+          
+          <details>
+            <summary><strong>Conceptual Pseudocode</strong></summary>
+            <pre>
+          for each cell in grid:
+              create vertices for the cell
+              add vertices to global vertex list
+          merge_vertices(vertex_list)
+            </pre>
+          </details>
+          
+          <h3>Step 2: Defining Cell and Vertex Properties</h3>
+          
+          <p>
+            &mdash; <strong>Vertices</strong>: Each vertex has a position vector and a force vector initialized to zero.
+          </p>
+          <p>
+            &mdash; <strong>Cells</strong>: Each cell has a list of vertex indices and properties like area \( A_c \), perimeter \( P_c \), and target values \( A_{0c} \), \( P_{0c} \).
+          </p>
+          
+          <h3>Step 3: Computing Forces</h3>
+          
+          <p>For each cell:</p>
+          
+          <ol>
+            <li>
+              <strong>Compute Area and Perimeter</strong>:
+              <ul>
+                <li><strong>Area</strong>: Use the shoelace formula for polygons.</li>
+                <li><strong>Perimeter</strong>: Sum the lengths of the edges.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Calculate Gradients</strong>:
+              <ul>
+                <li>Compute the gradients of area and perimeter with respect to each vertex position.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Compute Forces on Vertices</strong>:
+              <ul>
+                <li>Use the potential energy derivatives to calculate the force contributions from each cell to its vertices.</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <details>
+            <summary><strong>Conceptual Pseudocode</strong></summary>
+            <pre>
+          for each cell:
+              compute area and perimeter
+              for each vertex in cell:
+                  calculate gradient of area and perimeter
+                  update vertex force using gradients
+            </pre>
+          </details>
+          
+          <h3>Step 4: Updating Positions</h3>
+          
+          <p>
+            &mdash; <strong>Time Stepping</strong>: Use a simple integration method like Forward Euler to update vertex positions based on the forces.
+          </p>
+          <p>
+            &mdash; <strong>Viscous Damping</strong>: Include a damping coefficient to simulate the viscous nature of cellular environments.
+          </p>
+          
+          <details>
+            <summary><strong>Conceptual Pseudocode</strong></summary>
+            <pre>
+          for each vertex:
+              update position: x_new = x_old + (time_step / damping_coefficient) * force
+            </pre>
+          </details>
+          
+          <h3>Step 5: Simulating Growth and Division</h3>
+          
+          <h4>Cell Growth</h4>
+          
+          <p>
+            &mdash; <strong>Target Area Increase</strong>: Increment the target area \( A_{0c} \) of cells over time to simulate growth.
+          </p>
+          <p>
+            &mdash; <strong>Variable Growth Rates</strong>: Assign different growth rates to cells, possibly drawn from a random distribution.
+          </p>
+          
+          <h4>Cell Division</h4>
+          
+          <p>
+            &mdash; <strong>Division Criteria</strong>: A cell divides when its area exceeds a threshold \( A_{\text{div}} \).
+          </p>
+          <p>
+            &mdash; <strong>Division Process</strong>:
+          </p>
+          
+          <ol>
+            <li><strong>Determine Division Axis</strong>: Use Hertwig's rule (divide along the longest axis) or choose randomly.</li>
+            <li><strong>Compute Centroid</strong>: Find the cell's centroid.</li>
+            <li><strong>Insert New Vertices and Edges</strong>: Add new vertices along the division axis and update the cell topology.</li>
+            <li><strong>Create Daughter Cells</strong>: Split the mother cell into two daughter cells, each with adjusted target areas.</li>
+          </ol>
+          
+          <details>
+            <summary><strong>Conceptual Pseudocode</strong></summary>
+            <pre>
+          for each cell:
+              if cell area > division threshold:
+                  determine division axis
+                  compute centroid
+                  insert new vertices along division axis
+                  create two new cells with updated properties
+                  update neighboring cells to reflect topology change
+            </pre>
+          </details>
+          
+          <h3>Step 6: Handling Topological Changes (T1 Transitions)</h3>
+          
+          <p>
+            &mdash; <strong>T1 Transition Criteria</strong>: Occurs when an edge becomes shorter than a minimum length \( l_{\text{min}} \).
+          </p>
+          <p>
+            &mdash; <strong>Rearrangement Process</strong>:
+          </p>
+          
+          <ol>
+            <li><strong>Identify Short Edges</strong>: Check all edges for length criteria.</li>
+            <li><strong>Reconfigure Connections</strong>: Reconnect the vertices to neighboring cells to flip the edge.</li>
+            <li><strong>Adjust Vertex Positions</strong>: Move vertices slightly to prevent immediate reversal.</li>
+          </ol>
+          
+          <details>
+            <summary><strong>Conceptual Pseudocode</strong></summary>
+            <pre>
+          for each edge in cells:
+              if edge length < minimum length:
+                  identify neighboring cells involved
+                  reassign vertices to flip edge
+                  adjust positions of vertices to stabilize
+            </pre>
+          </details>
+          
+          <h3>Step 7: Visualizing the Tissue</h3>
+          
+          <p>
+            &mdash; <strong>Visualization Tools</strong>: Use libraries like Matplotlib to display the cells as polygons.
+          </p>
+          <p>
+            &mdash; <strong>Color Mapping</strong>: Optionally color cells based on properties like the number of neighbors.
+          </p>
+          <p>
+            &mdash; <strong>Animation</strong>: Create an animation to observe the tissue evolution over time.
+          </p>
+          
+          <h2>Conclusion</h2>
+          
+          <p>
+            By conceptualizing the implementation of the vertex model in Python, we can simulate complex tissue behaviors such as growth, division, and rearrangement. This approach provides a balance between computational efficiency and biological realism.
+          </p>
+          
+          <h3>Key Takeaways</h3>
+          
+          <ul>
+            <li><strong>Vertex Model</strong>: A powerful tool for simulating planar tissues with mechanical interactions.</li>
+            <li><strong>Mechanics</strong>: Cells aim to reach target areas and perimeters, with forces derived from deviations.</li>
+            <li><strong>Dynamics</strong>: Incorporating growth and topological changes allows for realistic tissue evolution.</li>
+          </ul>
+          
+          <h3>Further Exploration</h3>
+          
+          <ul>
+            <li><strong>Parameter Variation</strong>: Experiment with different elasticity and tension coefficients to observe various tissue behaviors.</li>
+            <li><strong>Advanced Features</strong>: Implement additional biological processes like apoptosis or differentiation.</li>
+            <li><strong>3D Extensions</strong>: Consider extending the model to three dimensions for more comprehensive simulations.</li>
+          </ul>
+          
+          <h2>References</h2>
+          
+          <ul>
+            <li>
+              Farhadifar, R., et al. (2007). "The influence of cell mechanics, cell-cell interactions, and proliferation on epithelial packing." <em>Current Biology</em>, 17(24), 2095-2104.
+            </li>
+            <li>
+              Lecture notes and exercises on vertex models and tissue simulations.
+            </li>
+          </ul>
+          
+          <p>
+            By understanding the conceptual steps and mathematical foundations of the vertex model, you can implement a simulation in Python that captures the dynamic nature of cell growth and tissue development, even without explicit code examples.
+          </p>
+         </main>
+      </div>
+
+      <footer>
+         &copy; 2024 Luca | All rights reserved.
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
+            </a>
+         </div>
+      </footer>
+
+      <script>
+         function toggleSidebar() {
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
+         }
+      </script>
+
+   </body>
+</html>

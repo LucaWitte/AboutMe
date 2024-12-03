@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Blog Post - How to speak and think">
+      <title>How to speak and think - Luca Witte</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../style.css">
+
+   </head>
+   <body>
+      <header>
+         <h1>How to speak and think</h1>
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="../index.html">About Me</a>
+         <a href="../resume.html">My Resume</a>
+         <a href="../blog.html" class="active">Blog</a>
+         <a href="../portfolio.html">Cool Things I Have Done</a>
+      </div>
+
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <section>
+               <div class="summary">
+                  <p>
+                  <h2>Communication</h2>
+                    <p>
+                      <b>As everything on the website, this is a work in progress</b>. <br><br><br>
+                      
+                      I have always been interested in acquiring "meta-skills". While learning <b>how to do </b> a thing is great fun, that process can be accelerated by learning <b>how to learn</b>. <br>
+                      These concepts span a lot of contexts - one very influencial book I have read as a teenager was "The power of habbit". What I learned was not to do a specific thing - it was understanding how to build habbits, which in the long-term catalyze the doing of whatever I want to persue. <br>
+                      Other examples include: biomechanics and nutrition (a basic understanding helps you in a lot of sports and health contexts), learning how to learn (essential for being a good student), project and time management, etc. <br> <br>
+
+                      However, here I want to lay out my mental model for thinking and communication, and why you should invest in building such a framework yourself. Have fun!
+                      
+                    </p>
+
+                  <h2>Less Wrong</h2>
+                    <p>
+                      Probably the most important framework for reasoning in a sustainable way has been created by the <b>Rationality Community</b> on <a href="https://www.lesswrong.com/rationality#">LessWrong</a>.
+                      Here is a quick rundown of some important key concepts for you to start with:
+                      
+                    </p>
+
+                 
+                      <h3>To be continued</h3>
+                        <p>
+                          Will be added
+                          E.g. one interesting method I implemented is that if you check any estimates (e.g. a number by using google to verify), first quickly lay out how you arrived at your estimate (usually this can be done in your mind, but for important things, writing it down helps). 
+                          If your guess was significantly off, you can then trace at which point your assumptions were faulty and try to update them accordingly.
+                          
+                        </p>
+
+                 <h2>Steel manning</h2>
+                    <p>
+                      This is one of the most important conversational tools I have lerned:<br>
+                      The name is derived from straw manning and refers to the fact that you should be able to embody a counter argument to your opinion in a way that a person holding that belief would agree that you understood the point. 
+                      A key point here is the verb <b>embody</b>, this is not only a theoretical abstraction of a belief, but you should be able to understand the connected emotions etc.
+                      
+                    </p>
+                    
+                   <img src="../Images/Microelectronics_Starting.jpg" alt="Smaller bioengineering-related image" class="smaller-image">
+                   
+
+    
+                </p>
+            </section>
+         </main>
+      </div>
+
+      <footer>
+         &copy; 2024 Luca | All rights reserved.
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
+            </a>
+         </div>
+      </footer>
+
+      <script>
+         function toggleSidebar() {
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
+         }
+      </script>
+
+   </body>
+</html>

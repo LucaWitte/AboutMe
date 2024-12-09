@@ -266,20 +266,134 @@
             </section>
 
             <section>
-               <h2>Research Projects</h2>
-               <p><b>Click the thumbnails for more Details</b></p>
-               <div class="project-gallery">
-                  <div class="thumbnail-container">
-                     <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1" onclick="openLightbox('lightbox1')">
-                     <p class="thumbnail-title">Integrins and Sequencing</p>
-                  </div>
-                  <div id="lightbox1" class="lightbox">
-                     <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
-                     <div class="lightbox-content">
-                        <!-- Lightbox content here -->
-                     </div>
-                  </div>
-               </div>
+                <h2>Research Projects</h2>
+                <p><b>Click the thumbnails for more Details</b></p>
+                <br>
+                
+                   <div class="project-gallery">
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1 - Integrins and Sequencing" onclick="openLightbox('lightbox1')">
+                            <p class="thumbnail-title">Integrins and Sequencing</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/SemesterProject2.PNG" alt="Project 2 - Genetic circuits" onclick="openLightbox('lightbox2')">
+                            <p class="thumbnail-title">Genetic Circuits</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/Bachelorthesis3.PNG" alt="Project 3 - bd Oxidase binding assay" onclick="openLightbox('lightbox3')">
+                            <p class="thumbnail-title">bd Oxidase Binding Assay</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/ProjectZurich2.PNG" alt="Project 4 - Omphalotin mutagenesis" onclick="openLightbox('lightbox4')">
+                            <p class="thumbnail-title">Omphalotin Mutagenesis</p>
+                    </div>
+
+                <div id="lightbox1" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Master's thesis - Multiomics for Integrin Mechanosensing</h3>
+                        <p>In this thesis, I examined how integrin signaling impacts cellular behaviors, 
+                            focusing on gene expression changes induced by integrin-mediated mechanotransduction. <br><br>
+                            Integrins, which mediate cell adhesion and signal transmission from the extracellular matrix, 
+                            play vital roles in cell migration and proliferation. <br><br>
+                            Using transcriptome sequencing on fibroblast cell lines with specific integrin receptors knocked out, 
+                            I observed significant alterations in ECM and cytoskeletal gene expression upon fibronectin exposure. 
+                            The analysis also uncovered genes linked to immune response, neural development, and disease pathways, 
+                            offering potential new avenues for therapeutic targeting. <br><br>
+                            Additionally, I developed a novel approach combining cellular confinement with single-cell transcriptomics, 
+                            enhancing our ability to study mechanosignaling at the mRNA level. 
+                            This method holds promise for understanding disease processes like cancer metastasis, where cellular mechanics play a crucial role. <br><br>
+
+                            We are currently preparing a manuscript to submit our findings, as well as a conference talk. So please stay tuned for our results being published early 2025 :)
+                            
+                            <br><br>Skills:
+                            <ul>
+                            <li>Cell culture</li>
+                            <li>Omics data analysis (Genomics, Transcriptomics, sc RNA data)</li>
+                            <li>Integrin mechnobiology</li>                                
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="lightbox2" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Research project - Statistical Models of Genetic Circuits</h3>
+                        <p>In this project, I investigated the role of negative feedback in enhancing robustness in gene expression, 
+                            specifically focusing on noise reduction mechanisms on a population level. <br><br>
+                            Biological noise, influenced by factors like environmental changes and molecule concentrations, 
+                            can disturb cellular function. Negative feedback was explored as a strategy to dampen this noise, 
+                            achieving stability in cellular outputs.<br><br> I modeled these feedback mechanisms using deterministic ordinary differential equations (ODEs) 
+                            to capture temporal changes and noise propagation across cells. By varying parameters in simulated autoregulatory networks, 
+                            I identified how specific feedback strengths impact noise and cell-to-cell variability in a heterogenous population. This research provides insights for fine-tuning synthetic gene circuits to optimize stability and performance. <br><br>
+
+                            <i><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05538-z#auth-Baptiste-Turpin-Aff1" target="_blank">This conference paper</a></i> by my project supervisor Baptiste provides an overview of the used methodology.
+
+                            <br><br>Skills:
+                            <ul>
+                            <li>Deterministic simulations (ODEs implemented in R and C++)</li>
+                            <li>Statistics (population level analysis)</li>
+                            <li>Synthetic biology (Genetic circuits, Feedback control)</li>                                
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="lightbox3" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox3')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Bachelor's thesis - Development of a label free thermal shift assay</h3>
+                        <p>In this thesis, I investigated a new method for analyzing the binding of Aurachin-derived inhibitors to cytochrome bd oxidases, 
+                            crucial enzymes involved in aerobic respiration and pathogenesis. <br><br>
+                            Cytochrome bd oxidases are of particular interest as they help bacteria adapt to environmental stresses and are linked to virulence, 
+                            making them a potential target for antibiotic development. Using a modified thermal shift assay with nanoscale differential scanning fluorimetry, 
+                            I was able to characterize the binding of an Aurachin-type inhibitor, AD 6-1, to Escherichia coli cytochrome bd I oxidase. 
+                            The assay, optimized for buffer composition and solvent, revealed a concentration-dependent shift in the enzyme's unfolding profile, 
+                            suggesting a specific interaction. <br><br> Interestingly, our observations combined with functional assays hinted at complex binding dynamics. 
+                            This novel assay provides a promising platform for future drug discovery targeting bd-type oxidases in various pathogenic bacteria. <br><br>
+                            
+                            The results can be found here:<br> <br>
+                            <i><a href="https://www.nature.com/articles/s41598-021-03288-7" target="_blank">Short-chain aurachin D derivatives are selective inhibitors of E. coli cytochrome bd-I and bd-II oxidases. Sci Rep 11, 23852 (2021).</a></i><br><br>
+                            I further contributed to solving the protein structure of another protein, the bd II oxidase. This resulted in a coauthorship on the PNAS publication highlighting the obtained insights: <br><br>
+                            <i><a href="https://www.pnas.org/doi/full/10.1073/pnas.2114013118" target="_blank">Mechanistic and structural diversity between cytochrome bd isoforms of Escherichia coli. Proc. Nat. Acad. Sci. 2021; 118 (50) e2114013118</a></i>
+                                                    
+                            <br><br>Skills:
+                            <ul>
+                            <li>Binding assays</li>
+                            <li>Structural biology (Cryo-EM)</li>
+                            <li>Biophysics (Docking, Binding kinetics, Protein stability)</li>                                
+                            </ul>
+                    </p>
+                    </div>
+                </div>
+
+                <div id="lightbox4" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox4')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Investigating the promiscuity of enzymes involved in the omphalotin biosynthesis</h3>
+                        <p>This study explored the enzymatic modification of Omphalotin A, 
+                            a cyclic peptide produced by Omphalotus olearius, focusing on how sequence changes in its core peptide affect methylation and cleavage processes. <br><br>
+                            Omphalotin A, modified by the methyltransferase domain within its precursor protein OphMA and processed by the enzyme OphP, 
+                            serves as a prototype for the borosin family of fungal natural products. By coexpressing mutated forms of OphMA and OphP in Pichia pastoris, 
+                            I analyzed how variations in core peptide sequences influenced enzymatic activity, observing shifts in methylation and cleavage patterns via mass spectrometry. <br><br>
+                            Additionally, I established culture conditions for various fungi with homologous methyltransferases, discovering a new N-methylated cyclic peptide from D. bispora. 
+                            This work highlights the potential of borosin-producing fungi to yield bioactive compounds with agricultural and pharmaceutical applications. <br><br>
+                           
+                            The results have been published here:<br> <br>
+                            <i><a href="https://linkinghub.elsevier.com/retrieve/pii/S007668792100149X" target="_blank">Enzyme-mediated backbone N-methylation in ribosomally encoded peptides. Methods Enzymol. 2021;656:429-458.</a></i><br><br>
+                            <i><a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cbic.202300626" target="_blank">Promiscuity of Omphalotin A Biosynthetic Enzymes Allows de novo Production of Non-natural Multiply Backbone N-Methylated Peptide Macrocycles in Yeast. ChemBioChem 2023; e202300626</a></i>
+                            <br><br>Skills:
+                            <ul>
+                            <li>Mutagenesis, Molecular cloning</li>
+                            <li>Microbiology (E. coli, P. pastoris)</li>
+                            <li>Peptide analytics (Mass spectrometry)</li>                                
+                            </ul>
+
+                        </p>
+                    </div>
+                </div>
+
             </section>
          </main>
       </div>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Meta Description - Optimized for SEO -->
+      <meta name="description" content="Luca Fabian Witte's personal website showcases projects in biotechnology, data science, and automation. Explore the resume, blog, and cool projects of a biotechnology enthusiast.">
+      
+      <!-- Title Tag - Optimized for SEO -->
+      <title>About Luca Witte - Biotechnology, Data Science & Automation Projects</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../style.css">
+      <link rel="icon" href="/Images/dna_32.png" type="image/png">
+
+      <style>
+         :root {
+            --green-primary: rgb(0, 94, 68); /* Primary accent color from palette */
+            --green-secondary: rgb(20, 124, 98);
+            --background: #f4f4f4; /* Light gray for background */
+            --text-color: #222;
+            --link-color: var(--green-primary);
+         }
+
+         body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+         }
+
+         header {
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 2rem;
+         }
+
+         .side-menu {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--green-secondary);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 200px;
+            padding: 1rem;
+            gap: 1rem;
+            transition: transform 0.3s;
+            transform: translateX(-100%);
+         }
+
+         .side-menu.show {
+            transform: translateX(0);
+         }
+
+         .side-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem;
+            border: 2px solid transparent;
+            text-align: center;
+         }
+
+         .side-menu a.active,
+         .side-menu a:hover {
+            background-color: #fff;
+            color: var(--green-secondary);
+            border-color: var(--green-primary);
+         }
+
+         .sidebar-toggle {
+            background-color: var(--green-primary);
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+         }
+
+         .main-content {
+            margin-left: 220px;
+            padding: 2rem;
+         }
+
+         .intro {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+         }
+
+         .intro img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--green-primary);
+         }
+
+         .intro-text h2 {
+            color: var(--green-primary);
+            margin-bottom: 1rem;
+         }
+
+         footer {
+            text-align: center;
+            background-color: var(--green-primary);
+            color: #fff;
+            padding: 1rem 0;
+            margin-top: 2rem;
+         }
+
+         .social-icons img {
+            width: 20px;
+            margin: 0 0.5rem;
+            filter: invert(1);
+         }
+
+         a {
+            color: var(--link-color);
+            text-decoration: underline;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         About Me
+      </header>
+
+      <!-- Left-hand menu starts below the header -->
+      <div class="side-menu">
+         <a href="index.html" class="active">About Me</a>
+         <a href="resume.html">My Resume</a>
+         <a href="blog.html">Blog</a>
+         <a href="portfolio.html">Cool Things I Have Done</a>
+      </div>
+
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+      
+      <!-- Main content starts here -->
+      <div class="main-content">
+         <main>
+            <!-- Introduction section with picture -->
+            <section class="intro">
+               <img src="Images/MyPicture.jpg" alt="Picture of Luca">
+               <div class="intro-text">
+                  <h2>Hi there, and welcome!</h2>
+                  <p>This text, the whole website and also myself are currently under construction - please expect changes :) <br><br>
+                     I’m Luca, a biotechnology enthusiast who loves tackling complex problems and turning them into innovative solutions. 
+                     My work blends biotechnology, data science, and automation—three things I’m deeply passionate about. 
+                     Whether I’m coding an ETL pipeline, diving into the latest biotech research, or working on cool projects, I’m always excited to explore new ideas and push boundaries.</p>
+                  <p>This website is my little corner of the web where I share my journey, showcase what I’ve been up to, and maybe even inspire a few of you along the way! 
+                     Feel free to check out my <a href="resume.html">Resume</a>, read my latest musings on the <a href="blog.html">Blog</a>, or browse through some <a href="portfolio.html">Cool Things I Have Done</a>. Let's connect and create something awesome together!</p>
+               </div>
+            </section>
+         </main>
+      </div>
+      
+      <footer>
+         &copy; 2024 Luca Fabian Witte | You can also find me here:
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
+            </a>
+         </div>
+      </footer>
+      
+      <script>
+         function toggleSidebar() {
+            const sidebar = document.querySelector('.side-menu');
+            sidebar.classList.toggle('show');
+         }
+      </script>
+   </body>
+</html>

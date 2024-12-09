@@ -5,76 +5,218 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Cool things I have done - Luca">
       <title>Cool Things I Have Done - Luca</title>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../style.css">
-      
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="icon" href="/Images/dna_32.png" type="image/png">
+
+      <style>
+         :root {
+            --green-primary: rgb(0, 94, 68);
+            --green-secondary: rgb(20, 124, 98);
+            --green-light: rgb(80, 150, 120);
+            --background: #f9f9f9;
+            --border-color: #000;
+            --text-color: #111;
+         }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         html, body {
+            height: 100%;
+         }
+
+         body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--background);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+         }
+
+         header {
+            background-color: var(--green-primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
+         }
+
+         .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--green-light);
+            border: 4px solid var(--green-primary);
+            padding: 0.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 var(--border-color);
+         }
+
+         .nav-bar a {
+            color: var(--green-primary);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: 2px solid transparent;
+         }
+
+         .nav-bar a.active,
+         .nav-bar a:hover {
+            background-color: var(--green-primary);
+            color: #fff;
+            border-color: var(--green-primary);
+         }
+
+         .content-container {
+            flex: 1;
+            max-width: 1200px;
+            width: 90%;
+            margin: 2rem auto;
+         }
+
+         .cool-thing {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            border: 4px solid var(--green-secondary);
+            background-color: #fff;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         .cool-thing img {
+            max-width: 150px;
+            height: auto;
+            border: 4px solid var(--green-primary);
+         }
+
+         .cool-thing h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+         }
+
+         .cool-thing a {
+            color: var(--green-primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--green-primary);
+         }
+
+         .cool-thing a:hover {
+            color: var(--green-secondary);
+         }
+
+         .cool-thing p {
+            font-size: 1rem;
+            line-height: 1.5;
+         }
+
+         footer {
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 4px solid var(--border-color);
+            margin-top: auto;
+         }
+
+         .social-icons {
+            margin-top: 1rem; /* Added space above social icons */
+         }
+
+         .social-icons img {
+            width: 24px;
+            margin: 0 0.5rem;
+         }
+
+         @media screen and (max-width: 768px) {
+            .cool-thing {
+               flex-direction: column;
+               align-items: flex-start;
+            }
+
+            .nav-bar {
+               flex-direction: column;
+               padding: 1rem;
+            }
+
+            .nav-bar a {
+               margin-bottom: 0.5rem;
+            }
+         }
+      </style>
    </head>
    <body>
       <header>
-         <h1>Cool Things I Have Done</h1>
+         Cool Things I Have Done
       </header>
 
-      <!-- Left-hand menu starts below the header -->
-      <div class="side-menu">
+      <!-- Navigation bar -->
+      <nav class="nav-bar">
          <a href="index.html">About Me</a>
          <a href="resume.html">My Resume</a>
          <a href="blog.html">Blog</a>
-         <a href="cool-things.html" class="active">Cool Things I Have Done</a>
-      </div>
+         <a href="cool-things.html" class="active">Projects</a>
+         <a href="contact.html">Contact</a>
+      </nav>
 
-      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+      <div class="content-container">
+         <section>
+            <h2>Projects & Accomplishments</h2>
 
-      <!-- Main content starts here -->
-      <div class="main-content">
-         <main>
-            <section>
-               <h2>Projects & Accomplishments</h2>
-
-               <div class="cool-thing">
-                  <img src="Images/Chess2.png" alt="Project 1">
-                  <div>
-                     <h3><a href="Portfolio/Blender.html">Learning to use Blender</a></h3>
-                     <p>I looked into 3d modelling with Blender. As is tradition, I started of with a donut. I further created some chess figures and started modeling my DnD character to 3d print it (to be continued).</p>
-                  </div>
+            <div class="cool-thing">
+               <img src="Images/Chess2.png" alt="Project 1">
+               <div>
+                  <h3><a href="Portfolio/Blender.html">Learning to use Blender</a></h3>
+                  <p>I looked into 3d modelling with Blender. As is tradition, I started off with a donut. I further created some chess figures and started modeling my DnD character to 3d print it (to be continued).</p>
                </div>
+            </div>
        
-               <div class="cool-thing">
-                  <img src="Images/vertex_model.gif" alt="Vertex model of cell growth">
-                  <div>
-                     <h3><a href="Portfolio/2dCellModel.html">Vertex model of cell growth</a></h3>
-                     <p>Draft / Work in progress: Explanation of how I implemented a 2d vertex model simulating cell growth and why this is usefull. </p>
-                  </div>
+            <div class="cool-thing">
+               <img src="Images/vertex_model.gif" alt="Vertex model of cell growth">
+               <div>
+                  <h3><a href="Portfolio/2dCellModel.html">Vertex model of cell growth</a></h3>
+                  <p>Draft / Work in progress: Explanation of how I implemented a 2d vertex model simulating cell growth and why this is useful.</p>
                </div>
+            </div>
 
-              <div class="cool-thing">
-                  <img src="Images/ESP32.PNG" alt="Moodtracker ESP32">
-                  <div>
-                     <h3><a href="Portfolio/Moodtracker.html">Building a Mood tracker using an ESP32</a></h3>
-                     <p>I built a little device that gives me a questionaire about some high-level lifestyle factors twice a day and sends this data to a google sheet for statistical analysis. Detailed descriptions and images coming soon! </p>
-                  </div>
+            <div class="cool-thing">
+               <img src="Images/ESP32.PNG" alt="Moodtracker ESP32">
+               <div>
+                  <h3><a href="Portfolio/Moodtracker.html">Building a Mood tracker using an ESP32</a></h3>
+                  <p>I built a little device that gives me a questionnaire about some high-level lifestyle factors twice a day and sends this data to a Google Sheet for statistical analysis. Detailed descriptions and images coming soon!</p>
                </div>
+            </div>
 
-               <div class="cool-thing">
-                  <img src="Images/3dPrinting_Thumbnail.PNG" alt="Project 2">
-                  <div>
-                     <h3><a href="Portfolio/3dPrinting.html">3d printing adventures</a></h3>
-                     <p>Some stuff I have 3d modelled and printed. This will be expanded. </p>
-                  </div>
+            <div class="cool-thing">
+               <img src="Images/3dPrinting_Thumbnail.PNG" alt="Project 2">
+               <div>
+                  <h3><a href="Portfolio/3dPrinting.html">3d printing adventures</a></h3>
+                  <p>Some stuff I have 3d modelled and printed. This will be expanded.</p>
                </div>
+            </div>
                
-               <div class="cool-thing">
-                  <img src="Images/MyPicture.webp" alt="Project 3">
-                  <div>
-                     <h3><a href="Portfolio/project3.html">Music</a></h3>
-                     <p>Right now there is nothing here. I will later on add some guitar things I recorded over the last years, as well as maybe some stuff from my old band, Midi tracks, etc. Please stay tuned for updates :) </p>
-                  </div>
+            <div class="cool-thing">
+               <img src="Images/MyPicture.webp" alt="Project 3">
+               <div>
+                  <h3><a href="Portfolio/project3.html">Music</a></h3>
+                  <p>Right now there is nothing here. I will later on add some guitar things I recorded over the last years, as well as maybe some stuff from my old band, MIDI tracks, etc. Please stay tuned for updates :)</p>
                </div>
-            </section>
-         </main>
+            </div>
+         </section>
       </div>
       
       <footer>
-         &copy; 2024 Luca | All rights reserved.
+         &copy; 2024 Luca Witte | All rights reserved.
          <div class="social-icons">
             <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
@@ -84,13 +226,5 @@
             </a>
          </div>
       </footer>
-
-      <script>
-         function toggleSidebar() {
-            const sidebar = document.querySelector('.side-menu');
-            sidebar.classList.toggle('show');
-         }
-      </script>
-      
    </body>
 </html>

@@ -104,16 +104,18 @@
          }
          
          .tooltip {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--green-light);
-            color: #fff;
-            padding: 0.5rem;
-            border-radius: 4px;
-            z-index: 10;
-            font-size: 0.8rem;
+             display: none;
+             position: absolute;
+             bottom: 35px;
+             left: 50%;
+             transform: translateX(-50%);
+             background-color: var(--green-secondary); /* Tooltip background */
+             color: #fff;
+             padding: 0.5rem 1rem;
+             border: 2px solid var(--green-primary); /* Tooltip border */
+             border-radius: 5px;
+             box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
+             font-size: 0.9rem;
          }
 
          .project-gallery {

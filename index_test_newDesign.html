@@ -4,176 +4,164 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Luca Fabian Witte's personal website showcases projects in biotechnology, data science, and automation. Explore the resume, blog, and cool projects of a biotechnology enthusiast.">
-      <title>About Luca Witte - Biotechnology, Data Science & Automation Projects</title>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <title>Luca Witte | Biotechnology, Data Science & Automation</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
       <link rel="icon" href="/Images/dna_32.png" type="image/png">
 
       <style>
          :root {
-            --green-primary: rgb(0, 94, 68); /* Primary accent color */
-            --green-secondary: rgb(20, 124, 98); /* Secondary green */
-            --background: #f4f4f4; /* Light gray */
-            --text-color: #222;
-            --link-color: var(--green-primary);
+            --green-primary: rgb(0, 94, 68);
+            --green-secondary: rgb(20, 124, 98);
+            --background: #f9f9f9;
+            --border-color: #000;
+            --text-color: #111;
+         }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
          }
 
          body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto Mono', monospace;
             background-color: var(--background);
             color: var(--text-color);
             display: flex;
             flex-direction: column;
+            align-items: center;
          }
 
          header {
             background-color: var(--green-primary);
+            width: 100%;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
-            font-size: 2rem;
+            padding: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
          }
 
-         .side-menu {
-            background-color: var(--green-secondary);
-            color: #fff;
-            height: 100vh;
-            width: 250px;
-            padding: 2rem 1rem;
-            position: fixed;
-            top: 0;
-            left: 0;
+         .content-container {
+            max-width: 1200px;
+            width: 90%;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-         }
-
-         .side-menu a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem;
-            border: 2px solid transparent;
-            text-align: left;
-         }
-
-         .side-menu a.active,
-         .side-menu a:hover {
-            background-color: #fff;
-            color: var(--green-secondary);
-            border-color: var(--green-primary);
-         }
-
-         .main-content {
-            margin-left: 270px; /* Leave space for side menu */
-            padding: 2rem;
-            flex: 1;
-         }
-
-         .intro {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
             gap: 2rem;
+            margin-top: 2rem;
          }
 
-         .intro img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+         .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+         }
+
+         .hero img {
+            max-width: 100%;
             border: 4px solid var(--green-primary);
+            box-shadow: 8px 8px 0 var(--border-color);
          }
 
-         .intro-text h2 {
-            color: var(--green-primary);
+         .hero-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+         }
+
+         .hero-text h2 {
+            font-size: 2rem;
             margin-bottom: 1rem;
+            color: var(--green-primary);
+         }
+
+         .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+         }
+
+         .nav-card {
+            background-color: var(--green-secondary);
+            color: #fff;
+            padding: 1rem;
+            border: 4px solid var(--border-color);
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+         }
+
+         .nav-card:hover {
+            transform: translateY(-4px);
+            background-color: var(--green-primary);
          }
 
          footer {
-            text-align: center;
+            margin-top: 2rem;
             background-color: var(--green-primary);
             color: #fff;
+            text-align: center;
             padding: 1rem 0;
-            margin-top: auto;
+            border-top: 4px solid var(--border-color);
+            width: 100%;
          }
 
          .social-icons img {
-            width: 20px;
+            width: 24px;
             margin: 0 0.5rem;
             filter: invert(1);
+            transition: transform 0.2s ease;
          }
 
-         a {
-            color: var(--link-color);
-            text-decoration: underline;
+         .social-icons img:hover {
+            transform: scale(1.2);
          }
 
          @media screen and (max-width: 768px) {
-            .side-menu {
-               transform: translateX(-100%);
-               transition: transform 0.3s ease-in-out;
+            .hero {
+               grid-template-columns: 1fr;
+               text-align: center;
             }
 
-            .side-menu.show {
-               transform: translateX(0);
+            .hero img {
+               margin: 0 auto;
             }
 
-            .sidebar-toggle {
-               display: block;
+            .nav-grid {
+               grid-template-columns: 1fr;
             }
-
-            .main-content {
-               margin-left: 0;
-            }
-         }
-
-         .sidebar-toggle {
-            background-color: var(--green-primary);
-            color: #fff;
-            border: none;
-            font-size: 1.5rem;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            display: none;
          }
       </style>
    </head>
    <body>
       <header>
-         About Me
+         Luca Fabian Witte
       </header>
 
-      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+      <div class="content-container">
+         <section class="hero">
+            <img src="Images/MyPicture.jpg" alt="Picture of Luca">
+            <div class="hero-text">
+               <h2>Hi there!</h2>
+               <p>Welcome to my personal corner of the web! I’m Luca, a biotechnology enthusiast passionate about blending science and technology to solve complex problems. My expertise lies in biotechnology, data science, and automation.</p>
+               <p>Feel free to explore this website to learn more about me, view my resume, read my blog, or check out some of my coolest projects!</p>
+            </div>
+         </section>
 
-      <div class="side-menu">
-         <a href="index.html" class="active">About Me</a>
-         <a href="resume.html">My Resume</a>
-         <a href="blog.html">Blog</a>
-         <a href="portfolio.html">Cool Things I Have Done</a>
-      </div>
-
-      <div class="main-content">
-         <main>
-            <section class="intro">
-               <img src="Images/MyPicture.jpg" alt="Picture of Luca">
-               <div class="intro-text">
-                  <h2>Hi there, and welcome!</h2>
-                  <p>This text, the whole website and also myself are currently under construction - please expect changes :) <br><br>
-                     I’m Luca, a biotechnology enthusiast who loves tackling complex problems and turning them into innovative solutions. 
-                     My work blends biotechnology, data science, and automation—three things I’m deeply passionate about. 
-                     Whether I’m coding an ETL pipeline, diving into the latest biotech research, or working on cool projects, I’m always excited to explore new ideas and push boundaries.</p>
-                  <p>This website is my little corner of the web where I share my journey, showcase what I’ve been up to, and maybe even inspire a few of you along the way! 
-                     Feel free to check out my <a href="resume.html">Resume</a>, read my latest musings on the <a href="blog.html">Blog</a>, or browse through some <a href="portfolio.html">Cool Things I Have Done</a>. Let's connect and create something awesome together!</p>
-               </div>
-            </section>
-         </main>
+         <div class="nav-grid">
+            <a href="resume.html" class="nav-card">Resume</a>
+            <a href="blog.html" class="nav-card">Blog</a>
+            <a href="portfolio.html" class="nav-card">Projects</a>
+            <a href="contact.html" class="nav-card">Contact Me</a>
+         </div>
       </div>
 
       <footer>
-         &copy; 2024 Luca Fabian Witte | You can also find me here:
+         &copy; 2024 Luca Fabian Witte | Connect with me:
          <div class="social-icons">
             <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
@@ -183,12 +171,5 @@
             </a>
          </div>
       </footer>
-
-      <script>
-         function toggleSidebar() {
-            const sidebar = document.querySelector('.side-menu');
-            sidebar.classList.toggle('show');
-         }
-      </script>
    </body>
 </html>

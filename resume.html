@@ -92,13 +92,38 @@
             color: var(--green-primary);
          }
 
-         .education-block,
+         .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+         }
+
          .timeline-item {
             border: 4px solid var(--green-secondary);
             background-color: #fff;
             padding: 1rem;
-            margin-bottom: 1.5rem;
             box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         .timeline-date {
+            font-weight: bold;
+            color: var(--green-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+         }
+
+         .timeline-item ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+         }
+
+         .education-block {
+            border: 4px solid var(--green-secondary);
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 8px 8px 0 var(--border-color);
+            margin-bottom: 2rem;
          }
 
          .collapsible-button {
@@ -122,51 +147,56 @@
             margin-top: 1rem;
          }
 
-         .timeline-date {
-            font-weight: bold;
-            color: var(--green-primary);
-            margin-bottom: 0.5rem;
-            display: block;
-         }
-
-         .timeline-item ul {
-            margin-top: 0.5rem;
-            padding-left: 1.5rem;
-            list-style-type: disc;
-         }
-
-         .timeline {
-            display: flex;
-            flex-direction: column;
+         .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
          }
 
-         .skills-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
+         .thumbnail-container {
+            text-align: center;
          }
 
-         .skills-container div {
-            flex: 1;
+         .thumbnail {
+            max-width: 100%;
+            border: 4px solid var(--green-primary);
+            box-shadow: 4px 4px 0 var(--border-color);
+            cursor: pointer;
          }
 
-         .progress-bar {
+         .thumbnail-title {
+            margin-top: 0.5rem;
+            font-weight: bold;
+            color: var(--green-primary);
+         }
+
+         .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-color: #e0e0e0;
-            height: 20px;
-            border: 2px solid var(--border-color);
-            margin-bottom: 1rem;
-            position: relative;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
          }
 
-         .progress-bar div {
-            height: 100%;
-            background-color: var(--green-primary);
-            text-align: right;
+         .lightbox-content {
+            background-color: #fff;
+            padding: 2rem;
+            border: 4px solid var(--green-primary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
             color: #fff;
-            line-height: 20px;
-            padding-right: 5px;
+            font-size: 2rem;
+            cursor: pointer;
          }
 
          footer {
@@ -175,7 +205,6 @@
             text-align: center;
             padding: 1rem 0;
             border-top: 4px solid var(--border-color);
-            margin-top: auto;
          }
 
          .social-icons {
@@ -188,8 +217,8 @@
          }
 
          @media screen and (max-width: 768px) {
-            .skills-container {
-               flex-direction: column;
+            .project-gallery {
+               grid-template-columns: repeat(2, 1fr);
             }
          }
       </style>
@@ -217,7 +246,6 @@
                <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
                <div class="collapsible-content">
                   <p>Specialized in advanced biotechnology with a focus on bioinformatics, data science, and innovative techniques in life sciences. </p>
-                  <p>Coursework included:</p>
                   <ul>
                      <li>Cellular Engineering</li>
                      <li>Bioprocess Design</li>
@@ -232,8 +260,6 @@
                   <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management</p>
                   <ul>
                      <li>Document management solutions - technical support, ontologies, automation.</li>
-                     <li>Business intelligence data analytics and visualization. </li>
-                     <li>ETL pipelines, Interactive visualizations, Data science and Data engineering.</li>
                   </ul>
                </div>
                <div class="timeline-item">
@@ -241,56 +267,18 @@
                   <p><strong>ETH Zürich</strong> | Master Thesis - Multiomics for Integrin Mechanosensing</p>
                   <ul>
                      <li>Single cell RNA sequencing to study integrin signaling in mammalian cells.</li>
-                     <li>Developed novel protocols for physical confinement of mammalian cells.</li>
-                     <li>Multi-omics data analysis and integration.</li>
-                  </ul>
-               </div>
-               <div class="timeline-item">
-                  <span class="timeline-date">Jan 2023</span>
-                  <p><strong>Esther Goeltzer Augenoptik & Optometrie</strong> | Shiny app developer</p>
-                  <ul>
-                     <li>R Shiny applications for automated analysis and visualization of diagnostic data.</li>
-                  </ul>
-               </div>
-               <div class="timeline-item">
-                  <span class="timeline-date">Sep 2022</span>
-                  <p><strong>ETH Zürich</strong> | Research Project - Statistical models of genetic circuits</p>
-                  <ul>
-                     <li>Nonlinear mixed-effects models of cell-to-cell variability in synthetic gene circuits.</li>
-                     <li>Deterministic simulations of microbial populations and statistical analysis.</li>
-                  </ul>
-               </div>
-               <div class="timeline-item">
-                  <span class="timeline-date">Jun 2021</span>
-                  <p><strong>Wacker Chemie</strong> | Summer Rotation Student - Manufacturing Operations</p>
-                  <ul>
-                     <li>Handled high-purity silicon deposition for semiconductors.</li>
-                     <li>Preparing, maintaining and operating industrial machinery.</li>
                   </ul>
                </div>
             </div>
          </section>
 
          <section>
-            <h2>Skills</h2>
-            <div class="skills-container">
-               <div>
-                  <p><strong>Labwork:</strong></p>
-                  <div class="progress-bar"><div style="width: 95%">95%</div></div>
-                  <p><strong>Data science & Statistics:</strong></p>
-                  <div class="progress-bar"><div style="width: 90%">90%</div></div>
-                  <p><strong>Sequencing technologies:</strong></p>
-                  <div class="progress-bar"><div style="width: 85%">85%</div></div>
-               </div>
-               <div>
-                  <p><strong>Soft Skills:</strong></p>
-                  <ul>
-                     <li>Project Management</li>
-                     <li>Adaptability</li>
-                     <li>Creative Problem-Solving</li>
-                     <li>Collaboration & Communication</li>
-                     <li>Attention to Detail</li>
-                  </ul>
+            <h2>Research Projects</h2>
+            <p><b>Click the thumbnails for more Details</b></p>
+            <div class="project-gallery">
+               <div class="thumbnail-container">
+                  <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1" onclick="openLightbox('lightbox1')">
+                  <p class="thumbnail-title">Integrins and Sequencing</p>
                </div>
             </div>
          </section>
@@ -313,6 +301,14 @@
             const content = button.nextElementSibling;
             content.style.display = content.style.display === "block" ? "none" : "block";
             button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
+         }
+
+         function openLightbox(id) {
+            document.getElementById(id).style.display = 'flex';
+         }
+
+         function closeLightbox(id) {
+            document.getElementById(id).style.display = 'none';
          }
       </script>
    </body>

@@ -431,14 +431,22 @@
          </div>
       </footer>
 
-      <script>
-         function openLightbox(id) {
-            document.getElementById(id).style.display = 'flex';
-         }
+    <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
+        function toggleCollapse(button) {
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+            button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
+        }
+    </script>
+    
+    <script>
+        function openLightbox(id) {
+            document.getElementById(id).style.display = 'block';
+        }
 
-         function closeLightbox(id) {
+        function closeLightbox(id) {
             document.getElementById(id).style.display = 'none';
-         }
-      </script>
+        }
+    </script>
    </body>
 </html>

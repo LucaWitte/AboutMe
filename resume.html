@@ -1,37 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resume of Luca">
-    <title>Resume - Luca</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    
-</head>
-<body>
-    <header>
-      <h1>Resume - Luca</h1>
-      <p class="summary">
-          Experienced Biotech Professional <br>
-          Specializing in bridging Bioengineering and Bioinformatics
-      </p>
-    </header>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Resume of Luca">
+      <title>Resume - Luca Witte</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="icon" href="/Images/dna_32.png" type="image/png">
+      <style>
+         :root {
+            --green-primary: rgb(0, 94, 68);
+            --green-secondary: rgb(20, 124, 98);
+            --background: #f9f9f9;
+            --border-color: #000;
+            --text-color: #111;
+         }
 
-    <div class="side-menu">
-        <a href="index.html">About Me</a>
-        <a href="resume.html" class="active">My Resume</a>
-        <a href="blog.html">Blog</a>
-        <a href="portfolio.html">Cool Things I Have Done</a>
-    </div>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
 
-   <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+         html, body {
+            height: 100%;
+         }
 
-    <div class="main-content">
-        <main>
+         body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--background);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+         }
+
+         header {
+            background-color: var(--green-primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
+         }
+
+         .summary {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+         }
+
+         .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--green-secondary);
+            border: 4px solid var(--green-primary);
+            padding: 0.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 var(--border-color);
+         }
+
+         .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: 2px solid transparent;
+         }
+
+         .nav-bar a.active,
+         .nav-bar a:hover {
+            background-color: var(--green-primary);
+            color: #fff;
+            border-color: var(--green-primary);
+         }
+
+         .content-container {
+            flex: 1;
+            max-width: 1200px;
+            width: 90%;
+            margin: 2rem auto;
+         }
+
+
+          .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 1rem;
+            position: relative;
+         }
+
+         .progress-bar div {
+            height: 100%;
+            background-color: var(--green-primary);
+            text-align: right;
+            color: #fff;
+            line-height: 20px;
+            padding-right: 5px;
+         }
+         
+         .tooltip {
+             display: none;
+             position: absolute;
+             bottom: 35px;
+             left: 50%;
+             transform: translateX(-50%);
+             background-color: var(--green-secondary); /* Tooltip background */
+             color: #fff;
+             padding: 5px 10px;
+             border: 2px solid var(--green-primary); /* Tooltip border */
+             border-radius: 5px;
+             box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
+             font-size: 0.9rem;
+         }
+
+         .project-gallery {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+         }
+
+         .thumbnail-container {
+            text-align: center;
+         }
+
+         .thumbnail {
+            max-width: 150px;
+            cursor: pointer;
+            border: 4px solid var(--green-secondary);
+            box-shadow: 6px 6px 0 var(--border-color);
+         }
+
+            .thumbnail:hover {
+       transform: scale(1.05);
+       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+         
+  .thumbnail-container {
+       text-align: center;
+       width: 170px;
+       margin-bottom: 10px;
+   }
+   
+   .thumbnail-title {
+       font-size: 0.8em;
+       color: #555;
+       margin-top: 5px;
+   }
+         .thumbnail-title {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+         }
+
+         .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .lightbox-content {
+             margin: 10% auto;
+             padding: 20px;
+             background-color: white;
+             width: 80%;
+             max-width: 800px;
+             border: 4px solid var(--green-primary); /* Border around lightbox content */
+             box-shadow: 8px 8px 0 var(--border-color); /* Shadow for a bold look */
+         }
+
+         .lightbox .close {
+             position: absolute;
+             top: 20px;
+             right: 40px;
+             color: white;
+             font-size: 40px;
+             cursor: pointer;
+         }
+
+         footer {
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 4px solid var(--border-color);
+            margin-top: auto;
+         }
+
+         .social-icons img {
+            width: 24px;
+            margin: 0 0.5rem;
+         }
+
+            .timeline {
+       position: relative;
+       margin: 0;
+       padding-left: 150px;
+   }
+   
+   .timeline:before {
+       content: '';
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 100px;
+       width: 2px;
+       background: var(--green-primary); /* Timeline line color */
+   }
+   
+   .timeline-item {
+       margin-bottom: 30px;
+       position: relative;
+       padding-left: 0px;
+       padding-right: 30px;
+   }
+   
+   .timeline-item:before {
+       content: '';
+       position: absolute;
+       left: -60px;
+       background-color: var(--green-secondary); /* Timeline markers */      
+       width: 20px;
+       height: 20px;
+       border-radius: 50%;
+   }
+   
+   .timeline-date {
+       position: absolute;
+       left: -140px;
+       top: 0;
+       color: var(--green-primary);
+       font-size: 0.9em;
+       font-weight: bold;
+       text-align: left;
+       width: 80px;
+   }
+
+   .education-block {
+       background-color: #fff;
+       border: 4px solid var(--green-secondary); /* Neobrutalist border */
+       box-shadow: 8px 8px 0 var(--border-color); /* Strong shadow effect */
+       padding: 1.5rem;
+       margin-bottom: 2rem;
+   }
+   
+   .education-block p {
+       font-size: 1.1em;
+       color: #0d3b66;
+       margin: 0 0 15px 0;
+       font-weight: bold;
+   }
+   
+   .education-content {
+       margin-bottom: 10px;
+   }
+   
+   .education-tooltip {
+       display: none;
+       position: absolute;
+       right: -300px;
+       top: 50%;
+       transform: translateY(-50%);
+       width: 250px;
+       padding: 15px;
+       background-color: #ffffff;
+       color: #333333;
+       border: 1px solid #0d3b66;
+       border-radius: 10px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+       font-size: 0.9em;
+       line-height: 1.4em;
+   }
+   
+   .education-tooltip strong {
+       color: #0d3b66;
+       font-size: 1em;
+   }
+   
+   .skills-container {
+       display: flex;
+       justify-content: space-between;
+       gap: 20px;
+       padding-top: -20px;
+   }
+   
+   .skills-hard {
+       flex: 1;
+       padding: 0px;
+   }
+   
+   .skills-soft {
+       flex: 1;
+       padding: 20px;
+       margin-top: auto;
+       margin-bottom: auto;
+   }
+   
+   .skills-soft .skill-item {
+       margin: 10px 0;
+       padding: 7px;
+       border-radius: 25px;
+       background-color: #f4f4f4;
+       color: #333;
+       font-size: 16px;
+       text-align: center;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       position: relative;
+       cursor: pointer;
+       transition: background-color 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .skills-soft .skill-item:hover {
+       background-color: #ffcc00;
+       color: #0d3b66;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   }
+   
+   .skill-item:hover .tooltip {
+       display: block;
+   }
+   
+   .divider {
+       width: 2px;
+       background-color: #ddd;
+       height: 100%;
+   }
+
+
+   .lightbox {
+       display: none;
+       position: fixed;
+       z-index: 2;
+       left: 0;
+       top: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.9);
+   }
+      
+   
+   
+   .collapsible-button {
+       background-color: #0d3b66;
+       color: #ffffff;
+       border: none;
+       padding: 8px 12px;
+       margin-top: 10px;
+       cursor: pointer;
+       font-size: 0.9em;
+       font-weight: bold;
+       border-radius: 5px;
+       transition: background-color 0.3s ease, transform 0.3s ease;
+   }
+   
+      .collapsible-button:hover {
+          background-color: #1d4e89;
+          transform: scale(1.05);
+      }
+      
+      .collapsible-content {
+          display: none;
+          padding-top: 15px;
+          font-size: 0.95em;
+          line-height: 1.6;
+          color: #333;
+          border-top: 1px solid #e0e0e0;
+          margin-top: 10px;
+      }
+      
+      .collapsible-content ul {
+          padding-left: 20px;
+          margin-top: 10px;
+      }
+      
+      .collapsible-content ul li {
+          list-style-type: disc;
+          color: #0d3b66;
+          margin-bottom: 5px;
+      }
+   
+     .education-logo-container {
+         float: right;
+         margin-left: 15px; /* Adds some space between text and logo */
+         max-width: 120px;
+         align-items: center; 
+     }
+     
+     .education-logo-container img {
+         max-width: 120px; 
+         height: auto;
+     }
+     
+     .logo-container {
+         /* Maintain original styling for timeline logos, or add specific styling here as needed */
+         position: absolute;
+         right: 0;
+         top: 0;
+     }
+     
+     .logo-container img {
+         max-width: 60px; /* Keep the original size for timeline logos */
+         height: auto;
+     }
+   
+            
+         @media screen and (max-width: 768px) {
+            .nav-bar {
+               flex-direction: column;
+               padding: 1rem;
+            }
+
+            .nav-bar a {
+               margin-bottom: 0.5rem;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         Resume - Luca Witte
+         <p class="summary">
+            Experienced Biotech Professional <br>
+            Specializing in bridging Bioengineering and Bioinformatics
+         </p>
+      </header>
+
+      <!-- Navigation bar -->
+      <nav class="nav-bar">
+         <a href="index.html">About Me</a>
+         <a href="resume.html" class="active">My Resume</a>
+         <a href="blog.html">Blog</a>
+         <a href="portfolio.html">Projects</a>
+         <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="content-container">
+         <main>
             <p>
-                You can download <a href="Images/CV.pdf" target="_blank">my CV as pdf here</a>. <br>
-                Below you will find an interactive view with additional details about my research projects. </p>
+               You can download <a href="Images/CV.pdf" target="_blank">my CV as pdf here</a>. <br>
+               Below you will find an interactive view with additional details about my research projects.
+            </p>
+
             <section>
                 <h2>Education & Experience</h2>
                  
@@ -163,7 +583,7 @@
                     
                 </div>
             </section>
-            
+
             <section>
                 <h2>Skills</h2>
                 <div class="skills-container">
@@ -331,8 +751,20 @@
                 </div>
 
             </section>
-        </main>
-    </div>
+         </main>
+      </div>
+
+      <footer>
+         &copy; 2024 Luca Witte | All rights reserved.
+         <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
+               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
+            </a>
+         </div>
+      </footer>
 
     <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
         function toggleCollapse(button) {
@@ -351,28 +783,5 @@
             document.getElementById(id).style.display = 'none';
         }
     </script>
-
-    
-    <script>
-     function toggleSidebar() {
-        const sidebar = document.querySelector('.side-menu');
-        sidebar.classList.toggle('show');
-     }
-    </script>
-    
-    <footer style="text-align: center; padding: 20px; background-color: #2a5a8a; color: #e0e0e0; position: fixed; width: 100%; bottom: 0; z-index: 0;">
-        &copy; 2024 Luca | You can also find me here:
-        <div class="social-icons" style="margin-top: 10px;">
-            <a href="https://www.linkedin.com/in/lucawitte" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
-            </a>
-            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
-                <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
-            </a>
-        </div>
-    </footer>
-
-
-    
-</body>
+   </body>
 </html>

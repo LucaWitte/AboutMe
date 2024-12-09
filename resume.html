@@ -257,10 +257,22 @@
    
    .education-block p {
        font-size: 1.1em;
-       color: #0d3b66;
-       margin: 0 0 15px 0;
+       color: var(--text-color); /* Use primary text color */
+       margin: 0 0 15px;
        font-weight: bold;
    }
+
+   .education-block ul {
+    list-style-type: disc;
+    margin: 1rem 0 0 1.5rem;
+    color: var(--green-primary); /* Match with theme */
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.education-block ul li {
+    margin-bottom: 0.5rem;
+}
    
    .education-content {
        margin-bottom: 10px;
@@ -351,32 +363,33 @@
       
    
    
-   .collapsible-button {
-       background-color: #0d3b66;
-       color: #ffffff;
-       border: none;
-       padding: 8px 12px;
-       margin-top: 10px;
-       cursor: pointer;
-       font-size: 0.9em;
-       font-weight: bold;
-       border-radius: 5px;
-       transition: background-color 0.3s ease, transform 0.3s ease;
-   }
+      .collapsible-button {
+          background-color: var(--green-primary); /* Primary green */
+          color: #fff;
+          border: 2px solid var(--green-secondary); /* Bold border */
+          padding: 0.5rem 1rem;
+          margin-top: 1rem;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: bold;
+          border-radius: 0; /* No rounded corners for a brutalist look */
+          box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
+          transition: transform 0.2s ease, background-color 0.3s ease;
+      }
    
       .collapsible-button:hover {
-          background-color: #1d4e89;
-          transform: scale(1.05);
+          background-color: var(--green-secondary); /* Secondary green on hover */
+          transform: translateY(-2px); /* Slight lift on hover */
       }
       
       .collapsible-content {
           display: none;
-          padding-top: 15px;
+          padding-top: 1rem;
           font-size: 0.95em;
           line-height: 1.6;
-          color: #333;
-          border-top: 1px solid #e0e0e0;
-          margin-top: 10px;
+          color: var(--text-color); /* Default text color */
+          border-top: 2px solid var(--green-secondary); /* Separate with a border */
+          margin-top: 1rem;
       }
       
       .collapsible-content ul {
@@ -389,6 +402,13 @@
           color: #0d3b66;
           margin-bottom: 5px;
       }
+
+   .education-block .divider {
+       width: 100%;
+       height: 2px;
+       background-color: var(--green-secondary); /* Divider color */
+       margin: 1rem 0;
+   }
    
      .education-logo-container {
          float: right;
@@ -449,7 +469,7 @@
          <main>
             <p>
                You can download <a href="Images/CV.pdf" target="_blank">my CV as pdf here</a>. <br>
-               Below you will find an interactive view with additional details about my research projects. <br><br>
+               Below you will find an interactive view with additional details about my research projects.<br><br>
             </p>
 
             <section>

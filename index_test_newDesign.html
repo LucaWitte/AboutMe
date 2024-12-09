@@ -60,7 +60,7 @@
          }
 
          .hero img {
-            max-width: 100%;
+            max-width: 80%; /* Reduced size */
             border: 4px solid var(--green-primary);
             box-shadow: 8px 8px 0 var(--border-color);
          }
@@ -113,12 +113,11 @@
          .social-icons img {
             width: 24px;
             margin: 0 0.5rem;
-            filter: invert(1);
-            transition: transform 0.2s ease;
          }
 
-         .social-icons img:hover {
-            transform: scale(1.2);
+         a {
+            color: inherit;
+            text-decoration: underline;
          }
 
          @media screen and (max-width: 768px) {

@@ -1,315 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Resume of Luca">
-      <title>Resume - Luca</title>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="icon" href="/Images/dna_32.png" type="image/png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Luca">
+    <title>Resume - Luca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    
+</head>
+<body>
+    <header>
+      <h1>Resume - Luca</h1>
+      <p class="summary">
+          Experienced Biotech Professional <br>
+          Specializing in bridging Bioengineering and Bioinformatics
+      </p>
+    </header>
 
-      <style>
-         :root {
-            --green-primary: rgb(0, 94, 68);
-            --green-secondary: rgb(20, 124, 98);
-            --green-light: rgb(80, 150, 120);
-            --background: #f9f9f9;
-            --border-color: #000;
-            --text-color: #111;
-         }
+    <div class="side-menu">
+        <a href="index.html">About Me</a>
+        <a href="resume.html" class="active">My Resume</a>
+        <a href="blog.html">Blog</a>
+        <a href="portfolio.html">Cool Things I Have Done</a>
+    </div>
 
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-         }
+   <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
 
-         html, body {
-            height: 100%;
-         }
+    <div class="main-content">
+        <main>
+            <p>
+                You can download <a href="Images/CV.pdf" target="_blank">my CV as pdf here</a>. <br>
+                Below you will find an interactive view with additional details about my research projects. </p>
+            <section>
+                <h2>Education & Experience</h2>
+                 
+               <div class="education-block">
+                    <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
+                    <div class="education-logo-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                    </div>
+                    <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
+                    <div class="collapsible-content">
+                        <strong>Program Details:</strong>
+                        <p>Specialized in advanced biotechnology with a focus on bioinformatics, data science, and innovative techniques in life sciences. </p>
+                        <p>Coursework included:</p>
+                        <ul>
+                            <li>Cellular Engineering</li>
+                            <li>Bioprocess Design</li>
+                            <li>Data Analysis & Statistics</li>
+                            <li>Next-Generation Sequencing</li>
+                        </ul>
+                       
+                        <p>Hands-on laboratory courses included:</p>
+                        <ul>
+                            <li>Cellular Engineering and Genetic Circuits</li>
+                            <li>Laboratory automation, Cell sorting, Microscopy</li>
+                            <li>Microbial Engineering for Biotechnology</li>
+                            <li>Next-Generation Sequencing</li>
+                        </ul>
+                    </div>
+                </div>
+                                            
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2023</span>
+                        <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management</p>
+                        <ul>
+                            <li>Document management solutions - technical support, ontologies, automation.</li>
+                            <li>Business intelligence data analytics and visualization. </li>
+                            <li>ETL pipelines, Interactive visualizations, Data science and Data engineering.</li>
+                        </ul>                        
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hoffmann-La_Roche_logo.svg/2560px-Hoffmann-La_Roche_logo.svg.png" alt="Roche Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Feb 2023</span>
+                        <p><strong>ETH Zürich</strong> | Master Thesis - Multiomics for Integrin Mechanosensing</p>
+                        <ul>
+                            <li>Single cell RNA sequencing to study integrin signaling in mammalian cells.</li>
+                            <li>Developed novel protocols for physical confinement of mammalian cells.</li>
+                            <li>Multi-omics data analysis and integration.</li>
+                        </ul>                        
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2023</span>
+                        <p><strong>Esther Goeltzer Augenoptik & Optometrie</strong> | Shiny app developer</p>
+                        <ul>
+                            <li>R Shiny applications for automated analysis and visualization of diagnostic data.</li>
+                        </ul>
+                        <div class="logo-container">
+                            <img src="https://esthergoeltzer.de/wp-content/uploads/2023/01/logo-EstherGoeltzer-200.png" alt="Goeltzer Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sep 2022</span>
+                        <p><strong>ETH Zürich</strong> | Research Project - Statistical models of genetic circuits</p>
+                        <ul>
+                            <li>Nonlinear mixed-effects models of cell-to-cell variability in synthetic gene circuits.</li>
+                            <li>Deterministic simulations of microbial populations and statistical analysis.</li>
+                        </ul>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/2560px-ETH_Z%C3%BCrich_Logo_black.svg.png" alt="ETH Logo">
+                        </div>
+                    </div>
+                        
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jun 2021</span>
+                        <p><strong>Wacker Chemie</strong> | Summer Rotation Student - Manufacturing Operations</p>
+                        <ul>
+                            <li>Handled high-purity silicon deposition for semiconductors. </li>
+                            <li>Preparing, maintaining and operating industrial machinery.</li>
+                        </ul>                        
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wacker_Chemie.svg/640px-Wacker_Chemie.svg.png" alt="Wacker Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2020</span>
+                        <p><strong>MPI of Biophysics</strong> | Bachelor’s Thesis - Drug binding Assays </p>
+                        <ul>
+                            <li>Developed and optimized a thermal shift assay for drug candidates.</li>
+                            <li>Implemented automated statistical data analysis pipeline in R.</li>
+                            <li>protein expression and purification, biophysical characterizations.</li>
+                        </ul>                        
+                        <div class="logo-container">
+                            <img src="https://www.myscience.org/var/mysciencede/image/logo/mpg.svg" alt="MPI Logo">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Feb 2019</span>
+                        <p><strong>BTU Senftenberg</strong> | Research assistant in Biochemistry</p>
+                        <ul>
+                            <li>Cultivation of different immortalized and primary cell lines, Cell-based assays.</li>
+                            <li>Lab course preparation: Protein, RNA and DNA purification, Molecular cloning.</li>
+                        </ul>
+                        <div class="logo-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Brandenburgische_Technische_Universit%C3%A4t_Cottbus-Senftenberg_2013_logo.svg" alt="BTU Logo">
+                        </div>
+                    </div>
 
-         body {
-            font-family: 'Roboto Mono', monospace;
-            background-color: var(--background);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-         }
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2018</span>
+                        <p><strong>BTU Senftenberg</strong> | Teaching assistant in Chemistry </p>
+                        <ul>
+                            <li>Led weekly tutorials with exercises and Q&A </li>
+                            <li>Helped students understand complex topics in chemistry.</li>
+                        </ul>
+                        <div class="logo-container">
+                            <img src="Images/BTU Logo.png" alt="BTU Logo">
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <section>
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-hard">
+                        <p><strong>Labwork:</strong> <br>Molecular techniques & Protein biochemistry</p>
+                        <div class="progress-bar"><div style="width: 95%">95%</div></div>
+                        <p><strong>Data science & Statistics:</strong> <br>Python, R, SQL</p>
+                        <div class="progress-bar"><div style="width: 90%">90%</div></div>
+                        <p><strong>Sequencing technologies & Data analysis</strong></p>
+                        <div class="progress-bar"><div style="width: 85%">85%</div></div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="skills-soft">
+                        <div class="skill-item">
+                            Project Management
+                            <div class="tooltip">Independently managed research projects, handling complex tasks in parallel. <br>At Roche, I completed PM courses, covering advanced methodologies to efficiently oversee long-term projects and subtasks.</div>
+                        </div>
+                        <div class="skill-item">
+                            Adaptability
+                            <div class="tooltip">I quickly adjust to new environments and challenges, <br>constantly seeking opportunities to expand my skill set and adapt to evolving demands.</div>
+                        </div>
+                        <div class="skill-item">
+                            Creative Problem-Solving
+                            <div class="tooltip">My multidisciplinary background enables me to develop innovative solutions for <br>complex scientific problems, integrating insights from data science, biology, and statistics.</div>
+                        </div>
+                        <div class="skill-item">
+                            Collaboration & Communication
+                            <div class="tooltip">My diverse experience allows me to work effectively with <br>a range of collaborators and stakeholders, <br>supported by strong oral and written communication skills.</div>
+                        </div>
+                        <div class="skill-item">
+                            Attention to Detail
+                            <div class="tooltip">Scientific success often hinges on precision. <br>I prioritize careful planning and meticulous execution to ensure <br>all details are accounted for and experiments are set up for success.</div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
 
-         header {
-            background-color: var(--green-primary);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            border-bottom: 4px solid var(--border-color);
-         }
+            <section>
+                <h2>Research Projects</h2>
+                <p><b>Click the thumbnails for more Details</b></p>
+                <br>
+                
+                   <div class="project-gallery">
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1 - Integrins and Sequencing" onclick="openLightbox('lightbox1')">
+                            <p class="thumbnail-title">Integrins and Sequencing</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/SemesterProject2.PNG" alt="Project 2 - Genetic circuits" onclick="openLightbox('lightbox2')">
+                            <p class="thumbnail-title">Genetic Circuits</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/Bachelorthesis3.PNG" alt="Project 3 - bd Oxidase binding assay" onclick="openLightbox('lightbox3')">
+                            <p class="thumbnail-title">bd Oxidase Binding Assay</p>
+                        </div>
+                        <div class="thumbnail-container">
+                            <img class="thumbnail" src="Images/ProjectZurich2.PNG" alt="Project 4 - Omphalotin mutagenesis" onclick="openLightbox('lightbox4')">
+                            <p class="thumbnail-title">Omphalotin Mutagenesis</p>
+                    </div>
 
-         .summary {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-         }
+                <div id="lightbox1" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Master's thesis - Multiomics for Integrin Mechanosensing</h3>
+                        <p>In this thesis, I examined how integrin signaling impacts cellular behaviors, 
+                            focusing on gene expression changes induced by integrin-mediated mechanotransduction. <br><br>
+                            Integrins, which mediate cell adhesion and signal transmission from the extracellular matrix, 
+                            play vital roles in cell migration and proliferation. <br><br>
+                            Using transcriptome sequencing on fibroblast cell lines with specific integrin receptors knocked out, 
+                            I observed significant alterations in ECM and cytoskeletal gene expression upon fibronectin exposure. 
+                            The analysis also uncovered genes linked to immune response, neural development, and disease pathways, 
+                            offering potential new avenues for therapeutic targeting. <br><br>
+                            Additionally, I developed a novel approach combining cellular confinement with single-cell transcriptomics, 
+                            enhancing our ability to study mechanosignaling at the mRNA level. 
+                            This method holds promise for understanding disease processes like cancer metastasis, where cellular mechanics play a crucial role. <br><br>
 
-         .nav-bar {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: var(--green-light);
-            border: 4px solid var(--green-primary);
-            padding: 0.8rem;
-            margin-bottom: 2rem;
-            box-shadow: 4px 4px 0 var(--border-color);
-         }
+                            We are currently preparing a manuscript to submit our findings, as well as a conference talk. So please stay tuned for our results being published early 2025 :)
+                            
+                            <br><br>Skills:
+                            <ul>
+                            <li>Cell culture</li>
+                            <li>Omics data analysis (Genomics, Transcriptomics, sc RNA data)</li>
+                            <li>Integrin mechnobiology</li>                                
+                            </ul>
+                        </p>
+                    </div>
+                </div>
 
-         .nav-bar a {
-            color: var(--green-primary);
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.3rem 0.8rem;
-            text-transform: uppercase;
-            font-size: 1rem;
-            border: 2px solid transparent;
-         }
+                <div id="lightbox2" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox2')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Research project - Statistical Models of Genetic Circuits</h3>
+                        <p>In this project, I investigated the role of negative feedback in enhancing robustness in gene expression, 
+                            specifically focusing on noise reduction mechanisms on a population level. <br><br>
+                            Biological noise, influenced by factors like environmental changes and molecule concentrations, 
+                            can disturb cellular function. Negative feedback was explored as a strategy to dampen this noise, 
+                            achieving stability in cellular outputs.<br><br> I modeled these feedback mechanisms using deterministic ordinary differential equations (ODEs) 
+                            to capture temporal changes and noise propagation across cells. By varying parameters in simulated autoregulatory networks, 
+                            I identified how specific feedback strengths impact noise and cell-to-cell variability in a heterogenous population. This research provides insights for fine-tuning synthetic gene circuits to optimize stability and performance. <br><br>
 
-         .nav-bar a.active,
-         .nav-bar a:hover {
-            background-color: var(--green-primary);
-            color: #fff;
-            border-color: var(--green-primary);
-         }
+                            <i><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05538-z#auth-Baptiste-Turpin-Aff1" target="_blank">This conference paper</a></i> by my project supervisor Baptiste provides an overview of the used methodology.
 
-         .content-container {
-            flex: 1;
-            max-width: 1200px;
-            width: 90%;
-            margin: 2rem auto;
-         }
+                            <br><br>Skills:
+                            <ul>
+                            <li>Deterministic simulations (ODEs implemented in R and C++)</li>
+                            <li>Statistics (population level analysis)</li>
+                            <li>Synthetic biology (Genetic circuits, Feedback control)</li>                                
+                            </ul>
+                        </p>
+                    </div>
+                </div>
 
-         section h2 {
-            margin-bottom: 1rem;
-            font-size: 2rem;
-            color: var(--green-primary);
-         }
+                <div id="lightbox3" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox3')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Bachelor's thesis - Development of a label free thermal shift assay</h3>
+                        <p>In this thesis, I investigated a new method for analyzing the binding of Aurachin-derived inhibitors to cytochrome bd oxidases, 
+                            crucial enzymes involved in aerobic respiration and pathogenesis. <br><br>
+                            Cytochrome bd oxidases are of particular interest as they help bacteria adapt to environmental stresses and are linked to virulence, 
+                            making them a potential target for antibiotic development. Using a modified thermal shift assay with nanoscale differential scanning fluorimetry, 
+                            I was able to characterize the binding of an Aurachin-type inhibitor, AD 6-1, to Escherichia coli cytochrome bd I oxidase. 
+                            The assay, optimized for buffer composition and solvent, revealed a concentration-dependent shift in the enzyme's unfolding profile, 
+                            suggesting a specific interaction. <br><br> Interestingly, our observations combined with functional assays hinted at complex binding dynamics. 
+                            This novel assay provides a promising platform for future drug discovery targeting bd-type oxidases in various pathogenic bacteria. <br><br>
+                            
+                            The results can be found here:<br> <br>
+                            <i><a href="https://www.nature.com/articles/s41598-021-03288-7" target="_blank">Short-chain aurachin D derivatives are selective inhibitors of E. coli cytochrome bd-I and bd-II oxidases. Sci Rep 11, 23852 (2021).</a></i><br><br>
+                            I further contributed to solving the protein structure of another protein, the bd II oxidase. This resulted in a coauthorship on the PNAS publication highlighting the obtained insights: <br><br>
+                            <i><a href="https://www.pnas.org/doi/full/10.1073/pnas.2114013118" target="_blank">Mechanistic and structural diversity between cytochrome bd isoforms of Escherichia coli. Proc. Nat. Acad. Sci. 2021; 118 (50) e2114013118</a></i>
+                                                    
+                            <br><br>Skills:
+                            <ul>
+                            <li>Binding assays</li>
+                            <li>Structural biology (Cryo-EM)</li>
+                            <li>Biophysics (Docking, Binding kinetics, Protein stability)</li>                                
+                            </ul>
+                    </p>
+                    </div>
+                </div>
 
-         .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-         }
+                <div id="lightbox4" class="lightbox">
+                    <span class="close" onclick="closeLightbox('lightbox4')">&times;</span>
+                    <div class="lightbox-content">
+                        <h3>Investigating the promiscuity of enzymes involved in the omphalotin biosynthesis</h3>
+                        <p>This study explored the enzymatic modification of Omphalotin A, 
+                            a cyclic peptide produced by Omphalotus olearius, focusing on how sequence changes in its core peptide affect methylation and cleavage processes. <br><br>
+                            Omphalotin A, modified by the methyltransferase domain within its precursor protein OphMA and processed by the enzyme OphP, 
+                            serves as a prototype for the borosin family of fungal natural products. By coexpressing mutated forms of OphMA and OphP in Pichia pastoris, 
+                            I analyzed how variations in core peptide sequences influenced enzymatic activity, observing shifts in methylation and cleavage patterns via mass spectrometry. <br><br>
+                            Additionally, I established culture conditions for various fungi with homologous methyltransferases, discovering a new N-methylated cyclic peptide from D. bispora. 
+                            This work highlights the potential of borosin-producing fungi to yield bioactive compounds with agricultural and pharmaceutical applications. <br><br>
+                           
+                            The results have been published here:<br> <br>
+                            <i><a href="https://linkinghub.elsevier.com/retrieve/pii/S007668792100149X" target="_blank">Enzyme-mediated backbone N-methylation in ribosomally encoded peptides. Methods Enzymol. 2021;656:429-458.</a></i><br><br>
+                            <i><a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cbic.202300626" target="_blank">Promiscuity of Omphalotin A Biosynthetic Enzymes Allows de novo Production of Non-natural Multiply Backbone N-Methylated Peptide Macrocycles in Yeast. ChemBioChem 2023; e202300626</a></i>
+                            <br><br>Skills:
+                            <ul>
+                            <li>Mutagenesis, Molecular cloning</li>
+                            <li>Microbiology (E. coli, P. pastoris)</li>
+                            <li>Peptide analytics (Mass spectrometry)</li>                                
+                            </ul>
 
-         .timeline-item {
-            border: 4px solid var(--green-secondary);
-            background-color: #fff;
-            padding: 1rem;
-            box-shadow: 8px 8px 0 var(--border-color);
-         }
+                        </p>
+                    </div>
+                </div>
 
-         .timeline-date {
-            font-weight: bold;
-            color: var(--green-primary);
-            margin-bottom: 0.5rem;
-            display: block;
-         }
+            </section>
+        </main>
+    </div>
 
-         .timeline-item ul {
-            margin-top: 0.5rem;
-            padding-left: 1.5rem;
-            list-style-type: disc;
-         }
-
-         .education-block {
-            border: 4px solid var(--green-secondary);
-            background-color: #fff;
-            padding: 1rem;
-            box-shadow: 8px 8px 0 var(--border-color);
-            margin-bottom: 2rem;
-         }
-
-         .collapsible-button {
-            background-color: var(--green-primary);
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 1rem;
-            display: inline-block;
-            transition: transform 0.2s ease;
-         }
-
-         .collapsible-button:hover {
-            transform: translateY(-2px);
-         }
-
-         .collapsible-content {
-            display: none;
-            margin-top: 1rem;
-         }
-
-         .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-         }
-
-         .thumbnail-container {
-            text-align: center;
-         }
-
-         .thumbnail {
-            max-width: 100%;
-            border: 4px solid var(--green-primary);
-            box-shadow: 4px 4px 0 var(--border-color);
-            cursor: pointer;
-         }
-
-         .thumbnail-title {
-            margin-top: 0.5rem;
-            font-weight: bold;
-            color: var(--green-primary);
-         }
-
-         .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-         }
-
-         .lightbox-content {
-            background-color: #fff;
-            padding: 2rem;
-            border: 4px solid var(--green-primary);
-            box-shadow: 8px 8px 0 var(--border-color);
-         }
-
-         .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-         }
-
-         footer {
-            background-color: var(--green-primary);
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            border-top: 4px solid var(--border-color);
-         }
-
-         .social-icons {
-            margin-top: 1rem;
-         }
-
-         .social-icons img {
-            width: 24px;
-            margin: 0 0.5rem;
-         }
-
-         @media screen and (max-width: 768px) {
-            .project-gallery {
-               grid-template-columns: repeat(2, 1fr);
-            }
-         }
-      </style>
-   </head>
-   <body>
-      <header>
-         Resume - Luca
-         <p class="summary">Experienced Biotech Professional <br> Specializing in bridging Bioengineering and Bioinformatics</p>
-      </header>
-
-      <!-- Navigation bar -->
-      <nav class="nav-bar">
-         <a href="index.html">About Me</a>
-         <a href="resume.html" class="active">My Resume</a>
-         <a href="blog.html">Blog</a>
-         <a href="portfolio.html">Cool Things I Have Done</a>
-         <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="content-container">
-         <section>
-            <h2>Education & Experience</h2>
-            <div class="education-block">
-               <p><strong>ETH Zürich</strong> | Master of Science - Biotechnology<br>GPA: 5.86/6, Summa cum laude</p>
-               <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
-               <div class="collapsible-content">
-                  <p>Specialized in advanced biotechnology with a focus on bioinformatics, data science, and innovative techniques in life sciences. </p>
-                  <ul>
-                     <li>Cellular Engineering</li>
-                     <li>Bioprocess Design</li>
-                     <li>Data Analysis & Statistics</li>
-                     <li>Next-Generation Sequencing</li>
-                  </ul>
-               </div>
-            </div>
-            <div class="timeline">
-               <div class="timeline-item">
-                  <span class="timeline-date">Oct 2023</span>
-                  <p><strong>F. Hoffmann-La Roche</strong> | Junior Project Manager Knowledge Management</p>
-                  <ul>
-                     <li>Document management solutions - technical support, ontologies, automation.</li>
-                  </ul>
-               </div>
-               <div class="timeline-item">
-                  <span class="timeline-date">Feb 2023</span>
-                  <p><strong>ETH Zürich</strong> | Master Thesis - Multiomics for Integrin Mechanosensing</p>
-                  <ul>
-                     <li>Single cell RNA sequencing to study integrin signaling in mammalian cells.</li>
-                  </ul>
-               </div>
-            </div>
-         </section>
-
-         <section>
-            <h2>Research Projects</h2>
-            <p><b>Click the thumbnails for more Details</b></p>
-            <div class="project-gallery">
-               <div class="thumbnail-container">
-                  <img class="thumbnail" src="Images/Masterthesis.PNG" alt="Project 1" onclick="openLightbox('lightbox1')">
-                  <p class="thumbnail-title">Integrins and Sequencing</p>
-               </div>
-            </div>
-         </section>
-      </div>
-
-      <footer>
-         &copy; 2024 Luca Witte | All rights reserved.
-         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
-               <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-            </a>
-            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank">
-               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID">
-            </a>
-         </div>
-      </footer>
-
-      <script>
-         function toggleCollapse(button) {
+    <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
+        function toggleCollapse(button) {
             const content = button.nextElementSibling;
             content.style.display = content.style.display === "block" ? "none" : "block";
             button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
-         }
+        }
+    </script>
+    
+    <script>
+        function openLightbox(id) {
+            document.getElementById(id).style.display = 'block';
+        }
 
-         function openLightbox(id) {
-            document.getElementById(id).style.display = 'flex';
-         }
-
-         function closeLightbox(id) {
+        function closeLightbox(id) {
             document.getElementById(id).style.display = 'none';
-         }
-      </script>
-   </body>
+        }
+    </script>
+
+    
+    <script>
+     function toggleSidebar() {
+        const sidebar = document.querySelector('.side-menu');
+        sidebar.classList.toggle('show');
+     }
+    </script>
+    
+    <footer style="text-align: center; padding: 20px; background-color: #2a5a8a; color: #e0e0e0; position: fixed; width: 100%; bottom: 0; z-index: 0;">
+        &copy; 2024 Luca | You can also find me here:
+        <div class="social-icons" style="margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/lucawitte" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
+            </a>
+            <a href="https://orcid.org/0000-0001-5033-9473" target="_blank" style="color: #e0e0e0; margin: 0 10px; text-decoration: none; transition: color 0.3s ease;">
+                <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 30px; height: 30px; vertical-align: middle; margin: 0 10px; transition: transform 0.3s ease;">
+            </a>
+        </div>
+    </footer>
+
+
+    
+</body>
 </html>

@@ -3,54 +3,165 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Meta Description - Optimized for SEO -->
       <meta name="description" content="Luca Fabian Witte's personal website showcases projects in biotechnology, data science, and automation. Explore the resume, blog, and cool projects of a biotechnology enthusiast.">
-      
-      <!-- Title Tag - Optimized for SEO -->
-      <title>About Luca Witte - Biotechnology, Data Science & Automation Projects</title>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../style.css">
-
+      <title>Luca Witte | Biotechnology, Data Science & Automation</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
       <link rel="icon" href="/Images/dna_32.png" type="image/png">
 
+      <style>
+         :root {
+            --green-primary: rgb(0, 94, 68);
+            --green-secondary: rgb(20, 124, 98);
+            --background: #f9f9f9;
+            --border-color: #000;
+            --text-color: #111;
+         }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--background);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+
+         header {
+            background-color: var(--green-primary);
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
+         }
+
+         .content-container {
+            max-width: 1200px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+         }
+
+         .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+         }
+
+         .hero img {
+            max-width: 80%; /* Reduced size */
+            border: 4px solid var(--green-primary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         .hero-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+         }
+
+         .hero-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--green-primary);
+         }
+
+         .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+         }
+
+         .nav-card {
+            background-color: var(--green-secondary);
+            color: #fff;
+            padding: 1rem;
+            border: 4px solid var(--border-color);
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+         }
+
+         .nav-card:hover {
+            transform: translateY(-4px);
+            background-color: var(--green-primary);
+         }
+
+         footer {
+            margin-top: 3rem;
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 4px solid var(--border-color);
+            width: 100%;
+         }
+
+         .social-icons img {
+            width: 24px;
+            margin: 0 0.5rem;
+         }
+
+         a {
+            color: inherit;
+            text-decoration: underline;
+         }
+
+         @media screen and (max-width: 768px) {
+            .hero {
+               grid-template-columns: 1fr;
+               text-align: center;
+            }
+
+            .hero img {
+               margin: 0 auto;
+            }
+
+            .nav-grid {
+               grid-template-columns: 1fr;
+            }
+         }
+      </style>
    </head>
    <body>
       <header>
-         <h1>About Me</h1>
+         Luca Fabian Witte
       </header>
 
-      <!-- Left-hand menu starts below the header -->
-      <div class="side-menu">
-         <a href="index.html" class="active">About Me</a>
-         <a href="resume.html">My Resume</a>
-         <a href="blog.html">Blog</a>
-         <a href="portfolio.html">Cool Things I Have Done</a>
+      <div class="content-container">
+         <section class="hero">
+            <img src="Images/MyPicture.jpg" alt="Picture of Luca">
+            <div class="hero-text">
+               <h2>Hi there!</h2>
+               <p>This text, the whole website and also myself are currently under construction - please expect changes :) <br><br>
+               <p>Welcome to my personal corner of the web! I’m Luca, a biotechnology enthusiast passionate about blending science and technology to solve complex problems. My expertise lies in biotechnology, data science, and automation.</p>
+               <p>Feel free to explore this website to learn more about me, view my resume, read my blog, or check out some of my coolest projects!</p>
+            </div>
+         </section>
+
+         <div class="nav-grid">
+            <a href="resume.html" class="nav-card">Resume</a>
+            <a href="blog.html" class="nav-card">Blog</a>
+            <a href="portfolio.html" class="nav-card">Projects</a>
+            <a href="contact.html" class="nav-card">Contact Me</a>
+         </div>
       </div>
 
-      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
-      
-      <!-- Main content starts here -->
-      <div class="main-content">
-         <main>
-            <!-- Introduction section with picture -->
-            <section class="intro">
-               <img src="Images/MyPicture.jpg" alt="Picture of Luca">
-               <div class="intro-text">
-                  <h2>Hi there, and welcome!</h2>
-                  <p>This text, the whole website and also myself are currently under construction - please expect changes :) <br><br>
-                     I’m Luca, a biotechnology enthusiast who loves tackling complex problems and turning them into innovative solutions. 
-                     My work blends biotechnology, data science, and automation—three things I’m deeply passionate about. 
-                     Whether I’m coding an ETL pipeline, diving into the latest biotech research, or working on cool projects, I’m always excited to explore new ideas and push boundaries.</p>
-                  <p>This website is my little corner of the web where I share my journey, showcase what I’ve been up to, and maybe even inspire a few of you along the way! 
-                     Feel free to check out my <a href="resume.html">Resume</a>, read my latest musings on the <a href="blog.html">Blog</a>, or browse through some <a href="portfolio.html">Cool Things I Have Done</a>. Let's connect and create something awesome together!</p>
-               </div>
-            </section>
-
-         </main>
-      </div>
-      
       <footer>
-         &copy; 2024 Luca Fabian Witte | You can also find me here:
+         &copy; 2024 Luca Fabian Witte | Connect with me:
          <div class="social-icons">
             <a href="https://www.linkedin.com/in/lucawitte" target="_blank">
                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
@@ -60,13 +171,5 @@
             </a>
          </div>
       </footer>
-      
-      <script>
-         function toggleSidebar() {
-            const sidebar = document.querySelector('.side-menu');
-            sidebar.classList.toggle('show');
-         }
-      </script>
-      
    </body>
 </html>

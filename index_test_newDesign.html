@@ -477,6 +477,32 @@
          </main>
       </div>
 
+    <script> /* For callpsable button -> before the closing </body> tag ensures that the HTML elements are fully loaded before the script runs */
+        function toggleCollapse(button) {
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+            button.textContent = content.style.display === "block" ? "Hide Details" : "Program Details";
+        }
+    </script>
+    
+    <script>
+        function openLightbox(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeLightbox(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+    
+    <script>
+     function toggleSidebar() {
+        const sidebar = document.querySelector('.side-menu');
+        sidebar.classList.toggle('show');
+     }
+    </script>
+      
       <footer>
          &copy; 2024 Luca Witte | All rights reserved.
          <div class="social-icons">

@@ -83,20 +83,21 @@
 
          .cool-thing {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            flex-wrap: nowrap;
             align-items: center;
             border: 4px solid var(--green-secondary);
             background-color: #fff;
             padding: 1rem;
             margin-bottom: 1.5rem;
             box-shadow: 8px 8px 0 var(--border-color);
+            gap: 1.5rem;
          }
 
          .cool-thing img {
             max-width: 150px;
             height: auto;
             border: 4px solid var(--green-primary);
+            flex-shrink: 0;
          }
 
          .cool-thing h3 {
@@ -130,7 +131,7 @@
          }
 
          .social-icons {
-            margin-top: 1rem; /* Added space above social icons */
+            margin-top: 1rem;
          }
 
          .social-icons img {
@@ -141,16 +142,11 @@
          @media screen and (max-width: 768px) {
             .cool-thing {
                flex-direction: column;
-               align-items: flex-start;
+               align-items: center;
             }
 
-            .nav-bar {
-               flex-direction: column;
-               padding: 1rem;
-            }
-
-            .nav-bar a {
-               margin-bottom: 0.5rem;
+            .cool-thing img {
+               margin-bottom: 1rem;
             }
          }
       </style>

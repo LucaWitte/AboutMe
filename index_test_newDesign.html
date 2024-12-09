@@ -3,20 +3,16 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Meta Description - Optimized for SEO -->
       <meta name="description" content="Luca Fabian Witte's personal website showcases projects in biotechnology, data science, and automation. Explore the resume, blog, and cool projects of a biotechnology enthusiast.">
-      
-      <!-- Title Tag - Optimized for SEO -->
       <title>About Luca Witte - Biotechnology, Data Science & Automation Projects</title>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../style.css">
       <link rel="icon" href="/Images/dna_32.png" type="image/png">
 
       <style>
          :root {
-            --green-primary: rgb(0, 94, 68); /* Primary accent color from palette */
-            --green-secondary: rgb(20, 124, 98);
-            --background: #f4f4f4; /* Light gray for background */
+            --green-primary: rgb(0, 94, 68); /* Primary accent color */
+            --green-secondary: rgb(20, 124, 98); /* Secondary green */
+            --background: #f4f4f4; /* Light gray */
             --text-color: #222;
             --link-color: var(--green-primary);
          }
@@ -26,6 +22,8 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--background);
             color: var(--text-color);
+            display: flex;
+            flex-direction: column;
          }
 
          header {
@@ -37,23 +35,17 @@
          }
 
          .side-menu {
-            display: flex;
-            flex-direction: column;
             background-color: var(--green-secondary);
             color: #fff;
+            height: 100vh;
+            width: 250px;
+            padding: 2rem 1rem;
             position: fixed;
             top: 0;
             left: 0;
-            height: 100%;
-            width: 200px;
-            padding: 1rem;
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
-            transition: transform 0.3s;
-            transform: translateX(-100%);
-         }
-
-         .side-menu.show {
-            transform: translateX(0);
          }
 
          .side-menu a {
@@ -62,7 +54,7 @@
             font-weight: bold;
             padding: 0.5rem;
             border: 2px solid transparent;
-            text-align: center;
+            text-align: left;
          }
 
          .side-menu a.active,
@@ -72,25 +64,15 @@
             border-color: var(--green-primary);
          }
 
-         .sidebar-toggle {
-            background-color: var(--green-primary);
-            color: #fff;
-            border: none;
-            font-size: 1.5rem;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-         }
-
          .main-content {
-            margin-left: 220px;
+            margin-left: 270px; /* Leave space for side menu */
             padding: 2rem;
+            flex: 1;
          }
 
          .intro {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 2rem;
          }
@@ -112,7 +94,7 @@
             background-color: var(--green-primary);
             color: #fff;
             padding: 1rem 0;
-            margin-top: 2rem;
+            margin-top: auto;
          }
 
          .social-icons img {
@@ -125,6 +107,38 @@
             color: var(--link-color);
             text-decoration: underline;
          }
+
+         @media screen and (max-width: 768px) {
+            .side-menu {
+               transform: translateX(-100%);
+               transition: transform 0.3s ease-in-out;
+            }
+
+            .side-menu.show {
+               transform: translateX(0);
+            }
+
+            .sidebar-toggle {
+               display: block;
+            }
+
+            .main-content {
+               margin-left: 0;
+            }
+         }
+
+         .sidebar-toggle {
+            background-color: var(--green-primary);
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: none;
+         }
       </style>
    </head>
    <body>
@@ -132,7 +146,8 @@
          About Me
       </header>
 
-      <!-- Left-hand menu starts below the header -->
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+
       <div class="side-menu">
          <a href="index.html" class="active">About Me</a>
          <a href="resume.html">My Resume</a>
@@ -140,12 +155,8 @@
          <a href="portfolio.html">Cool Things I Have Done</a>
       </div>
 
-      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
-      
-      <!-- Main content starts here -->
       <div class="main-content">
          <main>
-            <!-- Introduction section with picture -->
             <section class="intro">
                <img src="Images/MyPicture.jpg" alt="Picture of Luca">
                <div class="intro-text">
@@ -160,7 +171,7 @@
             </section>
          </main>
       </div>
-      
+
       <footer>
          &copy; 2024 Luca Fabian Witte | You can also find me here:
          <div class="social-icons">
@@ -172,7 +183,7 @@
             </a>
          </div>
       </footer>
-      
+
       <script>
          function toggleSidebar() {
             const sidebar = document.querySelector('.side-menu');

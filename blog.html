@@ -5,52 +5,155 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Blog of Luca Witte">
       <title>Blog - Luca Witte</title>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../style.css">
-      
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="icon" href="/Images/dna_32.png" type="image/png">
+
+      <style>
+         :root {
+            --green-primary: rgb(0, 94, 68);
+            --green-secondary: rgb(20, 124, 98);
+            --background: #f9f9f9;
+            --border-color: #000;
+            --text-color: #111;
+         }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         html, body {
+            height: 100%;
+         }
+
+         body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--background);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+         }
+
+         header {
+            background-color: var(--green-primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
+         }
+
+         .content-container {
+            flex: 1; /* Makes the container fill remaining space */
+            max-width: 1200px;
+            width: 90%;
+            margin: 2rem auto;
+         }
+
+         .blog-post {
+            border: 4px solid var(--green-secondary);
+            background-color: #fff;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         .blog-post h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+         }
+
+         .blog-post a {
+            color: var(--green-primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--green-primary);
+         }
+
+         .blog-post a:hover {
+            color: var(--green-secondary);
+         }
+
+         .blog-post p {
+            font-size: 1rem;
+            line-height: 1.5;
+         }
+
+         .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+         }
+
+         footer {
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 4px solid var(--border-color);
+         }
+
+         .social-icons img {
+            width: 24px;
+            margin: 0 0.5rem;
+         }
+
+         .sidebar-toggle {
+            background-color: var(--green-primary);
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: none; /* Sidebar toggle button hidden for now */
+         }
+
+         @media screen and (max-width: 768px) {
+            .sidebar-toggle {
+               display: block; /* Sidebar toggle button shown on smaller screens */
+            }
+
+            .blog-post {
+               box-shadow: 6px 6px 0 var(--border-color);
+            }
+         }
+      </style>
    </head>
    <body>
       <header>
-         <h1>Blog - Luca Witte</h1>
+         Blog - Luca Witte
       </header>
 
-      <!-- Left-hand menu starts below the header -->
-      <div class="side-menu">
-         <a href="index.html">About Me</a>
-         <a href="resume.html">My Resume</a>
-         <a href="blog.html" class="active">Blog</a>
-         <a href="portfolio.html">Cool Things I Have Done</a>
-      </div>
+      <div class="content-container">
+         <section>
+            <h2>Recent Posts</h2>
 
-     <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+            <div class="blog-post">
+               <h3><a href="blogposts/blog-post-1.html">Biosecurity and finding a meaningful career (unfinished)</a></h3>
+               <p>Work in progress - why biosecurity is important and things to consider when selecting a career path</p>
+            </div>
 
-      <!-- Main content starts here -->
-      <div class="main-content">
-         <main>
-            <section>
-               <h2>Recent Posts</h2>
+            <div class="blog-post">
+               <h3><a href="blogposts/Communication.html">On Thinking and Communicating</a></h3>
+               <p>To be expanded - Frameworks for thinking and communicating arguments clearly. Developing meta skills is extremely important and we often do not cover which ones are worth investing time on. Here I give a quick rundown of rationality and reasoning practices that might be helpful to some readers.</p>
+            </div>
 
-               <div class="blog-post">
-                  <h3><a href="blogposts/blog-post-1.html">Biosecurity and finding a meaningful carreer (unfinished) </a></h3>
-                  <p>Work in progress - why biosecurity is important and things to consider when selecting a carreer path</p>
-               </div>
+            <div class="blog-post">
+               <h3><a href="blogposts/Building.html">The power of building or "just try it" (Collection of notes)</a></h3>
+               <p>To be written - What I learned from playing around with electronics: building cool things is easier in engineering than in biology, as hurdles for implementation are much lower</p>
+            </div>
 
-              <div class="blog-post">
-                  <h3><a href="blogposts/Communication.html"> On Thinking and Communicating</a></h3>
-                  <p>To be expanded - Frameworks for thinking and communicating arguments clearly. Developing meta skills is extremely important and we often do not cover which ones are worth investing time on. Here I give a quick rundown of rationality and reasoning practices that might be helpful to some readers. </p>
-               </div>
-
-               <div class="blog-post">
-                  <h3><a href="blogposts/Building.html">The power of building or "just try it" (Collection of notes) </a></h3>
-                  <p>To be written - What I learned from playing around with electronics: building cool things is easier in engineering than in biology, as hurdles for implementation are much lower</p>
-               </div>
-
-               <div class="blog-post">
-                  <h3><a href="blogposts/blog-post-3.html">Another placeholder</a></h3>
-                  <p>There is nothing in here</p>
-               </div>
-            </section>
-         </main>
+            <div class="blog-post">
+               <h3><a href="blogposts/blog-post-3.html">Another placeholder</a></h3>
+               <p>There is nothing in here</p>
+            </div>
+         </section>
       </div>
       
       <footer>
@@ -64,13 +167,5 @@
             </a>
          </div>
       </footer>
-
-      <script>
-         function toggleSidebar() {
-            const sidebar = document.querySelector('.side-menu');
-            sidebar.classList.toggle('show');
-         }
-      </script>
-      
    </body>
 </html>

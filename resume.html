@@ -85,23 +85,26 @@
          }
 
          .progress-bar {
+             display: flex; /* Enables flexbox */
+             align-items: center; /* Vertically centers the content */
              width: 100%;
              background-color: #e0e0e0; /* Neutral background */
-             height: 30px; /* Increased height for better visibility */
+             height: 30px; /* Height remains the same */
              border: 4px solid var(--border-color); /* Bold border */
-             margin-bottom: 1.5rem; /* Add more spacing between progress bars */
+             margin-bottom: 1.5rem; /* Spacing between bars */
              position: relative;
              box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
          }
          
          .progress-bar div {
+             display: flex; /* Enables flexbox for internal alignment */
+             justify-content: flex-end; /* Aligns text to the right */
+             align-items: center; /* Vertically centers the text */
              height: 100%;
-             background-color: var(--green-primary); /* Match primary green color */
-             text-align: right;
+             background-color: var(--green-primary); /* Primary green color */
              color: #fff; /* White text for contrast */
-             line-height: 30px; /* Center text vertically */
-             font-size: 1rem; /* Larger font size for visibility */
-             padding-right: 8px; /* Add some spacing from the edge */
+             font-size: 1rem; /* Larger font size for readability */
+             padding-right: 8px; /* Adds spacing between text and edge */
              box-shadow: inset -2px -2px 0 var(--green-secondary); /* Inner shadow for depth */
          }
          

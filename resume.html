@@ -84,23 +84,25 @@
             margin: 2rem auto;
          }
 
-
-          .progress-bar {
-            width: 100%;
-            background-color: #e0e0e0;
-            height: 20px;
-            border: 2px solid var(--border-color);
-            margin-bottom: 1rem;
-            position: relative;
+         .progress-bar {
+             width: 100%;
+             background-color: #e0e0e0; /* Neutral background */
+             height: 30px; /* Increased height for better visibility */
+             border: 4px solid var(--border-color); /* Bold border */
+             margin-bottom: 1.5rem; /* Add more spacing between progress bars */
+             position: relative;
+             box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
          }
-
+         
          .progress-bar div {
-            height: 100%;
-            background-color: var(--green-primary);
-            text-align: right;
-            color: #fff;
-            line-height: 20px;
-            padding-right: 5px;
+             height: 100%;
+             background-color: var(--green-primary); /* Match primary green color */
+             text-align: right;
+             color: #fff; /* White text for contrast */
+             line-height: 30px; /* Center text vertically */
+             font-size: 1rem; /* Larger font size for visibility */
+             padding-right: 8px; /* Add some spacing from the edge */
+             box-shadow: inset -2px -2px 0 var(--green-secondary); /* Inner shadow for depth */
          }
          
          .tooltip {

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const animateProgress = (bar) => {
         const targetPercentage = parseInt(bar.getAttribute("data-percentage"), 10);
         let currentPercentage = 0;
-        const animationDuration = 2000; // Animation duration in milliseconds
+        const animationDuration = 1500; // Animation duration in milliseconds
         const incrementStep = targetPercentage / (animationDuration / 16); // Approx. 60 FPS
 
         const incrementNumber = () => {

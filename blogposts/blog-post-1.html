@@ -6,9 +6,107 @@
       <meta name="description" content="Blog Post - Biosecurity">
       <title>My journey into biosecurity - Part 1 - Luca Witte</title>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../style.css">
+
+      <style>
+         header {
+            background-color: var(--green-primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
       
+         .content-container {
+            flex: 1;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #fff;
+            border: 4px solid var(--green-secondary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+      
+         h2 {
+            color: var(--green-primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--green-secondary);
+            padding-bottom: 0.5rem;
+         }
+      
+         h3 {
+            color: var(--green-secondary);
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+         }
+      
+         p, ul {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+         }
+      
+         ul {
+            padding-left: 2rem;
+         }
+      
+         li {
+            list-style: disc;
+            color: var(--green-primary);
+            margin-bottom: 0.5rem;
+         }
+      
+         a {
+            color: var(--green-primary);
+            text-decoration: none;
+            border-bottom: 2px solid var(--green-primary);
+            transition: color 0.3s, border-color 0.3s;
+         }
+      
+         a:hover {
+            color: var(--green-secondary);
+            border-color: var(--green-secondary);
+         }
+      
+         .smaller-image {
+            display: block;
+            max-width: 100%;
+            margin: 1rem auto;
+            border: 4px solid var(--green-secondary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+      
+         footer {
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 4px solid var(--border-color);
+            margin-top: auto;
+         }
+      
+         .social-icons img {
+            width: 24px;
+            margin: 0 0.5rem;
+         }
+      
+         @media screen and (max-width: 768px) {
+            .content-container {
+               margin: 1rem;
+               padding: 1rem;
+               box-shadow: 6px 6px 0 var(--border-color);
+            }
+      
+            header {
+               font-size: 2rem;
+               padding: 1rem;
+            }
+         }
+      </style>      
    </head>
+   
    <body>
       <header>
          <h1>My journey into biosecurity - Part 1: The Why?</h1>
@@ -21,11 +119,9 @@
          <a href="../blog.html" class="active">Blog</a>
          <a href="../portfolio.html">Cool Things I Have Done</a>
       </div>
-
-      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
       
       <!-- Main content starts here -->
-      <div class="main-content">
+      <div class="content-container">
          <main>
             <section>
                <div class="summary">

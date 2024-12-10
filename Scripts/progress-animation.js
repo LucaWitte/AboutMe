@@ -1,24 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
     const progressBars = document.querySelectorAll(".progress-bar div");
 
+    const animateProgress = (bar) => {
+        const targetPercentage = parseInt(bar.getAttribute("data-percentage"), 10);
+        let currentPercentage = 0;
+
+        const incrementNumber = () => {
+            if (currentPercentage <= targetPercentage) {
+                bar.textContent = `${currentPercentage}%`;
+                bar.style.width = `${currentPercentage}%`;
+                currentPercentage++;
+                requestAnimationFrame(incrementNumber);
+            }
+        };
+
+        incrementNumber();
+    };
+
     const handleScroll = () => {
         progressBars.forEach((bar) => {
             const barPosition = bar.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
 
-            // Check if the progress bar is in the viewport
             if (barPosition < windowHeight && bar.dataset.animated !== "true") {
-                const targetPercentage = bar.getAttribute("data-percentage");
-                bar.style.setProperty("--target-percentage", `${targetPercentage}%`);
-                bar.style.width = `${targetPercentage}%`;
-                bar.dataset.animated = "true"; // Mark as animated to prevent retrigger
+                animateProgress(bar);
+                bar.dataset.animated = "true";
             }
         });
     };
 
-    // Listen for scroll events
     window.addEventListener("scroll", handleScroll);
-
-    // Initial check in case the section is already in view
-    handleScroll();
+    handleScroll(); // Run on load in case the element is already visible
 });
+

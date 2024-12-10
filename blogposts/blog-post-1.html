@@ -96,6 +96,34 @@
             border-top: 4px solid var(--border-color);
             margin-top: auto;
          }
+
+         .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--green-secondary);
+            border: 4px solid var(--green-primary);
+            padding: 0.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 var(--border-color);
+         }
+
+         .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: 2px solid transparent;
+         }
+
+         .nav-bar a.active,
+         .nav-bar a:hover {
+            background-color: var(--green-primary);
+            color: #fff;
+            border-color: var(--green-primary);
+         }
       
          .social-icons img {
             width: 24px;
@@ -123,7 +151,7 @@
       </header>
 
       <!-- Left-hand menu starts below the header -->
-      <div class="side-menu">
+      <div class="nav-bar">
          <a href="../index.html">About Me</a>
          <a href="../resume.html">My Resume</a>
          <a href="../blog.html" class="active">Blog</a>

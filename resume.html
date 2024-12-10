@@ -109,13 +109,15 @@
              bottom: 35px;
              left: 50%;
              transform: translateX(-50%);
-             background-color: var(--green-secondary); /* Tooltip background */
+             background-color: var(--green-secondary); /* Match the theme */
              color: #fff;
-             padding: 5px 10px;
+             padding: 0.5rem 1rem;
              border: 2px solid var(--green-primary); /* Tooltip border */
              border-radius: 5px;
              box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
              font-size: 0.9rem;
+             z-index: 10;
+             white-space: nowrap;
          }
 
          .project-gallery {
@@ -140,17 +142,17 @@
        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
       }
          
-  .thumbnail-container {
-       text-align: center;
-       width: 170px;
-       margin-bottom: 10px;
-   }
-   
-   .thumbnail-title {
-       font-size: 0.8em;
-       color: #555;
-       margin-top: 5px;
-   }
+     .thumbnail-container {
+          text-align: center;
+          width: 170px;
+          margin-bottom: 10px;
+      }
+      
+      .thumbnail-title {
+          font-size: 0.8em;
+          color: #555;
+          margin-top: 5px;
+      }
          .thumbnail-title {
             margin-top: 0.5rem;
             font-size: 1rem;

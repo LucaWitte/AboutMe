@@ -4,12 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const animateProgress = (bar) => {
         const targetPercentage = parseInt(bar.getAttribute("data-percentage"), 10);
         let currentPercentage = 0;
+        const animationDuration = 2000; // Animation duration in milliseconds
+        const incrementStep = targetPercentage / (animationDuration / 16); // Approx. 60 FPS
 
         const incrementNumber = () => {
-            if (currentPercentage <= targetPercentage) {
-                bar.textContent = `${currentPercentage}%`;
+            if (currentPercentage < targetPercentage) {
+                currentPercentage = Math.min(currentPercentage + incrementStep, targetPercentage);
                 bar.style.width = `${currentPercentage}%`;
-                currentPercentage++;
+                bar.textContent = `${Math.round(currentPercentage)}%`;
                 requestAnimationFrame(incrementNumber);
             }
         };
@@ -32,4 +34,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Run on load in case the element is already visible
 });
-

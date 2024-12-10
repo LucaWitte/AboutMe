@@ -179,16 +179,16 @@
       <div class="content-container">
          <h2>Get in Touch</h2>
          <p>Feel free to send me a message! I'll get back to you as soon as possible.</p>
-         <form action="https://formspree.io/f/manyzdel" method="POST">
-            <label for="name">Your Name</label>
+         <form id="contactForm" action="https://formspree.io/f/manyzdel" method="POST">
+            <label for="name"> <br>Your Name</label>
             <input type="text" id="name" name="name" required>
-
+         
             <label for="email">Your Email</label>
             <input type="email" id="email" name="email">
-
+         
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="6" required></textarea>
-
+         
             <button type="submit">Send Message</button>
          </form>
          <div id="confirmationMessage" style="display:none; margin-top: 1rem; color: var(--green-primary); font-weight: bold;">

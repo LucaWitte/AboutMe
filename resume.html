@@ -84,17 +84,20 @@
             margin: 2rem auto;
          }
 
-         .progress-bar {
-             display: flex; /* Enables flexbox */
-             align-items: center; /* Vertically centers the content */
-             width: 100%;
-             background-color: #e0e0e0; /* Neutral background */
-             height: 30px; /* Height remains the same */
-             border: 4px solid var(--border-color); /* Bold border */
-             margin-bottom: 1.5rem; /* Spacing between bars */
-             position: relative;
-             box-shadow: 4px 4px 0 var(--border-color); /* Neobrutalist shadow */
-         }
+      .progress-bar div {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 100%;
+          background-color: var(--green-primary);
+          color: #fff;
+          font-size: 1rem;
+          padding-right: 8px;
+          box-shadow: inset -2px -2px 0 var(--green-secondary);
+          width: 0%; /* Start with 0% */
+          transition: width 2s ease-in-out; /* Smooth transition */
+          animation: fillBar 2s ease-in-out forwards; /* Fill animation */
+      }
          
          .progress-bar div {
              display: flex; /* Enables flexbox for internal alignment */
@@ -454,6 +457,15 @@
                margin-bottom: 0.5rem;
             }
          }
+
+         @keyframes fillBar {
+          from {
+              width: 0%;
+          }
+          to {
+              width: var(--target-percentage); /* Dynamic width */
+          }
+      }
       </style>
    </head>
    <body>
@@ -616,14 +628,20 @@
             <section>
                 <h2>Skills</h2>
                 <div class="skills-container">
-                    <div class="skills-hard">
-                        <p><strong>Labwork:</strong> <br>Molecular techniques & Protein biochemistry</p>
-                        <div class="progress-bar"><div style="width: 95%">95%</div></div>
-                        <p><strong>Data science & Statistics:</strong> <br>Python, R, SQL</p>
-                        <div class="progress-bar"><div style="width: 90%">90%</div></div>
-                        <p><strong>Sequencing technologies & Data analysis</strong></p>
-                        <div class="progress-bar"><div style="width: 85%">85%</div></div>
-                    </div>
+                  <div class="skills-hard">
+                      <p><strong>Labwork:</strong> <br>Molecular techniques & Protein biochemistry</p>
+                         <div class="progress-bar">
+                             <div data-percentage="95">95%</div>
+                         </div>
+                      <p><strong>Data science & Statistics:</strong> <br>Python, R, SQL</p>
+                         <div class="progress-bar">
+                             <div data-percentage="90">90%</div>
+                         </div>
+                      <p><strong>Sequencing technologies & Data analysis:</strong></p>
+                         <div class="progress-bar">
+                             <div data-percentage="85">85%</div>
+                         </div>
+                  </div>
                     <div class="divider"></div>
                     <div class="skills-soft">
                         <div class="skill-item">
@@ -812,5 +830,7 @@
             document.getElementById(id).style.display = 'none';
         }
     </script>
+
+    <script src="Scripts/progress-animation.js"></script>
    </body>
 </html>

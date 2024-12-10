@@ -443,6 +443,24 @@
          max-width: 60px; /* Keep the original size for timeline logos */
          height: auto;
      }
+
+      .education-block .table-container {
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+         margin-top: 1rem;
+      }
+      
+      .table-container div {
+         flex: 1;
+         border-right: 2px solid var(--green-primary);
+         padding-right: 10px;
+      }
+      
+      .table-container div:last-child {
+         border-right: none;
+         padding-left: 10px;
+      }
    
             
          @media screen and (max-width: 768px) {
@@ -464,6 +482,17 @@
               width: var(--target-percentage); /* Dynamic width */
           }
       }
+
+         @media screen and (max-width: 768px) {
+            .table-container {
+               flex-direction: column;
+            }
+         
+            .table-container div {
+               border-right: none;
+               padding: 0;
+            }
+         }
       </style>
    </head>
    <body>
@@ -501,24 +530,27 @@
                     </div>
                     <button class="collapsible-button" onclick="toggleCollapse(this)">Program Details</button>
                     <div class="collapsible-content">
-                        <strong>Program Details:</strong>
-                        <p>Specialized in advanced biotechnology with a focus on bioinformatics, data science, and innovative techniques in life sciences. </p>
-                        <p>Coursework included:</p>
-                        <ul>
-                            <li>Cellular Engineering</li>
-                            <li>Bioprocess Design</li>
-                            <li>Data Analysis & Statistics</li>
-                            <li>Next-Generation Sequencing</li>
-                        </ul>
-                       
-                        <p>Hands-on laboratory courses included:</p>
-                        <ul>
-                            <li>Cellular Engineering and Genetic Circuits</li>
-                            <li>Laboratory automation, Cell sorting, Microscopy</li>
-                            <li>Microbial Engineering for Biotechnology</li>
-                            <li>Next-Generation Sequencing</li>
-                        </ul>
-                    </div>
+                        <div class="table-container">
+                           <div>
+                              <strong>Coursework:</strong>
+                              <ul>
+                                 <li>Cellular Engineering</li>
+                                 <li>Bioprocess Design</li>
+                                 <li>Data Analysis & Statistics</li>
+                                 <li>Next-Generation Sequencing</li>
+                              </ul>
+                           </div>
+                           <div>
+                              <strong>Hands-on Laboratory:</strong>
+                              <ul>
+                                 <li>Cellular Engineering and Genetic Circuits</li>
+                                 <li>Laboratory Automation, Cell Sorting, Microscopy</li>
+                                 <li>Microbial Engineering for Biotechnology</li>
+                                 <li>Next-Generation Sequencing</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
                 </div>
                                             
                 <div class="timeline">

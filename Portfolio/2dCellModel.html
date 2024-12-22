@@ -109,13 +109,20 @@
          }
          
          details {
-            background-color: var(--green-light);
-            padding: 1rem;
+            background-color: #f9f9f9; /* Lighter background when collapsed */
+            padding: 0.5rem; /* Smaller padding to reduce height */
             margin: 1rem 0;
-            border: 4px solid var(--green-secondary);
-            box-shadow: 4px 4px 0 var(--border-color);
-            font-size: 1.1rem;
+            border: 2px solid var(--green-secondary); /* Thinner border for a lighter feel */
+            box-shadow: 2px 2px 0 var(--border-color); /* Subtle shadow */
+            font-size: 1rem;
             cursor: pointer;
+         }
+         
+         details[open] {
+            background-color: var(--green-light); /* Keep the green background when expanded */
+            padding: 1rem; /* Larger padding when expanded */
+            border-width: 4px; /* Thicker border when expanded */
+            box-shadow: 4px 4px 0 var(--border-color); /* Bold shadow for expanded state */
          }
          
          details summary {
@@ -135,6 +142,7 @@
             overflow-x: auto;
             box-shadow: 4px 4px 0 var(--border-color);
          }
+
                   
          img, video {
             display: block;

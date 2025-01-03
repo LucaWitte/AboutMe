@@ -4,105 +4,174 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Building a mood tracker with a single-board computer - Project by Luca">
-      <title>Building a mood tracker with a single-board computer - Luca</title>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../style.css">
-      
+      <title>Building a Mood Tracker - Luca Witte</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+      <style>
+         :root {
+            --green-primary: rgb(0, 94, 68);
+            --green-secondary: rgb(20, 124, 98);
+            --green-light: rgb(80, 150, 120);
+            --background: #f9f9f9;
+            --border-color: #000;
+            --text-color: #111;
+         }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--background);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+         }
+
+         header {
+            background-color: var(--green-primary);
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--border-color);
+         }
+
+         .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--green-secondary);
+            padding: 1rem;
+            border: 4px solid var(--green-primary);
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 var(--border-color);
+         }
+
+         .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+         }
+
+         .nav-bar a.active,
+         .nav-bar a:hover {
+            background-color: var(--green-primary);
+            color: #fff;
+            border-color: var(--green-primary);
+         }
+
+         .content-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #fff;
+            border: 4px solid var(--green-secondary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         h2 {
+            font-size: 1.5rem;
+            color: var(--green-primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--green-secondary);
+            padding-bottom: 0.5rem;
+         }
+
+         p, ul {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+         }
+
+         img.project-image {
+            display: block;
+            max-width: 100%;
+            margin: 1rem auto;
+            border: 4px solid var(--green-secondary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         .collapsible {
+            background-color: var(--green-secondary);
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            border: 2px solid var(--green-primary);
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            text-align: left;
+         }
+
+         .collapsible-content {
+            display: none;
+            padding: 1rem;
+            background-color: #fff;
+            border: 4px solid var(--green-secondary);
+            box-shadow: 8px 8px 0 var(--border-color);
+         }
+
+         footer {
+            background-color: var(--green-primary);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 4px solid var(--border-color);
+         }
+      </style>
    </head>
    <body>
       <header>
-         <h1>Building a mood tracker with a single-board computer</h1>
+         <h1>Building a Mood Tracker</h1>
       </header>
-      
-      <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
-      
-      <!-- Left-hand menu starts below the header -->
-      <div class="side-menu">
+      <div class="nav-bar">
          <a href="../index.html">About Me</a>
          <a href="../resume.html">My Resume</a>
          <a href="../blog.html">Blog</a>
          <a href="../portfolio.html" class="active">Cool Things I Have Done</a>
       </div>
-
-      <!-- Main content starts here -->
-      <div class="main-content">
+      <div class="content-container">
          <main>
-            <!-- Project overview -->
-            <section>
-               <h2>Project Overview</h2>
-               <p>
-                  Currently I have been learning to build things using Arduino and ESP32 single board computers. My current project is a device with of a number pad, a display and a 3d printed box, 
-                  that will remind me with sound and light to enter some data twice a day and sends me an email reminding me to enter the data manually if I happen to not be at home.
-                  I have been wanting to track things like mood, activity, caffeine consumption etc. for a while. The more classic way would be a mood board - the journaling community has many great examples of that. But there is a big issue for me:
-                  Having these things on paper will not allow me to statistically analyze them continuously. Therefore I came up with this solution, which not only reminds me of tracking data, 
-                  but it also writes them into a GSheet via the google API connection, allowing me to pull it into python and run analyses.  
-                  
-               </p>
-
-               Here is me getting started with building random things trying different input-output relations:
-               <img src="../Images/Microelectronics_Starting.jpg" alt="Cables and sensors and mess" class="project-image">
-
-               Here is a picture of the device (to be added):
-
-               <!-- Detailed description -->
-               <h2>Circuitry:</h2>
-               <p>This is where the circuit layout and technical details go</p>
-
-                  <h3>The ESP32:</h3>
-                  <p>The ESP32 is a versatile microcontroller known for its low power consumption, dual-core processor, and built-in Wi-Fi and Bluetooth capabilities. 
-                     These features make it ideal for home-built projects requiring wireless connectivity, such as smart home devices, IoT applications, and automation systems. 
-                     With multiple GPIO pins, ADCs, and PWM outputs, it’s highly adaptable for sensors, relays, and other hardware components. 
-                     The ESP32’s affordability and ease of programming through platforms like Arduino and MicroPython allow for quick prototyping and implementation, making it my go-to choice for reliable, connected, and customizable DIY projects.
-                  </p>
-
-               <h2>Code:</h2>
-               <p>This is where the scripts on the ESP32 and examples of my analysis go:</p>
-               <!-- Collapsible code block showing a Git file -->
-               <button type="button" class="collapsible">View Code from GitHub</button>
-               <div class="collapsible-content">
-                  <pre><code>
-                     # Example Python Code 
-                     
-                     import numpy as np
-                     from sklearn.ensemble import RandomForestRegressor
-                     
-                  </code></pre>
-               </div>
-               
-               <h2>Analysis:</h2>
-               <p>This is where results and insights go:</p>
-
-                 <p>Here’s some things I would be interested in:</p>
-               <ul>
-                  <li>Does my migraine correlate with sleep length / caffeine consumption / exercise / ... </li>
-                  <li>Correlation of sleep and mood (according to the literature a clear causality, but also in my individual case?). Does this depend solely on sleep length or a sleep schedule (e.g. what happens when shifting both sleeping and waking up back for two hours?</li>
-                  <li>Getting a smartwatch to track sleep and heart rate and include that in the analysis (Do they usually have APIs available?) </li>
-               </ul>
-
-         </section>
+            <h2>Project Overview</h2>
+            <p>Currently I have been learning to build things using Arduino and ESP32 single-board computers...</p>
+            <img src="../Images/Microelectronics_Starting.jpg" alt="Cables and sensors and mess" class="project-image">
+            <h2>Circuitry</h2>
+            <p>Details on the circuit layout and components used.</p>
+            <h3>The ESP32</h3>
+            <p>The ESP32 is a versatile microcontroller known for its low power consumption...</p>
+            <h2>Code</h2>
+            <button type="button" class="collapsible">View Code from GitHub</button>
+            <div class="collapsible-content">
+               <pre><code>import numpy as np
+from sklearn.ensemble import RandomForestRegressor</code></pre>
+            </div>
+            <h2>Analysis</h2>
+            <p>Exploring the data collected and its insights.</p>
+            <ul>
+               <li>Does migraine correlate with sleep length, caffeine, etc.?</li>
+               <li>How does sleep impact mood?</li>
+               <li>Can smartwatch data enhance the analysis?</li>
+            </ul>
+         </main>
       </div>
-
       <footer>
          &copy; 2024 Luca | All rights reserved.
       </footer>
-
       <script>
-         // Script to toggle the collapsible content
-         const collapsible = document.querySelector('.collapsible');
-         const content = document.querySelector('.collapsible-content');
-
-         collapsible.addEventListener('click', function() {
+         document.querySelector('.collapsible').addEventListener('click', function() {
             this.classList.toggle('active');
+            const content = document.querySelector('.collapsible-content');
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
          });
       </script>
-
-      <script>
-         function toggleSidebar() {
-            const sidebar = document.querySelector('.side-menu');
-            sidebar.classList.toggle('show');
-         }
-      </script>
-      
    </body>
 </html>

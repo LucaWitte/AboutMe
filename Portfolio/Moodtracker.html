@@ -142,25 +142,39 @@
       <div class="content-container">
          <main>
             <h2>Project Overview</h2>
-            <p>Currently I have been learning to build things using Arduino and ESP32 single-board computers...</p>
+            <p>Currently I have been learning to build things using Arduino and ESP32 single board computers. My current project is a device with of a number pad, a display and a 3d printed box, 
+                  that will remind me with sound and light to enter some data twice a day and sends me an email reminding me to enter the data manually if I happen to not be at home.
+                  I have been wanting to track things like mood, activity, caffeine consumption etc. for a while. The more classic way would be a mood board - the journaling community has many great examples of that. But there is a big issue for me:
+                  Having these things on paper will not allow me to statistically analyze them continuously. Therefore I came up with this solution, which not only reminds me of tracking data, 
+                  but it also writes them into a GSheet via the google API connection, allowing me to pull it into python and run analyses.  </p>
             <img src="../Images/Microelectronics_Starting.jpg" alt="Cables and sensors and mess" class="project-image">
+            
             <h2>Circuitry</h2>
-            <p>Details on the circuit layout and components used.</p>
+            <p>This is where the circuit layout and technical details go</p>
+            
             <h3>The ESP32</h3>
-            <p>The ESP32 is a versatile microcontroller known for its low power consumption...</p>
+            <p>The ESP32 is a versatile microcontroller known for its low power consumption, dual-core processor, and built-in Wi-Fi and Bluetooth capabilities. 
+                     These features make it ideal for home-built projects requiring wireless connectivity, such as smart home devices, IoT applications, and automation systems. 
+                     With multiple GPIO pins, ADCs, and PWM outputs, it’s highly adaptable for sensors, relays, and other hardware components. 
+                     The ESP32’s affordability and ease of programming through platforms like Arduino and MicroPython allow for quick prototyping and implementation, making it my go-to choice for reliable, connected, and customizable DIY projects.</p>
+            
             <h2>Code</h2>
+            <p>This is where the scripts on the ESP32 and examples of my analysis go: <br> </p>
+            
             <button type="button" class="collapsible">View Code from GitHub</button>
             <div class="collapsible-content">
                <pre><code>import numpy as np
 from sklearn.ensemble import RandomForestRegressor</code></pre>
             </div>
+            
             <h2>Analysis</h2>
-            <p>Exploring the data collected and its insights.</p>
-            <ul>
-               <li>Does migraine correlate with sleep length, caffeine, etc.?</li>
-               <li>How does sleep impact mood?</li>
-               <li>Can smartwatch data enhance the analysis?</li>
-            </ul>
+            <p>This is where results and insights go ... </p>
+            <p>Here’s some things I would be interested in:</p>
+               <ul>
+                  <li>Does my migraine correlate with sleep length / caffeine consumption / exercise / ... </li>
+                  <li>Correlation of sleep and mood (according to the literature a clear causality, but also in my individual case?). Does this depend solely on sleep length or a sleep schedule (e.g. what happens when shifting both sleeping and waking up back for two hours?</li>
+                  <li>Getting a smartwatch to track sleep and heart rate and include that in the analysis (Do they usually have APIs available?) </li>
+               </ul>
          </main>
       </div>
       <footer>

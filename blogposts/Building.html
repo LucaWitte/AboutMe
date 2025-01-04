@@ -201,14 +201,16 @@
                      <h3>Building an oscillator</h3>
                   <p> 
                      An oscillator is a device that periodically changes states. There has been a bunch of synbio papers describing how to build an oscillator, with the basic idea being mutually respressing genes. 
-                     Imagine 3 genes (G1, G2, G3) in a cell, encoding separate repressors. G1 represses G2, G2 represses G3, G3 represses G1. This leads to oscillating repressions as shown in the following figure from :
+                     Imagine 3 genes (G1, G2, G3) in a cell, encoding separate repressors. G1 represses G2, G2 represses G3, G3 represses G1. This leads to oscillating repressions with three distinct states as shown in the following figure from 
+                     an <a href="https://doi.org/10.7554/eLife.12260" target="_blank">article</a> by Rosier and Greef:
                   </p>
 
-                  <img src="../Images/Microelectronics_Starting.jpg" alt="Image illustrating microelectronics" class="smaller-image">
+                  <img src="../Images/Oscillator_Genes.jpeg" alt="Image illustrating microelectronics" class="smaller-image">
                      
                   <p>                     
-                     - with more advanced approaches offering a higher degree of control of amplitude and period. 
-                     For the sake of simplicity, I will discuss only one of them: 
+                     Different implementations have been implemented - with more advanced approaches offering a higher degree of control of amplitude and period. 
+                     I will use the <a href="https://doi.org/10.1038/nature07616" target="_blank">example from the Fussenegger and Stelling labs</a> as example as both of them covered it extensively in their lectures during my Master's. 
+                     In summary:
                   </p>
                   
                   

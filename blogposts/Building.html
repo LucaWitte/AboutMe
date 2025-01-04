@@ -195,9 +195,21 @@
                         but with one big difference: I can just grab a few transistors and LED's and build these systems - implementing them and trying out variations to see their impact. 
                         This is basically an instant test of whether my theoretical understanding is flawed (as the LEDs will not light up the way I expect them to). <br><br>
 
-                        This example really shows one big flaw of synthetic biology: Building is much more limited and this sucks!
+                        This story really shows one big flaw of synthetic biology: Building is much more limited and this sucks! Here is an example of what I mean:
                      </p>
                      
+                     <h3>Building an oscillator</h3>
+                  <p> 
+                     An oscillator is a device that periodically changes states. There has been a bunch of synbio papers describing how to build an oscillator, with the basic idea being mutually respressing genes. 
+                     Imagine 3 genes (G1, G2, G3) in a cell, encoding separate repressors. G1 represses G2, G2 represses G3, G3 represses G1. This leads to oscillating repressions as shown in the following figure from :
+                  </p>
+
+                  <img src="../Images/Microelectronics_Starting.jpg" alt="Image illustrating microelectronics" class="smaller-image">
+                     
+                  <p>                     
+                     - with more advanced approaches offering a higher degree of control of amplitude and period. 
+                     For the sake of simplicity, I will discuss only one of them: 
+                  </p>
                   
                   
                      <h3>NOTES</h3>

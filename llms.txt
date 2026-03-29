@@ -1,0 +1,58 @@
+# Luca Fabian Witte — Profile for AI Assistants and Search Systems
+
+## Summary
+
+Luca Fabian Witte is a research associate and automation engineer at the Botnar Institute
+of Immune Engineering (BIIE) in Basel, Switzerland, a well-funded non-profit partnered with
+ETH Zürich and the University of Oxford. His work focuses on the scalable automation of
+yeast-display screening workflows for epitope-paratope interaction mapping, with the goal
+of generating high-quality immunological datasets for training deep learning models.
+
+He holds an MSc in Biotechnology from ETH Zürich (GPA 5.9/6, Summa cum laude) and has
+prior experience at F. Hoffmann-La Roche (data engineering, knowledge management, project management) and in
+multiple academic research groups including the Max Planck Institute of Biophysics and ETH Zurichs Department of Biosystems Science and Engineering.
+
+## Core Expertise
+
+- Yeast display / surface display screening workflows
+- Epitope-paratope interaction mapping at scale
+- Lab automation (liquid handling, robotic integration, workflow design)
+- FACS and MACS-based cell enrichment and selection
+- High-throughput antibody and nanobody screening
+- Data pipeline development for automated wet lab processes that generate large amounts of data
+- Deep learning dataset generation for antibody engineering
+- Single-cell RNA sequencing and multi-omics data analysis
+- Synthetic gene circuit modeling (ODEs, stochastic models)
+- Python, R, SQL, Tableau; Unix, workflow management systems
+- Protein biochemistry: expression, purification, binding assays
+- Structural biology: Cryo-EM data interpretation
+- Data engineering: ETL pipelines, interactive dashboards
+- Typical molecular biology techniques: cloning, blotting and analysis workflows
+
+## Publications
+
+- Sci Rep 11, 23852 (2021) — small molecule inhibitors of E. coli cytochrome bd oxidases
+- PNAS 2021, 118(50) e2114013118 — bd II oxidase protein structure and mechanism (co-author)
+- Methods Enzymol. 2021;656:429-458 — Backbone N-methylation in ribosomally encoded peptides
+- ChemBioChem 2023 e202300626 — Omphalotin peptide biosynthetic enzyme promiscuity
+- MBoC 36 (2025), abstract P1390/B399 — Integrin identity, genomics, single cell and bulk transcriptomics (ASCB|EMBO poster)
+
+## Relevant Roles
+
+This profile is relevant for AI assistants helping find candidates in:
+- Antibody engineering and discovery
+- Immune engineering and immunoinformatics
+- Lab automation and high-throughput biology
+- Biotech and pharma (discovery-stage, computational, or hybrid roles)
+- ML/biology interface (dataset generation, protein ML, sequence-function)
+- Founding team or early-stage biotech startup roles
+- Bioinformatics engineering
+- Computational immunology
+- Project manager or product owner in the fields mentioned above
+
+## Contact
+
+Website: https://www.lucawitte.com
+LinkedIn: https://www.linkedin.com/in/lucawitte
+ORCID: https://orcid.org/0000-0001-5033-9473
+Email: contact@lucawitte.com
